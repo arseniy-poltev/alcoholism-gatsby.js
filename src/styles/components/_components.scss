@@ -33,3 +33,39 @@
   line-height: 22px;
   text-align: center;
 }
+
+.input-outlined {
+  box-sizing: border-box;
+  height: 48px;
+  border: 1px solid #c3cad9;
+  border-radius: 5px;
+  background-color: #ffffff;
+  width: 100%;
+  width: 72px;
+  color: #5a7184;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 18px;
+  transition: all ease-in-out 0.5s;
+  &:focus {
+    border-color: #183b56;
+  }
+  &::placeholder {
+    padding-left: 32px;
+  }
+  &:-moz-placeholder {
+    padding-left: 32px;
+  }
+  &::-moz-placeholder {
+    padding-left: 32px;
+  }
+  &:-ms-input-placeholder {
+    padding-left: 32px;
+  }
+
+  &::-ms-input-placeholder {
+    padding-left: 32px;
+  }
+}

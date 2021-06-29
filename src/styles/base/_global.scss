@@ -25,6 +25,21 @@ a {
   text-decoration: none;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .min-h-screen {
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+input {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }
