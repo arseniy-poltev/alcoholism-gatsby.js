@@ -1,0 +1,30 @@
+bhtml,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.section {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+a,
+button {
+  cursor: pointer !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.min-h-screen {
+  height: 100vh;
+}

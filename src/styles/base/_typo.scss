@@ -1,0 +1,189 @@
+@mixin font($font-family, $font-file, $font-weight) {
+  @font-face {
+    font-family: $font-family;
+    // src: url($font-file + ".eot");
+    // src: url($font-file + ".eot?#iefix") format("embedded-opentype"), url($font-file + ".woff") format("woff"),
+    //     url($font-file + ".ttf") format("truetype"), url($font-file + ".svg#" + $font-family) format("svg");
+    src: url($font-file + ".ttf") format("truetype");
+    font-weight: $font-weight;
+    font-style: normal;
+  }
+}
+
+@include font("Gilroy-Thin", "/Typo/Gilroy/Gilroy-Thin", 100);
+@include font("Gilroy-ThinItalic", "/Typo/Gilroy/Gilroy-ThinItalic", 100);
+@include font("Gilroy-UltraLight", "/Typo/Gilroy/Gilroy-UltraLight", 200);
+@include font(
+  "Gilroy-UltraLightItalic",
+  "/Typo/Gilroy/Gilroy-UltraLightItalic",
+  200
+);
+@include font("Gilroy-Light", "/Typo/Gilroy/Gilroy-Light", 300);
+@include font("Gilroy-LightItalic", "/Typo/Gilroy/Gilroy-LightItalic", 300);
+@include font("Gilroy-Regular", "/Typo/Gilroy/Gilroy-Regular", 400);
+@include font("Gilroy-RegularItalic", "/Typo/Gilroy/Gilroy-RegularItalic", 400);
+@include font("Gilroy-Medium", "/Typo/Gilroy/Gilroy-Medium", 500);
+@include font("Gilroy-MediumItalic", "/Typo/Gilroy/Gilroy-MediumItalic", 500);
+@include font("Gilroy-SemiBold", "/Typo/Gilroy/Gilroy-SemiBold", 600);
+@include font(
+  "Gilroy-SemiBoldItalic",
+  "/Typo/Gilroy/Gilroy-SemiBoldItalic",
+  600
+);
+@include font("Gilroy-Bold", "/Typo/Gilroy/Gilroy-Bold", 700);
+@include font("Gilroy-BoldItalic", "/Typo/Gilroy/Gilroy-BoldItalic", 700);
+@include font("Gilroy-ExtraBold", "/Typo/Gilroy/Gilroy-ExtraBold", 800);
+@include font(
+  "Gilroy-ExtraBoldItalic",
+  "/Typo/Gilroy/Gilroy-ExtraBoldItalic",
+  800
+);
+@include font("Gilroy-Black", "/Typo/Gilroy/Gilroy-Black", 900);
+@include font("Gilroy-BlackItalic", "/Typo/Gilroy/Gilroy-BlackItalic", 900);
+@include font("Gilroy-Heavy", "/Typo/Gilroy/Gilroy-Heavy", bold);
+@include font("Gilroy-HeavyItalic", "/Typo/Gilroy/Gilroy-HeavyItalic", bold);
+
+@include font("Roboto-Thin", "/Typo/Roboto/Roboto-Thin", 100);
+@include font("Roboto-ThinItalic", "/Typo/Roboto/Roboto-ThinItalic", 100);
+@include font("Roboto-ExtraLight", "/Typo/Roboto/Roboto-ExtraLight", 200);
+@include font(
+  "Roboto-ExtraLightItalic",
+  "/Typo/Roboto/Roboto-ExtraLightItalic",
+  200
+);
+@include font("Roboto-Light", "/Typo/Roboto/Roboto-Light", 300);
+@include font("Roboto-LightItalic", "/Typo/Roboto/Roboto-LightItalic", 300);
+@include font("Roboto-Regular", "/Typo/Roboto/Roboto-Regular", 400);
+@include font("Roboto-Italic", "/Typo/Roboto/Roboto-Italic", 400);
+@include font("Roboto-Medium", "/Typo/Roboto/Roboto-Medium", 500);
+@include font("Roboto-MediumItalic", "/Typo/Roboto/Roboto-MediumItalic", 500);
+@include font("Roboto-SemiBold", "/Typo/Roboto/Roboto-SemiBold", 700);
+@include font(
+  "Roboto-SemiBoldItalic",
+  "/Typo/Roboto/Roboto-SemiBoldItalic",
+  700
+);
+@include font("Roboto-Bold", "/Typo/Roboto/Roboto-Bold", bold);
+@include font("Roboto-BoldItalic", "/Typo/Roboto/Roboto-BoldItalic", bold);
+
+body {
+  font-family: Gilroy-Medium, sans-serif;
+  font-size: 1rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gilroy-Bold";
+  color: $color-darkblue;
+  line-height: 100%;
+}
+
+h1 {
+  font-size: 54px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+// font-size
+
+.heading-xxl {
+  font-size: 64px;
+}
+
+.heading-sm {
+  font-size: 12px;
+}
+
+.heading-xs {
+  font-size: 10px;
+}
+
+.heading-xxs {
+  font-size: 9px;
+}
+
+p {
+  font-size: 16px;
+  font-family: Roboto-Light, sans-serif;
+  color: $color-darkblue;
+}
+
+.text-xxl {
+  font-size: 64px !important;
+}
+
+.text-lg {
+  font-size: 18px !important;
+}
+
+.text-sm {
+  font-size: 14px !important;
+}
+
+.text-xs {
+  font-size: 12px !important;
+}
+
+.text-xxs {
+  font-size: 10px !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+// font-family
+
+.gilroy-medium {
+  font-family: Gilroy-Medium !important;
+}
+
+.gilroy-regular {
+  font-family: Gilroy-Medium !important;
+}
+
+.gilroy-bold {
+  font-family: Gilroy-Bold !important;
+}
+
+.gilroy-semibold {
+  font-family: Gilroy-SemiBold !important;
+}
+
+.gilroy-light {
+  font-family: Gilroy-Light !important;
+}
+
+.roboto-medium {
+  font-family: Roboto-Medium !important;
+}
+
+.roboto-light {
+  font-family: Roboto-Light !important;
+}
+
+a {
+  font-family: Gilroy-SemiBold, sans-serif;
+  font-weight: normal;
+}

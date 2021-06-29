@@ -1,0 +1,39 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 567px,
+  md: 768px,
+  lg: 992px,
+  xl: 1170px,
+);
+
+$container-max-widths: (
+  sm: 567px,
+  md: 768px,
+  lg: 992px,
+  xl: 1170px,
+);
+
+$grid-gutter-width: 24px;
+
+@import "../../node_modules/bootstrap/scss/bootstrap-grid";
+
+// base styles
+@import "./base/variable";
+@import "./base/mixins";
+@import "./base/global";
+@import "./base/layout";
+@import "./base/typo";
+
+// component styles
+@import "../../node_modules/slick-carousel/slick/slick.css";
+@import "../../node_modules/slick-carousel/slick/slick-theme.css";
+@import "components/components";
+@import "components/navbar";
+@import "components/footer";
+
+// page styles
+@import "pages/shared";
+@import "pages/home";
