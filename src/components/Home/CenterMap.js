@@ -1,41 +1,27 @@
 import React from "react"
-import { GoogleApiWrapper } from "google-maps-react"
+import GoogleMapReact from "google-map-react"
 
-function CenterMap(props) {
-  const { className } = props
-  const [state] = React.useState({
-    center: { lat: 40.78306, lng: -73.971249 }, // 40.783060, -73.971249
-    zoom: 13,
-  })
+const AnyReactComponent = ({ text }) => <div>{text}</div>
 
-  function loadMap(element) {
-    const { google } = props
-    if (!element || !google) return
-    new google.maps.Map(element, {
-      zoom: state.zoom,
-      center: state.center,
-      scrollwheel: false,
-      mapTypeControlOptions: {
-        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-        position: google.maps.ControlPosition.TOP_RIGHT,
-      },
-    })
+export default function CenterMap() {
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
   }
-  const { loaded } = props
+
   return (
-    <div>
-      {loaded ? (
-        <div
-          className={className}
-          ref={loadMap}
-        />
-      ) : (
-        <span className="map-loader">API is Loading</span>
-      )}
+    // Important! Always set the container height explicitly
+    <div className="card-map">
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: "AIzaSyBtdO5k6CRntAMJCF-H5uZjTCoSGX95cdk" }}
+        defaultCenter={defaultProps.center}
+        defaultZoom={defaultProps.zoom}
+      >
+        <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
+      </GoogleMapReact>
     </div>
   )
 }
-
-export default GoogleApiWrapper({
-  apiKey: "AIzaSyCijXJZhd5zTCfVlViXKWVGOn1d9hJmVTI",
-})(CenterMap)

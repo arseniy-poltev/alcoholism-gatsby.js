@@ -1,8 +1,7 @@
 import React from "react"
 import Slider from "react-slick"
-import { FaArrowLeft, FaArrowRight, FaUber } from "react-icons/fa"
-import { Link } from "gatsby"
-import CenterMap from "./CenterMap"
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
+import CenterCard from "../common/CenterCard"
 
 const settings = {
   dots: false,
@@ -52,7 +51,7 @@ function PrevArrow(props) {
 export default function HomeFeatureCenters(props) {
   const { centers } = props
   return (
-    <section className="home-features centers">
+    <section className="home-feature-centers">
       <div className="container">
         <span className="badge">OUR FEATURES</span>
         <h2>Quality Recovery Centers in 50 States</h2>
@@ -60,14 +59,7 @@ export default function HomeFeatureCenters(props) {
           {
             <Slider {...settings}>
               {centers.map((center, index) => (
-                <div className="center-card">
-                  <CenterMap className="center-map" />
-                  <div className="center-summary">
-                    <h4>{center.name}</h4>
-                    <p>{center.description}</p>
-                    <Link to="/">Learn more</Link>
-                  </div>
-                </div>
+                <CenterCard key={index} center={center} />
               ))}
             </Slider>
           }

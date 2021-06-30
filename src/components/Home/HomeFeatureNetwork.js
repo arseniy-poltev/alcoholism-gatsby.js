@@ -2,7 +2,7 @@ import React from "react"
 
 export default function HomeFeatureNetwork() {
   return (
-    <section className="home-features">
+    <section className="home-feature-network">
       <div className="container">
         <span className="badge">OUR FEATURES</span>
         <h2>Our Network is Different</h2>

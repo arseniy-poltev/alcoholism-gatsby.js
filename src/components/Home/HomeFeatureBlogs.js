@@ -1,27 +1,23 @@
 import React from "react"
+import BlogCard from "../common/BlogCard"
 
-export default function HomeFeatureBlogs() {
+export default function HomeFeatureBlogs(props) {
+  const { blogs } = props
   return (
-    <section className="home-features">
+    <section className="home-feature-blogs">
       <div className="container">
         <span className="badge">OUR FEATURES</span>
-        <h2>Our Network is Different</h2>
+        <h2>Have a look over our publications</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
         <div className="row">
-          <div className="col-lg-4 col-sm-6 feature-item">
-            <h4>Dedicated.</h4>
-            <p>Recovery Centers thath have dedicated Alcoholism programs</p>
-          </div>
-          <div className="col-lg-4 col-sm-6 feature-item">
-            <h4>Vetted network.</h4>
-            <p>We call and verify information directly.</p>
-          </div>
-          <div className="col-lg-4 col-sm-6 feature-item">
-            <h4>Rich information.</h4>
-            <p>
-              We include information on facilities, certifications, reviews, and
-              more.
-            </p>
-          </div>
+          {blogs.map((blog, index) => (
+            <div key={index} className="col-lg-4 col-sm-6 feature-item">
+              <BlogCard blog={blog} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
