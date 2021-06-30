@@ -40,6 +40,7 @@ export const centersList = [
 export const blogList = [
   {
     id: 1,
+    image: "/1.jpg",
     tag: "Lifestyle",
     title: "Why Young People Experiment Substances",
     content:
@@ -48,6 +49,8 @@ export const blogList = [
   },
   {
     id: 2,
+    image: "/2.jpg",
+
     tag: "Lifestyle",
     title: "The Importance of Having Fun in Recovery",
     content:
@@ -56,6 +59,7 @@ export const blogList = [
   },
   {
     id: 3,
+    image: "/3.jpg",
     tag: "Lifestyle",
     title: "Learning to Deal with Life in Recovery",
     content:
