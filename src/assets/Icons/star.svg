@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path Copy 4</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.988235 0 0 0 0 0.709804 0 0 0 0 0.003922 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Listing" transform="translate(-812.000000, -224.000000)">
+            <g id="Group-7" transform="translate(165.000000, 168.000000)">
+                <g id="Group-30" transform="translate(565.000000, 0.000000)">
+                    <g id="Group-29" transform="translate(0.000000, 52.000000)" filter="url(#filter-1)">
+                        <g transform="translate(0.000000, 4.000000)">
+                            <polygon id="Path-Copy-4" fill="#FE8C62" fill-rule="nonzero" points="92.3911289 0 95.3282405 5.96793131 102 6.87558048 97.1443171 11.4713923 98.3294112 18 92.3911289 14.8717252 86.4520458 18 87.6379407 11.4713923 82.7822578 6.87558048 89.4540173 5.96793131"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

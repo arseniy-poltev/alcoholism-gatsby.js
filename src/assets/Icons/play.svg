@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 20</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Listing" transform="translate(-611.000000, -336.000000)">
+            <g id="Group-7" transform="translate(165.000000, 168.000000)">
+                <g id="Group" transform="translate(0.000000, 14.000000)">
+                    <g id="Group-6" transform="translate(409.000000, 0.000000)">
+                        <g id="Group-20" transform="translate(37.000000, 154.000000)">
+                            <rect id="Fill" fill="#FFFFFF" x="0" y="0" width="42" height="42"></rect>
+                            <g id="controls-play" transform="translate(15.000000, 13.000000)" fill="#000000" fill-rule="nonzero">
+                                <path d="M15.4263824,7.0717411 L1.50197233,0.1086682 C1.18012763,-0.0513438835 0.79845857,-0.0336958312 0.492750787,0.155333745 C0.187043004,0.344363321 0.000693700729,0.677940446 0,1.03738905 L0,14.9628681 C0.000552483504,15.3223504 0.186922318,15.6559924 0.49271918,15.8449413 C0.798516043,16.0338902 1.1802636,16.0512824 1.50197233,15.8909223 L15.4263824,8.92851609 C15.7779435,8.75264432 16,8.39325081 16,8.00012859 C16,7.60700637 15.7779435,7.24761286 15.4263824,7.0717411 Z" id="Path"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

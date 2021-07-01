@@ -2,7 +2,7 @@ import React from "react"
 
 export default function RequestCallForm() {
   return (
-    <div className="request-call-form-block">
+    <div className="request-call-form">
       <h3>or we can reach out to you</h3>
       <div className="d-flex justify-content-between">
         <input

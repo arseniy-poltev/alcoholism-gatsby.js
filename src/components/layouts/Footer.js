@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
+import Badges from "../common/Badges"
 import SocialLinks from "../common/SocialLinks"
 
 export default function Footer() {
@@ -14,6 +15,7 @@ export default function Footer() {
                 © Copyright 2020 Bright Stance® <br />
                 All Rights Reserved
               </h5>
+              <Badges />
             </div>
           </div>
           <div className="col-lg-2 col-sm-6 d-flex flex-column">

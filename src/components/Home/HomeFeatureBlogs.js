@@ -4,7 +4,7 @@ import BlogCard from "../common/BlogCard"
 export default function HomeFeatureBlogs(props) {
   const { blogs } = props
   return (
-    <section className="home-feature-blogs">
+    <section className="home-feature home-feature--blogs">
       <div className="container">
         <span className="badge">OUR FEATURES</span>
         <h2>Have a look over our publications</h2>

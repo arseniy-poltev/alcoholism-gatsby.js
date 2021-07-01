@@ -11,7 +11,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/Images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -30,11 +30,22 @@ module.exports = {
     },
     "gatsby-plugin-sass",
     // {
-    //   resolve: 'gatsby-plugin-sass',
+    //   resolve: "gatsby-plugin-sass",
     //   options: {
-    //     data: `@import "${__dirname}/src/styles/styles";`, // global styles
-    //   }
+    //     sassOptions: {
+    //       includePaths: ["src/images"],
+    //     },
+    //     // data: `@import "${__dirname}/src/styles/styles";`, // global styles
+    //   },
     // },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /Icons/,
+        },
+      },
+    },
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>google</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Listing" transform="translate(-529.000000, -497.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-7" transform="translate(165.000000, 168.000000)">
+                <g id="Group" transform="translate(0.000000, 14.000000)">
+                    <g id="google" transform="translate(364.000000, 315.000000)">
+                        <path d="M16,8.18709677 C16,12.7516129 12.8229508,16 8.13114754,16 C3.63278689,16 0,12.4258065 0,8 C0,3.57419355 3.63278689,0 8.13114754,0 C10.3213115,0 12.1639344,0.790322581 13.5836066,2.09354839 L11.3704918,4.18709677 C8.47540984,1.43870968 3.09180328,3.50322581 3.09180328,8 C3.09180328,10.7903226 5.35737705,13.0516129 8.13114754,13.0516129 C11.3508197,13.0516129 12.557377,10.7806452 12.747541,9.60322581 L8.13114754,9.60322581 L8.13114754,6.8516129 L15.8721311,6.8516129 C15.947541,7.26129032 16,7.65483871 16,8.18709677 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

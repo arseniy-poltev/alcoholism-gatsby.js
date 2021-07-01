@@ -1,3 +1,4 @@
+// elements
 .btn {
   display: inline-block;
   text-align: center;
@@ -22,10 +23,22 @@
 
 .btn-primary {
   height: 48px;
-  width: 165px;
   box-shadow: 0 10px 25px 0 rgba(21, 37, 72, 0.1);
   background-color: #fb9c00;
   color: #ffffff;
+  font-family: "Maison Neue";
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: center;
+}
+
+.btn-primary-outlined {
+  height: 48px;
+  box-shadow: 0 10px 25px 0 rgba(21, 37, 72, 0.1);
+  background-color: #ffffff;
+  color: #fb9c00;
   font-family: "Maison Neue";
   font-size: 15px;
   font-weight: bold;
@@ -68,4 +81,17 @@
   &::-ms-input-placeholder {
     padding-left: 32px;
   }
+}
+
+.badge {
+  padding: 9px 16px;
+  border-radius: 16px;
+  background-color: #fcce81;
+  color: #efa226;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: center;
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="224px" height="224px" viewBox="0 0 224 224" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FDBB4B" offset="0%"></stop>
+            <stop stop-color="#F89C00" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="112" cy="112" r="112"></circle>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FAB132" offset="0%"></stop>
+            <stop stop-color="#F9A619" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Verification-Page" transform="translate(-957.000000, -860.000000)">
+            <g id="Group" transform="translate(957.000000, 860.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="Oval" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <circle id="Oval-Copy" fill="#A76900" mask="url(#mask-3)" cx="112" cy="112" r="102.508475"></circle>
+                <text id="2021" mask="url(#mask-3)" font-family="DMSans-Medium, DM Sans" font-size="36.7407407" font-weight="400" line-spacing="16.5925926" fill="#FBA91F">
+                    <tspan x="69.9318519" y="191.139811">2021</tspan>
+                </text>
+                <text id="Alcoholism.org" mask="url(#mask-3)" font-family="MillerDisplaySemiBold" font-size="17.7777778" font-weight="bold" line-spacing="30.8148148" letter-spacing="-0.11851852" fill="#FBA91F">
+                    <tspan x="55.1111111" y="48.4074074">Alcoholism.org</tspan>
+                </text>
+                <g id="Group-3" mask="url(#mask-3)">
+                    <g transform="translate(0.000000, 72.888889)">
+                        <rect id="Rectangle" fill="url(#linearGradient-4)" fill-rule="evenodd" x="0" y="0" width="224" height="78.2222222"></rect>
+                        <g id="Group-2" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(34.370370, 8.296296)">
+                            <path d="M8.22816248,26.7138518 L0.354764252,18.9539996 C-0.118254751,18.4878023 -0.118254751,17.7319162 0.354764252,17.2656722 L2.06774884,15.5773447 C2.54076785,15.1111007 3.30776175,15.1111007 3.78078075,15.5773447 L9.08467843,20.8047057 L20.4450363,9.60822771 C20.9180553,9.14203034 21.6850492,9.14203034 22.1580682,9.60822771 L23.8710528,11.2965552 C24.3440718,11.7627525 24.3440718,12.5186386 23.8710528,12.9848826 L9.94119439,26.7138984 C9.46812807,27.1800958 8.70118148,27.1800958 8.22816248,26.7138518 L8.22816248,26.7138518 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero" transform="translate(12.112909, 18.161060) rotate(-360.000000) translate(-12.112909, -18.161060) "></path>
+                            <text id="VERIFIED" font-family="MillerDisplay-Bold, MillerDisplay" font-size="25.6391437" font-weight="bold" line-spacing="37.0343187" fill="#FFFFFF">
+                                <tspan x="32" y="24">VERIFIED</tspan>
+                            </text>
+                        </g>
+                        <text id="Rehab-Center" fill="none" font-family="DMSans-Medium, DM Sans" font-size="18.962963" font-weight="400" line-spacing="16.5925926">
+                            <tspan x="49.7777778" y="67.5925926" fill="#FFFFFF">Rehab Center</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

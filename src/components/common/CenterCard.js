@@ -7,9 +7,10 @@ export default function CenterCard(props) {
   const { center } = props
   return (
     <div className="center-card">
-      {/* <CenterMap className="center-map" /> */}
-      <div className="center-map" />
-      <div className="center-summary">
+      <div className="center-card__map">
+        <img src={center.image} alt="center" />
+      </div>
+      <div className="center-card__summary">
         <h4>{center.name}</h4>
         <p>{center.description}</p>
         <Link to="/">

@@ -9,7 +9,7 @@ export default function BlogCard(props) {
 
   return (
     <div className="blog-card">
-      <div className="blog-cover">
+      <div className="blog-card__cover">
         <img src={blog.image} alt="blog cover" />
         {/* <StaticImage
           src={blog.image}
@@ -20,7 +20,7 @@ export default function BlogCard(props) {
           style={{ marginBottom: `1.45rem` }}
         /> */}
       </div>
-      <div className="blog-summary">
+      <div className="blog-card__summary">
         <h6>
           <span>{blog.tag}</span>•
           {moment(blog.publishedAt).format("MMM DD, YYYY")}

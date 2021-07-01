@@ -1,6 +1,7 @@
 import React from "react"
 import Slider from "react-slick"
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
+import LeftArrow from "../../assets/Icons/tail-left.svg"
+import RightArrow from "../../assets/Icons/tail-right.svg"
 import CenterCard from "../common/CenterCard"
 
 const settings = {
@@ -34,7 +35,7 @@ function NextArrow(props) {
   const { className, onClick } = props
   return (
     <div onClick={onClick} className="slick-arrow next">
-      <FaArrowRight />
+      <LeftArrow />
     </div>
   )
 }
@@ -43,7 +44,7 @@ function PrevArrow(props) {
   const { className, onClick } = props
   return (
     <div onClick={onClick} className="slick-arrow prev">
-      <FaArrowLeft />
+      <RightArrow />
     </div>
   )
 }
@@ -51,7 +52,7 @@ function PrevArrow(props) {
 export default function HomeFeatureCenters(props) {
   const { centers } = props
   return (
-    <section className="home-feature-centers">
+    <section className="home-feature home-feature--centers">
       <div className="container">
         <span className="badge">OUR FEATURES</span>
         <h2>Quality Recovery Centers in 50 States</h2>

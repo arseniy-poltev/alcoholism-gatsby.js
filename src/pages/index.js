@@ -8,23 +8,21 @@ import HomeBanner from "../components/Home/HomeBanner"
 import HomeFeatureNetwork from "../components/Home/HomeFeatureNetwork"
 import HomeFeatureCenters from "./../components/Home/HomeFeatureCenters"
 import HomeFeatureBlogs from "./../components/Home/HomeFeatureBlogs"
-import { Helmet } from "react-helmet"
 import { blogList, centersList } from "../components/common/data"
+import HomeCertifications from "../components/Home/HomeCertifications"
+import HomeOutlets from "../components/Home/HomeOutlets"
+import FooterBanner from "../components/Home/FooterBanner"
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <Helmet>
-      <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCijXJZhd5zTCfVlViXKWVGOn1d9hJmVTI"
-        async
-        defer
-      />
-    </Helmet>
     <HomeBanner />
+    <HomeCertifications />
     <HomeFeatureNetwork />
     <HomeFeatureCenters centers={centersList} />
     <HomeFeatureBlogs blogs={blogList} />
+    <HomeOutlets />
+    <FooterBanner />
     {/* <StaticImage
       src="../images/gatsby-astronaut.png"
       width={300}
