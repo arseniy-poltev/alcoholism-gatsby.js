@@ -1,9 +1,9 @@
 import React from "react"
 
-export default function RequestCallForm() {
+export default function RequestCallForm({ text }) {
   return (
     <div className="request-call-form">
-      <h3>or we can reach out to you</h3>
+      <h3>{text}</h3>
       <div className="d-flex justify-content-between">
         <input
           className="input-outlined"

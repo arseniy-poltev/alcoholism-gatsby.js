@@ -23,8 +23,9 @@ $grid-gutter-width: 24px;
 // base styles
 @import "./base/variable";
 @import "./base/mixins";
-@import "./base/global";
+@import "./base/fonts";
 @import "./base/typo";
+@import "./base/global";
 
 // component styles
 @import "../../node_modules/slick-carousel/slick/slick.css";
@@ -36,3 +37,4 @@ $grid-gutter-width: 24px;
 
 // page styles
 @import "pages/home";
+@import "pages/listing";

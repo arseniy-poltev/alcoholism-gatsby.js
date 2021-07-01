@@ -1,10 +1,10 @@
 .navbar {
-  margin-top: 22px;
+  padding: 20px 0;
   .logo {
     height: 52px;
     width: 220px;
     color: #000000;
-    // font-family: MillerDisplaySemiBold;
+    font-family: "Miller Display";
     font-size: 30px;
     font-weight: bold;
     letter-spacing: -0.2px;
@@ -12,8 +12,9 @@
   }
   .navbar-nav {
     .nav-item {
+      display: flex;
       a {
-        padding: 18px;
+        padding: 16px 18px;
         color: #5a7184;
         font-family: "DM Sans";
         font-size: 16px;
@@ -24,5 +25,18 @@
         line-height: 21px;
       }
     }
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: "Maison Neue";
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
   }
 }

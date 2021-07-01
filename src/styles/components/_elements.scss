@@ -95,3 +95,14 @@
   line-height: 20px;
   text-align: center;
 }
+
+.star-rating {
+  display: flex;
+  svg {
+    width: 20px;
+    height: 18px;
+    polygon {
+      fill: #fb9c01;
+    }
+  }
+}

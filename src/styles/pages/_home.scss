@@ -12,12 +12,17 @@
     .text-block {
       h1 {
         margin-bottom: 40px;
+        color: #183b56;
+        font-family: "Miller Display";
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 52px;
       }
       h4 {
         margin-bottom: 45px;
         color: #5a7184;
         font-family: "DM Sans";
-        font-weight: bold;
+        font-weight: 700;
         letter-spacing: 0;
         line-height: 28px;
         span {
@@ -163,7 +168,7 @@
     h3 {
       margin-bottom: 60px;
       color: #183b56;
-      font-family: MillerDisplay;
+      font-family: "Miller Display";
       font-size: 28px;
       font-weight: bold;
       letter-spacing: 0;
@@ -190,12 +195,13 @@
     height: 48px;
     width: 694px;
     color: #ffffff;
-    font-family: MillerDisplaySemiBold;
+    font-family: "Miller Display";
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 48px;
   }
+
   .btn {
     display: flex;
     justify-content: center;

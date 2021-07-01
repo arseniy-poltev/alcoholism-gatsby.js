@@ -1,0 +1,116 @@
+.listing-banner {
+  background-color: #f9f9f9;
+  min-height: 531px;
+  padding: 77px 0;
+  .container {
+    height: 100%;
+  }
+  .gallery {
+    display: flex;
+    justify-content: space-between;
+
+    .gallery-main {
+      width: 76%;
+      > div {
+        position: relative;
+        width: 100%;
+        padding-top: 88%;
+        overflow: hidden;
+        img {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    .gallery-strip {
+      width: 22%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .location-summary {
+    margin: 0 auto 12px;
+    &__name {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      color: #183b56;
+      font-family: "Miller Display";
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 52px;
+
+      svg {
+        margin-left: 16px;
+        border-radius: 1000px;
+      }
+      // span {
+      //   margin-bottom: auto;
+      //   // height: 32px;
+      //   // width: 68px;
+      //   // opacity: 0.2;
+      //   border-radius: 2000px;
+      //   overflow: hidden;
+      //   // background-color: #11B416;
+      // }
+    }
+
+    &__rating {
+      display: flex;
+      align-items: center;
+      p {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-bottom: 0;
+        color: #3a586e;
+        font-family: "DM Sans";
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 28px;
+      }
+    }
+
+    &__review-btn {
+      color: #fb9c01;
+      font-family: "Maison Neue";
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 22px;
+      text-transform: uppercase;
+
+      svg {
+        margin-right: 6px;
+        path {
+          fill: #fb9c01;
+        }
+      }
+    }
+
+    &__address {
+      color: #5a7184;
+      font-family: "DM Sans";
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 28px;
+    }
+    &__phone {
+      color: #5a7184;
+      font-family: "DM Sans";
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 28px;
+      span {
+        color: #fb9c00;
+      }
+    }
+  }
+}

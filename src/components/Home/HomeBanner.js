@@ -16,7 +16,7 @@ export default function HomeBanner() {
                 Call our Hotline Number <span>888-777-6666</span>
               </h4>
             </div>
-            <RequestCallForm />
+            <RequestCallForm text="or we can reach out to you" />
           </div>
         </div>
       </div>
