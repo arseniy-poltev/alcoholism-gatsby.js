@@ -202,15 +202,24 @@
     line-height: 48px;
   }
 
-  .btn {
+  button {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 243px;
+    font-family: "DM Sans";
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 20px;
+
     svg {
-      // fill: #fb9c00;
-      // path {
-      //   fill: #fb9c00 !important;
-      // }
+      height: 11px;
+      width: 11px;
+      margin-right: 7px;
+      path {
+        fill: #fb9c00 !important;
+      }
     }
   }
 }

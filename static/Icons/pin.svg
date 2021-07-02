@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Listing" transform="translate(-945.000000, -1333.000000)" fill="#9FADB8" fill-rule="nonzero">
+            <g id="Group-21" transform="translate(165.000000, 683.000000)">
+                <g id="Group-16" transform="translate(759.000000, 0.000000)">
+                    <g id="Group-14-Copy-4" transform="translate(0.000000, 630.000000)">
+                        <g id="Group-12" transform="translate(21.000000, 12.000000)">
+                            <path d="M7,8 C3.13592559,8.00457738 0.00462856287,11.1012516 0,14.922601 C0,19.31153 6.2398,25.5335638 6.5044,25.7966226 C6.63572597,25.9268252 6.81404183,26 7,26 C7.18595817,26 7.36427403,25.9268252 7.4956,25.7966226 C7.7602,25.5335638 14,19.31153 14,14.922601 C13.9953714,11.1012516 10.8640744,8.00457738 7,8 Z M7,12.4996906 C8.35309764,12.4996906 9.45,13.5844645 9.45,14.922601 C9.45,16.2607374 8.35309764,17.3455113 7,17.3455113 C5.64690236,17.3455113 4.55,16.2607374 4.55,14.922601 C4.55154302,13.5850971 5.64754202,12.5012166 7,12.4996906 L7,12.4996906 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

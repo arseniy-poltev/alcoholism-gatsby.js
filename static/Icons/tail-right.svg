@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="15px" viewBox="0 0 21 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>tail-right</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Homepage-V.1" transform="translate(-1327.000000, -1970.000000)">
+            <g id="Group-19" transform="translate(0.000000, 1512.000000)">
+                <g id="Group-18" transform="translate(70.000000, 100.000000)">
+                    <g id="Group-16" transform="translate(0.000000, 157.000000)">
+                        <g id="tail-right" transform="translate(1235.000000, 176.000000)" filter="url(#filter-1)">
+                            <g transform="translate(23.000000, 26.000000)" id="Group-3" stroke="#FFFFFF" stroke-width="2">
+                                <line x1="0" y1="6.5" x2="19" y2="6.5" id="Path"></line>
+                                <polyline id="Path" points="13 0 19 6.5 13 13"></polyline>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

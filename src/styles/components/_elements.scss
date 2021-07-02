@@ -65,22 +65,22 @@
   &:focus {
     border-color: #183b56;
   }
-  &::placeholder {
-    padding-left: 32px;
-  }
-  &:-moz-placeholder {
-    padding-left: 32px;
-  }
-  &::-moz-placeholder {
-    padding-left: 32px;
-  }
-  &:-ms-input-placeholder {
-    padding-left: 32px;
-  }
+  // &::placeholder {
+  //   padding-left: 32px;
+  // }
+  // &:-moz-placeholder {
+  //   padding-left: 32px;
+  // }
+  // &::-moz-placeholder {
+  //   padding-left: 32px;
+  // }
+  // &:-ms-input-placeholder {
+  //   padding-left: 32px;
+  // }
 
-  &::-ms-input-placeholder {
-    padding-left: 32px;
-  }
+  // &::-ms-input-placeholder {
+  //   padding-left: 32px;
+  // }
 }
 
 .badge {

@@ -28,6 +28,7 @@
   }
 
   button {
+    padding: 12px 27px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,5 +39,15 @@
     letter-spacing: 0;
     line-height: 22px;
     text-align: center;
+    svg {
+      width: 11px;
+      height: 11px;
+      margin-top: -2px;
+      margin-right: 7px;
+      line-height: 1;
+      path {
+        fill: #ffffff;
+      }
+    }
   }
 }
