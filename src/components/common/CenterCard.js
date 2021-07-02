@@ -6,11 +6,11 @@ import CenterMap from "../Home/CenterMap"
 export default function CenterCard(props) {
   const { center } = props
   return (
-    <div className="center-card">
-      <div className="center-card__map">
+    <div className="center-map-card">
+      <div className="center-map-card__map">
         <img src={center.image} alt="center" />
       </div>
-      <div className="center-card__summary">
+      <div className="center-map-card__summary">
         <h4>{center.name}</h4>
         <p>{center.description}</p>
         <Link to="/">

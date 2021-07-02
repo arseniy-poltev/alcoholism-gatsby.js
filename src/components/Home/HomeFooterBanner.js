@@ -4,9 +4,9 @@ import { IoIosCall, IoMdCall } from "react-icons/io"
 import { IoCall } from "react-icons/io5"
 import PhoneIcon from "../../assets/Icons/phone.svg"
 
-export default function FooterBanner() {
+export default function HomeFooterBanner() {
   return (
-    <section className="home-footer-banner">
+    <section className="footer-banner footer-banner--home">
       <div className="container">
         <h2>You’re only a call away from changing your life!</h2>
         <button className="btn btn-primary-outlined">

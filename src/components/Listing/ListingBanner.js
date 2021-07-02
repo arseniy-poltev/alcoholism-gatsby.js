@@ -2,6 +2,10 @@ import React from "react"
 import RequestCallForm from "../Home/RequestCallForm"
 import BadgeIcon from "../../assets/Icons/badge.svg"
 import PencilIcon from "../../assets/Icons/pencil.svg"
+import PlayIcon from "../../assets/Icons/play.svg"
+import YelpIcon from "../../assets/Icons/yelp-black.svg"
+import GoogleIcon from "../../assets/Icons/google.svg"
+
 import Rating from "../common/Rating"
 
 const gallery = {
@@ -17,17 +21,32 @@ export default function ListingBanner() {
     <section className="listing-banner">
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 col-sm-12">
-            <div className="gallery">
-              <div className="gallery-main">
-                <div>
+          <div className="col-lg-6 col-sm-12 d-flex">
+            <div className="gallery-wrapper">
+              <div className="gallery">
+                <div className="gallery-main">
                   <img src={gallery.main} alt="gallery main" />
+                  <div className="gallery-main__actions">
+                    <div>
+                      <YelpIcon />
+                    </div>
+                    <div>
+                      <GoogleIcon />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="gallery-strip">
-                <img src={gallery.items[0]} alt="gallery" />
-                <img src={gallery.items[1]} alt="gallery" />
-                <img src={gallery.items[2]} alt="gallery" />
+                <div className="gallery-strip">
+                  <div className="gallery-strip__item">
+                    <img src={gallery.items[0]} alt="gallery" />
+                  </div>
+                  <div className="gallery-strip__item">
+                    <PlayIcon />
+                    <img src={gallery.items[1]} alt="gallery" />
+                  </div>
+                  <div className="gallery-strip__item">
+                    <img src={gallery.items[2]} alt="gallery" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -56,7 +75,10 @@ export default function ListingBanner() {
             <h3 className="location-summary__phone">
               Call our Hotline Number <span>888-777-6666</span>
             </h3>
-            <RequestCallForm text={"Enter your phone number"} />
+            <RequestCallForm
+              className="call-form--listing"
+              text={"Enter your phone number"}
+            />
           </div>
         </div>
       </div>

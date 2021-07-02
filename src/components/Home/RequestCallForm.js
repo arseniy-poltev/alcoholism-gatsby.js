@@ -2,9 +2,9 @@ import React from "react"
 import PhoneIcon from "../../assets/Icons/phone.svg"
 import UserIcon from "../../assets/Icons/user.svg"
 
-export default function RequestCallForm({ text }) {
+export default function RequestCallForm({ className, text }) {
   return (
-    <div className="call-form">
+    <div className={`call-form ${className}`}>
       <h3>{text}</h3>
       <div>
         <div className="call-form__input-wrapper">

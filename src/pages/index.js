@@ -11,7 +11,7 @@ import HomeFeatureBlogs from "./../components/Home/HomeFeatureBlogs"
 import { blogList, centersList } from "../components/common/data"
 import HomeCertifications from "../components/Home/HomeCertifications"
 import HomeOutlets from "../components/Home/HomeOutlets"
-import FooterBanner from "../components/Home/FooterBanner"
+import HomeFooterBanner from "../components/Home/HomeFooterBanner"
 
 const IndexPage = () => (
   <Layout>
@@ -22,7 +22,7 @@ const IndexPage = () => (
     <HomeFeatureCenters centers={centersList} />
     <HomeFeatureBlogs blogs={blogList} />
     <HomeOutlets />
-    <FooterBanner />
+    <HomeFooterBanner />
     {/* <StaticImage
       src="../images/gatsby-astronaut.png"
       width={300}
