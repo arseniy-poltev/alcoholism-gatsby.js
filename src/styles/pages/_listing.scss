@@ -230,8 +230,9 @@
       top: 6px;
       height: 24px;
       width: 24px;
-      background-image: url("/Icons/close-circle.svg");
+      background-image: url("/Icons/check-circle.svg");
       background-repeat: no-repeat;
+      background-size: 23px 23px;
     }
     .off::before {
       content: "";
@@ -242,6 +243,7 @@
       width: 24px;
       background-image: url("/Icons/close-circle.svg");
       background-repeat: no-repeat;
+      background-size: 24px 24px;
     }
   }
 }
@@ -321,6 +323,7 @@
   &__body {
     padding: 16px 24px;
     p {
+      position: relative;
       margin-bottom: 6px;
       padding-left: 36px;
       color: #183b56;
@@ -425,7 +428,48 @@
   }
 }
 
-.center-detail {
-  &__header {
+.local-centers {
+  padding: 90px 0 100px;
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  span {
+    margin: 0 auto 30px;
+  }
+  h2 {
+    color: #183b56;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 44px;
+    text-align: center;
+  }
+  p {
+    margin: 0 auto 62px;
+    max-width: 642px;
+    color: #5a7184;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 26px;
+    text-align: center;
+  }
+  .states {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 450px;
+    > div {
+      width: 12%;
+      padding: 12px 0;
+      color: #5a7184;
+      font-family: "DM Sans";
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 26px;
+      text-align: center;
+    }
   }
 }

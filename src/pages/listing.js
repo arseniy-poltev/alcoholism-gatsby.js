@@ -9,6 +9,7 @@ import CenterInfo from "../components/Listing/ListingDetail.js/CenterInfo"
 import CenterMoreResource from "../components/Listing/ListingDetail.js/CenterMoreResource"
 import CenterSetting from "../components/Listing/ListingDetail.js/CenterSetting"
 import ListingFooterBanner from "../components/Listing/ListingFooterBanner"
+import FindLocalCenters from "../components/Listing/FindLocalCenters"
 
 export default function Listing() {
   return (
@@ -32,6 +33,7 @@ export default function Listing() {
         </div>
       </section>
       <ListingFooterBanner />
+      <FindLocalCenters />
     </Layout>
   )
 }

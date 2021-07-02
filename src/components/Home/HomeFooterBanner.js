@@ -8,11 +8,13 @@ export default function HomeFooterBanner() {
   return (
     <section className="footer-banner footer-banner--home">
       <div className="container">
-        <h2>You’re only a call away from changing your life!</h2>
-        <button className="btn btn-primary-outlined">
-          <PhoneIcon />
-          GIVE US A CALL TODAY
-        </button>
+        <div>
+          <h2>You’re only a call away from changing your life!</h2>
+          <button className="btn btn-primary-outlined">
+            <PhoneIcon />
+            GIVE US A CALL TODAY
+          </button>
+        </div>
       </div>
     </section>
   )

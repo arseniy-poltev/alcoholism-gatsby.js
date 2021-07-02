@@ -8,9 +8,13 @@ export default function ListingFooterBanner() {
       <div className="container">
         <div className="row">
           <div className="col-lg-5 col-sm-12">
-            <h2>You’re only a call away from changing your life!</h2>
+            <h2>
+              You’re only a call away from
+              <br /> changing your life!
+            </h2>
             <RequestCallForm className="call-form--listing-footer" />
           </div>
+          <div className="col-lg-7 col-sm-12"></div>
         </div>
       </div>
     </section>
