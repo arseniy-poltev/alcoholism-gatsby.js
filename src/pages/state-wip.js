@@ -24,11 +24,8 @@ export default function StateWip() {
               <ListingCard />
             </div>
             <div className="col-lg-4 col-sm-12">
-              <CenterFeature />
               <CenterDetail />
               <CenterInfo />
-              <CenterSetting />
-              <CenterMoreResource />
             </div>
           </div>
         </div>

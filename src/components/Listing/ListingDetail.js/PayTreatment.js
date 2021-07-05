@@ -7,12 +7,12 @@ export default function PayTreatment() {
       <VerifiedIcon />
       <h3>Paying for Treatment</h3>
       <div className="pay-treatment__info">
-        <p>
+        <div>
           Duration: <span>28 Days</span>
-        </p>
-        <p>
+        </div>
+        <div>
           Est. Cost: <span> $28,000</span>
-        </p>
+        </div>
       </div>
       <div className="row pay-treatment__features">
         <div className="col-lg-6 col-sm-12">
