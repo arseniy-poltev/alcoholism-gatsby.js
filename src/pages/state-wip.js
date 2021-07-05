@@ -12,7 +12,7 @@ import ListingFooterBanner from "../components/Listing/ListingFooterBanner"
 import FindLocalCenters from "../components/Listing/FindLocalCenters"
 import ListingCard from "../components/Listing/ListingCard"
 
-export default function Listing() {
+export default function StateWip() {
   return (
     <Layout>
       <ListingBanner />
@@ -20,9 +20,8 @@ export default function Listing() {
         <div className="container">
           <div className="row">
             <div className="col-lg-8 col-sm-12">
-              {/* <ListingCard /> */}
-              <PayTreatment />
-              <TreatmentDetail />
+              <ListingCard />
+              <ListingCard />
             </div>
             <div className="col-lg-4 col-sm-12">
               <CenterFeature />

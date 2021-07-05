@@ -5,12 +5,12 @@ import Logo from "../common/Logo"
 import PhoneIcon from "../../assets/Icons/phone.svg"
 
 const navmenus = [
-  { to: "treatment", label: "Treatment" },
-  { to: "listing", label: "Locations" },
-  { to: "admissions", label: "Admissions" },
-  { to: "about", label: "About" },
-  { to: "blog", label: "Blog" },
-  { to: "contact", label: "Contact" },
+  { to: "/treatment", label: "Treatment" },
+  { to: "/listing", label: "Locations" },
+  { to: "/admissions", label: "Admissions" },
+  { to: "/about", label: "About" },
+  { to: "/blog", label: "Blog" },
+  { to: "/contact", label: "Contact" },
 ]
 
 function Header(props) {
