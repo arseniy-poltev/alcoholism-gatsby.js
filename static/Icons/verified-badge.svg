@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="134px" height="134px" viewBox="0 0 134 134" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Badge</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Listing" transform="translate(-774.000000, -649.000000)">
+            <g id="Group-21" transform="translate(165.000000, 683.000000)">
+                <g id="Group-10" transform="translate(20.000000, -33.468037)">
+                    <g id="Badge" transform="translate(656.000000, 66.468037) rotate(-315.000000) translate(-656.000000, -66.468037) translate(578.000000, 50.468037)">
+                        <g id="Layer" transform="translate(0.000000, 0.000000)" fill="#11B416">
+                            <rect id="Fill" x="0" y="0" width="156" height="32"></rect>
+                        </g>
+                        <text id="Verified" stroke="#FFFFFF" fill-rule="nonzero" font-family="DMSans-Bold, DM Sans" font-size="14" font-weight="bold" line-spacing="20" fill="#FFFFFF">
+                            <tspan x="48.124" y="20">VERIFIED</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
 import { FaArrowRight } from "react-icons/fa"
-import CenterMap from "../Home/CenterMap"
 
 export default function CenterCard(props) {
   const { center } = props

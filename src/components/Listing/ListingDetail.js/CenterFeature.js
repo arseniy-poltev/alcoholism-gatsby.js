@@ -1,4 +1,5 @@
 import React from "react"
+import CheckIcon from "../../../assets/Icons/check-circle.svg"
 
 export default function CenterFeature() {
   return (
@@ -7,9 +8,18 @@ export default function CenterFeature() {
         <h5>Center Details</h5>
       </div>
       <div className="center-card__body">
-        <p>Vocational Rehabilitation</p>
-        <p>One-on-One Time With Staff</p>
-        <p>Small Group Settings</p>
+        <p>
+          <CheckIcon />
+          Vocational Rehabilitation
+        </p>
+        <p>
+          <CheckIcon />
+          One-on-One Time With Staff
+        </p>
+        <p>
+          <CheckIcon />
+          Small Group Settings
+        </p>
       </div>
     </div>
   )

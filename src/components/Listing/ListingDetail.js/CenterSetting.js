@@ -1,4 +1,5 @@
 import React from "react"
+import LockIcon from "../../../assets/Icons/lock.svg"
 
 export default function CenterSetting() {
   return (
@@ -7,7 +8,10 @@ export default function CenterSetting() {
         <h5>Settings</h5>
       </div>
       <div className="center-card__body">
-        <p>Private/Secluded</p>
+        <p>
+          <LockIcon />
+          Private/Secluded
+        </p>
       </div>
     </div>
   )

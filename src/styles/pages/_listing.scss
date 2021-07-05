@@ -323,24 +323,19 @@
   &__body {
     padding: 16px 24px;
     p {
-      position: relative;
+      display: flex;
+      align-items: center;
       margin-bottom: 6px;
-      padding-left: 36px;
       color: #183b56;
       font-family: "DM Sans";
       font-weight: bold;
       letter-spacing: -0.08px;
       line-height: 36px;
-    }
-    p::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 8px;
-      height: 24px;
-      width: 24px;
-      background-image: url("/Icons/close-circle.svg");
-      background-repeat: no-repeat;
+      svg {
+        height: 21px;
+        width: 21px;
+        margin-right: 12px;
+      }
     }
   }
 
@@ -358,6 +353,12 @@
   &--detail {
     h5::before {
       background-image: url("/Icons/house.svg");
+    }
+    svg {
+      path,
+      polygon {
+        fill: #fb9c00;
+      }
     }
   }
 
@@ -393,16 +394,6 @@
   &--setting {
     p {
       position: relative;
-    }
-    p::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 8px;
-      height: 24px;
-      width: 24px;
-      background-image: url("/Icons/lock.svg");
-      background-repeat: no-repeat;
     }
   }
 

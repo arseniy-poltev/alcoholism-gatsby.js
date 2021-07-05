@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>3</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.984314 0 0 0 0 0.611765 0 0 0 0 0.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Listing" transform="translate(-944.000000, -1095.000000)">
+            <g id="Group-21" transform="translate(165.000000, 683.000000)">
+                <g id="Group-16" transform="translate(759.000000, 0.000000)">
+                    <g id="Group-14" transform="translate(0.000000, 233.000000)">
+                        <g id="Group-13" transform="translate(20.000000, 76.000000)">
+                            <g id="Group-9-Copy-8" transform="translate(0.000000, 98.000000)">
+                                <g id="3" transform="translate(0.000000, 5.000000)">
+                                    <path d="M26,13 C26,20.1797218 20.1797218,26 13,26 C5.82027823,26 0,20.1797218 0,13 C0,5.82027823 5.82027823,0 13,0 C20.1797218,0 26,5.82027823 26,13 Z" id="Path" fill="#FB9C00" fill-rule="nonzero" opacity="0.200000003"></path>
+                                    <g filter="url(#filter-1)" id="clone">
+                                        <g transform="translate(6.000000, 6.000000)">
+                                            <path d="M12.6875,0 C13.4123828,0 14,0.587617188 14,1.3125 L14,9.1875 C14,9.91238281 13.4123828,10.5 12.6875,10.5 L4.8125,10.5 C4.08761719,10.5 3.5,9.91238281 3.5,9.1875 L3.5,1.3125 C3.5,0.587617188 4.08761719,0 4.8125,0 L12.6875,0 M4.8125,11.375 C3.6063125,11.375 2.625,10.3936875 2.625,9.1875 L2.625,3.5 L1.3125,3.5 C0.587617188,3.5 0,4.08761719 0,4.8125 L0,12.6875 C0,13.4123828 0.587617188,14 1.3125,14 L9.1875,14 C9.91238281,14 10.5,13.4123828 10.5,12.6875 L10.5,11.375 L4.8125,11.375 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
