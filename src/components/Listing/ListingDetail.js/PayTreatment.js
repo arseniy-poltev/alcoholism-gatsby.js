@@ -1,8 +1,10 @@
 import React from "react"
+import VerifiedIcon from "../../../assets/Icons/verified-badge.svg"
 
 export default function PayTreatment() {
   return (
     <div className="pay-treatment">
+      <VerifiedIcon />
       <h3>Paying for Treatment</h3>
       <div className="pay-treatment__info">
         <p>

@@ -1,4 +1,5 @@
 import React from "react"
+import CenterMap from "../../common/CenterMap"
 import PhoneIcon from ".././../../assets/Icons/phone.svg"
 
 export default function CenterInfo() {
@@ -9,7 +10,9 @@ export default function CenterInfo() {
       </div>
       <div className="center-card__body">
         <p>2528 W. Palmetto St. Florence, SC 29501</p>
-        <div className="center-card__map"></div>
+        <div className="center-card__map">
+          <CenterMap />
+        </div>
         <button className="btn btn-primary">
           <PhoneIcon />
           888-999-0000
