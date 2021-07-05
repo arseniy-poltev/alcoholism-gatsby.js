@@ -1,6 +1,6 @@
 import React from "react"
 import PhoneIcon from "../../assets/Icons/phone.svg"
-import RequestCallForm from "../Home/RequestCallForm"
+import RequestCallForm from "../common/RequestCallForm"
 
 export default function ListingFooterBanner() {
   return (

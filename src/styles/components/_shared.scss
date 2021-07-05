@@ -1,3 +1,55 @@
+.top-banner {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../assets/Banners/hero1.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+
+  &--home {
+    min-height: 640px;
+    background-image: url("../assets/Banners/hero1.png");
+    > .container {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  &--admissions {
+    min-height: 691px;
+    background-image: url("../assets/Banners/hero2.png");
+    > .container {
+      margin-top: 107px;
+      margin-bottom: auto;
+    }
+  }
+
+  .container {
+    height: 100%;
+    .text-block {
+      h1 {
+        margin-bottom: 40px;
+        color: #183b56;
+        font-family: "Miller Display";
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 52px;
+      }
+      h4 {
+        margin-bottom: 45px;
+        color: #5a7184;
+        font-family: "DM Sans";
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 28px;
+        span {
+          color: #fb9c00;
+        }
+      }
+    }
+  }
+}
+
 .call-form {
   position: relative;
   max-width: 523px;
@@ -60,7 +112,8 @@
     }
   }
 
-  &--home {
+  &--home,
+  &--admissions {
     padding: 38px 30px;
   }
 

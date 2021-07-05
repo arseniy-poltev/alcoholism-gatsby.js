@@ -1,9 +1,9 @@
 import React from "react"
 import RequestCallForm from "../common/RequestCallForm"
 
-export default function HomeBanner() {
+export default function AdmissionsBanner() {
   return (
-    <section className="top-banner top-banner--home">
+    <section className="top-banner top-banner--admissions">
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-sm-12 d-flex flex-column">
@@ -17,7 +17,7 @@ export default function HomeBanner() {
               </h4>
             </div>
             <RequestCallForm
-              className="call-form--home"
+              className="call-form--admissions"
               text="or we can reach out to you"
             />
           </div>

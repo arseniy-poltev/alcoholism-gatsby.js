@@ -1,5 +1,5 @@
 import React from "react"
-import RequestCallForm from "../Home/RequestCallForm"
+import RequestCallForm from "../common/RequestCallForm"
 import BadgeIcon from "../../assets/Icons/badge.svg"
 import PencilIcon from "../../assets/Icons/pencil.svg"
 import PlayIcon from "../../assets/Icons/play.svg"
