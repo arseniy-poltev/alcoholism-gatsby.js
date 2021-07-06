@@ -417,12 +417,15 @@
   }
   &--home {
     padding: 40px 0;
+    background-image: url("/Images/cta1.png");
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   &--listing {
     padding: 90px 0;
     height: 441px;
-    background-image: url("/Images/footer-banner2.png");
+    background-image: url("/Images/cta2.png");
     background-repeat: no-repeat;
     background-position: center;
   }
