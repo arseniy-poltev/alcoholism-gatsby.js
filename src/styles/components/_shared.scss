@@ -4,7 +4,7 @@
   background-image: url("../assets/Banners/hero1.png");
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: 100% auto;
+  background-size: cover;
 
   &--home {
     min-height: 640px;
@@ -21,6 +21,28 @@
     > .container {
       margin-top: 107px;
       margin-bottom: auto;
+    }
+  }
+
+  &--blog {
+    min-height: 640px;
+    background-image: url("../assets/Banners/hero3.png");
+    > .container {
+      margin-top: auto;
+      margin-bottom: auto;
+      p {
+        margin-bottom: 20px;
+        max-width: 467px;
+        color: #5a7184;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 28px;
+      }
+      button {
+        margin-bottom: 40px;
+        min-width: 308px;
+      }
     }
   }
 
