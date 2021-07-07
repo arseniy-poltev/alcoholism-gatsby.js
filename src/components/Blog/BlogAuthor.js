@@ -1,4 +1,5 @@
 import React from "react"
+import moduleName from 'react-icons/fa'
 
 export default function BlogAuthor() {
   return (
