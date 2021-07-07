@@ -5,10 +5,12 @@ import CenterInfo from "../components/Listing/ListingDetail.js/CenterInfo"
 import ListingFooterBanner from "../components/Listing/ListingFooterBanner"
 import FindLocalCenters from "../components/Listing/FindLocalCenters"
 import ListingCard from "../components/Listing/ListingCard"
+import Seo from "../components/seo"
 
 export default function StateWip() {
   return (
     <Layout>
+      <Seo title="State WIP" />
       <section className="state-wip__banner">
         <div className="container">
           <h2>New Hampshire</h2>

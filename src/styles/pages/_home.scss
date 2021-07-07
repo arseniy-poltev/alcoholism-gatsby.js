@@ -1,5 +1,5 @@
 .home-certifications {
-  padding: 56px 0 60px;
+  padding: 60px 0;
   &__logo {
     display: flex;
     align-items: center;
@@ -20,13 +20,26 @@
       justify-content: space-between;
     }
   }
+  @include media-breakpoint-down(md) {
+    &__logo {
+      width: 50%;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .container {
+      > div {
+        flex-wrap: wrap;
+      }
+    }
+  }
 }
 
 .home-feature {
-  padding: 100px 0;
+  padding: 100px 0 80px;
   text-align: center;
 
   &__item {
+    margin-bottom: 20px;
     h4 {
       margin: 0 auto 18px;
       color: #183b56;
@@ -108,6 +121,9 @@
         line-height: 26px;
         text-align: center;
       }
+      [class*="col-sm-"] {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -143,6 +159,18 @@
     > div {
       display: flex;
       justify-content: space-between;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &__logo {
+      width: 50%;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .container {
+      > div {
+        flex-wrap: wrap;
+      }
     }
   }
 }

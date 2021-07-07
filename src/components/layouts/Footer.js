@@ -9,22 +9,20 @@ export default function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-lg-4 col-sm-12">
-            <div className="d-flex flex-column">
-              <SocialLinks />
-              <h5 className="copyright">
-                © Copyright 2020 Bright Stance® <br />
-                All Rights Reserved
-              </h5>
-              <Badges />
-            </div>
+            <SocialLinks />
+            <h5 className="copyright">
+              © Copyright 2020 Bright Stance® <br />
+              All Rights Reserved
+            </h5>
+            <Badges />
           </div>
-          <div className="col-lg-2 col-sm-6 d-flex flex-column">
+          <div className="col-lg-2 col-sm-6">
             <h5>About us</h5>
             <Link to="/staff">Staff</Link>
             <Link to="/philosphy">Philosphy</Link>
             <Link to="/testimonials">Testimonials</Link>
           </div>
-          <div className="col-lg-2 col-sm-6 d-flex flex-column">
+          <div className="col-lg-2 col-sm-6">
             <h5>Services</h5>
             <Link to="/">Alumni</Link>
             <Link to="/">Addiction Problems</Link>
@@ -33,13 +31,13 @@ export default function Footer() {
               Experimentation
             </Link>
           </div>
-          <div className="col-lg-2 col-sm-6 d-flex flex-column">
+          <div className="col-lg-2 col-sm-6">
             <h5>Resources</h5>
             <Link to="/">Resources</Link>
             <Link to="/">Careers</Link>
             <Link to="/">Privacy Policy</Link>
           </div>
-          <div className="col-lg-2 col-sm-6 d-flex flex-column">
+          <div className="col-lg-2 col-sm-6">
             <h5>Quick Links</h5>
             <Link to="/">Insurance</Link>
             <Link to="/">Blog</Link>

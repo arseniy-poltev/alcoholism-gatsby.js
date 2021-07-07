@@ -1,8 +1,10 @@
-import * as React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Logo from "../common/Logo"
 import PhoneIcon from "../../assets/Icons/phone.svg"
+import { FaBars, FaHamburger } from "react-icons/fa"
+import classNames from "classnames"
 
 const navmenus = [
   { to: "/treatment", label: "Treatment" },
@@ -14,23 +16,33 @@ const navmenus = [
 ]
 
 function Header(props) {
+  const [dropdownOpened, setDropdownOpened] = useState(false)
   return (
     <>
       <div className="container">
-        <div className="navbar d-flex justify-content-between">
+        <div className="navbar">
           <Logo />
-          <div className="navbar-nav d-flex justify-content-around">
+          <div
+            className={classNames("navbar-nav", {
+              show: dropdownOpened,
+              hidden: !dropdownOpened,
+            })}
+          >
             {navmenus.map((menu, index) => (
               <div key={index} className="nav-item">
                 <Link to={menu.to}>{menu.label}</Link>
               </div>
             ))}
           </div>
-          <div>
-            <button className="btn btn-primary">
-              <PhoneIcon />
-              CALL US NOW
-            </button>
+          <button className="btn btn-primary">
+            <PhoneIcon />
+            CALL US NOW
+          </button>
+          <div
+            className="toggler"
+            onClick={() => setDropdownOpened(!dropdownOpened)}
+          >
+            <FaBars />
           </div>
         </div>
       </div>

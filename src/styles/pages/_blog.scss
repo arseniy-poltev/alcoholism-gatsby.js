@@ -32,6 +32,7 @@
 .blog__summary {
   margin-bottom: 30px;
   display: flex;
+  flex-direction: row;
   > div + div {
     border-left: 1px solid #d8d8d8;
     padding-left: 20px;

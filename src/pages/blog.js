@@ -7,10 +7,12 @@ import BlogWriters from "../components/Blog/BlogWriters"
 import Layout from "../components/layout"
 import CloseIcon from "../assets/Icons/close-circle.svg"
 import BlogFooterBanner from "../components/Blog/BlogFooterBanner"
+import Seo from "../components/seo"
 
 export default function blog() {
   return (
     <Layout>
+      <Seo title="blog" />
       <BlogBanner />
       <BlogSummary />
       <BlogTopic />

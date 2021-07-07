@@ -184,8 +184,8 @@
 .social-links {
   margin-bottom: 12px;
   display: flex;
+  width: max-content;
   &__item {
-    margin-right: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -202,14 +202,20 @@
       }
     }
   }
+  &__item + &__item {
+    margin-left: 8px;
+  }
 }
 
 .footer-badges {
   display: flex;
+  width: max-content;
   &__item {
     height: 47px;
     width: 47px;
-    margin-right: 25px;
+  }
+  &__item + &__item {
+    margin-left: 25px;
   }
 }
 
@@ -271,7 +277,9 @@
 }
 
 .blog-card {
-  box-sizing: border-box;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   max-width: 352px;
   height: 100%;
   border: 1px solid #e5eaf4;
@@ -281,18 +289,24 @@
 
   &__cover {
     border-radius: 8px 8px 0 0;
-    min-height: 230px;
     img {
-      border-radius: 8px 8px 0 0;
       width: 100%;
+      min-height: 230px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px 8px 0 0;
     }
   }
 
   &__summary {
+    display: flex;
+    flex-direction: column;
     padding: 30px;
     text-align: left !important;
+    flex-grow: 1;
+
     h6 {
-      margin: 0 auto 28px;
+      margin-bottom: 28px;
       color: #5a7184;
       font-family: "DM Sans";
       font-size: 15px;
@@ -319,6 +333,7 @@
     }
 
     p {
+      margin-top: auto;
       max-height: 56px;
       overflow: hidden;
       color: #5a7184;
@@ -330,7 +345,6 @@
     }
 
     a {
-      margin-top: auto;
       width: fit-content;
       color: #fb9c00;
       text-transform: uppercase;
@@ -409,7 +423,7 @@
 
   h2 {
     margin-bottom: 0;
-    width: 694px;
+    max-width: 694px;
     color: #ffffff;
     font-family: "Miller Display";
     font-size: 32px;
@@ -476,6 +490,20 @@
       height: 56px;
       border-radius: 5px;
       background-color: #ffffff;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .container {
+      > div {
+        flex-direction: column;
+      }
+    }
+    h2 {
+      text-align: center;
+    }
+    .btn {
+      margin: 20px auto;
     }
   }
 }

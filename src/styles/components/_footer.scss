@@ -31,4 +31,18 @@ footer {
     letter-spacing: 0;
     line-height: 28px;
   }
+
+  [class*="col-sm-"] {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  @include media-breakpoint-down(md) {
+    text-align: center !important;
+    .social-links,
+    .footer-badges {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }

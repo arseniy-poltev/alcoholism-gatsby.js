@@ -10,17 +10,17 @@ import CenterMoreResource from "../components/Listing/ListingDetail.js/CenterMor
 import CenterSetting from "../components/Listing/ListingDetail.js/CenterSetting"
 import ListingFooterBanner from "../components/Listing/ListingFooterBanner"
 import FindLocalCenters from "../components/Listing/FindLocalCenters"
-import ListingCard from "../components/Listing/ListingCard"
+import Seo from "../components/seo"
 
 export default function Listing() {
   return (
     <Layout>
+      <Seo title="listing" />
       <ListingBanner />
       <section className="listing-detail">
         <div className="container">
           <div className="row">
             <div className="col-lg-8 col-sm-12">
-              {/* <ListingCard /> */}
               <PayTreatment />
               <TreatmentDetail />
             </div>

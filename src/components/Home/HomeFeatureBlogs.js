@@ -14,7 +14,7 @@ export default function HomeFeatureBlogs(props) {
         </p>
         <div className="row">
           {blogs.map((blog, index) => (
-            <div key={index} className="col-lg-4 col-sm-6 feature-item">
+            <div key={index} className="col-lg-4 col-sm-6">
               <BlogCard blog={blog} />
             </div>
           ))}
