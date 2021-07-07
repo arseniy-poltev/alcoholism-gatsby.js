@@ -2,7 +2,7 @@ import React from "react"
 
 export default function BlogSummary() {
   return (
-    <div className="blog__summary">
+    <div className="blog blog__summary">
       <div>
         <img src="/Images/author.png" alt="author" />
         <p>

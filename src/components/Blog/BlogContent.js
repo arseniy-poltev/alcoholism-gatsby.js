@@ -3,7 +3,7 @@ import React from "react"
 
 export default function BlogContent() {
   return (
-    <div className="blog__content">
+    <div className="blog blog__content">
       <h3>Types of Addiction Treatment</h3>
       <p>
         The severity and type of addiction affect the type of substance abuse

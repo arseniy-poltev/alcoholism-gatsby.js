@@ -25,6 +25,7 @@
   }
 
   &--blog {
+    margin-bottom: 50px;
     min-height: 640px;
     background-image: url("../assets/Banners/hero3.png");
     > .container {
@@ -399,10 +400,10 @@
 
 .footer-banner {
   background-color: #fb9c00;
+  background-size: cover;
   .container {
     > div {
       display: flex;
-      justify-content: space-between;
     }
   }
 
@@ -417,7 +418,19 @@
     line-height: 48px;
   }
 
-  button {
+  p {
+    margin-bottom: 0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+
+  .btn {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -427,6 +440,7 @@
     font-weight: 700;
     letter-spacing: 0;
     line-height: 20px;
+    box-shadow: none;
 
     svg {
       height: 11px;
@@ -437,6 +451,7 @@
       }
     }
   }
+
   &--home {
     padding: 40px 0;
     background-image: url("/Images/cta1.png");
@@ -450,6 +465,18 @@
     background-image: url("/Images/cta2.png");
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  &--blog {
+    padding: 40px 0;
+    background-image: url("/Images/cta1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    .btn {
+      height: 56px;
+      border-radius: 5px;
+      background-color: #ffffff;
+    }
   }
 }
 

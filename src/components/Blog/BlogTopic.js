@@ -10,7 +10,7 @@ const topics = [
 ]
 export default function BlogTopic() {
   return (
-    <div className="blog__topic">
+    <div className="blog blog__topic">
       <h5>Topics On This Page</h5>
       <ul>
         {topics.map(topic => (

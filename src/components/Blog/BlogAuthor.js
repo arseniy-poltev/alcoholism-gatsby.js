@@ -1,15 +1,15 @@
 import React from "react"
-import moduleName from 'react-icons/fa'
+import moduleName from "react-icons/fa"
 
 export default function BlogAuthor() {
   return (
-    <div className="blog__author">
+    <div className="blog-profile blog-profile--author">
       <h5>Author</h5>
       <div>
-        <div className="blog__author__avatar">
+        <div className="blog-profile__avatar">
           <img src="/Images/author.png" alt="author" />
         </div>
-        <div className="blog__author__description">
+        <div className="blog-profile__description">
           <h5>Lucas Dunn</h5>
           <h6>Senior Content Writer, Alchoholism.org</h6>
           <p>
@@ -19,10 +19,8 @@ export default function BlogAuthor() {
             addiction experts and authored stories of recovery.
           </p>
         </div>
-        <div className="blog__author__social">
-            <div>
-                
-            </div>
+        <div className="blog-profile__social">
+          <div></div>
         </div>
       </div>
     </div>
