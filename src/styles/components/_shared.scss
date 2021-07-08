@@ -179,6 +179,17 @@
       }
     }
   }
+  @media (max-width: 500px) {
+    > div {
+      flex-direction: column;
+      .call-form__input-wrapper:first-child {
+        margin-bottom: 20px;
+      }
+      .call-form__input-wrapper {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .social-links {
@@ -475,7 +486,7 @@
 
   &--listing {
     padding: 90px 0;
-    height: 441px;
+    // min-height: 441px;
     background-image: url("/Images/cta2.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -493,7 +504,7 @@
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     .container {
       > div {
         flex-direction: column;
@@ -559,6 +570,42 @@
         font-weight: bold;
         text-decoration: underline;
       }
+    }
+  }
+}
+
+.states {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 450px;
+  > div {
+    width: 12%;
+    padding: 12px 0;
+    color: #5a7184;
+    font-family: "DM Sans";
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 26px;
+    text-align: center;
+  }
+  @include media-breakpoint-down(md) {
+    height: 650px;
+    > div {
+      width: 25%;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    height: 850px;
+    > div {
+      width: 33.3%;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    height: 1250px;
+    > div {
+      width: 50%;
     }
   }
 }
