@@ -36,7 +36,7 @@ function Header(props) {
           </div>
           <button className="btn btn-primary">
             <PhoneIcon />
-            CALL US NOW
+            <span>CALL US NOW</span>
           </button>
           <div
             className="toggler"

@@ -1,5 +1,5 @@
 import React from "react"
-import moduleName from "react-icons/fa"
+import { FaEnvelope, FaTwitter } from "react-icons/fa"
 
 export default function BlogAuthor() {
   return (
@@ -18,9 +18,16 @@ export default function BlogAuthor() {
             2015, he's written about health-related topics, interviewed
             addiction experts and authored stories of recovery.
           </p>
-        </div>
-        <div className="blog-profile__social">
-          <div></div>
+          <div className="blog-profile__contact">
+            <a>
+              <FaEnvelope />
+              celkins@drugrehab.com
+            </a>
+            <a>
+              <FaTwitter />
+              @ChrisTheCritic9
+            </a>
+          </div>
         </div>
       </div>
     </div>

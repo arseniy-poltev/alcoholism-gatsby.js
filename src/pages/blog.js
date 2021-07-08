@@ -14,15 +14,17 @@ export default function blog() {
     <Layout>
       <Seo title="blog" />
       <BlogBanner />
-      <BlogSummary />
-      <BlogTopic />
-      <BlogContent />
-      <BlogWriters />
-      <div className="blog">
-        <button className="btn">
-          View more
-          <CloseIcon />
-        </button>
+      <div className="container">
+        <BlogSummary />
+        <BlogTopic />
+        <BlogContent />
+        <BlogWriters />
+        <div className="blog">
+          <button className="btn">
+            View more
+            <CloseIcon />
+          </button>
+        </div>
       </div>
       <BlogFooterBanner />
     </Layout>
