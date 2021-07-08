@@ -135,10 +135,15 @@
     }
   }
   @include media-breakpoint-down(xs) {
+    
+  }
+  @media (max-width:500px){
     button {
+      padding: 12px;
       span {
         display: none;
       }
+      
     }
   }
 }
