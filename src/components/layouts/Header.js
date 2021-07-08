@@ -18,7 +18,7 @@ const navmenus = [
 function Header(props) {
   const [dropdownOpened, setDropdownOpened] = useState(false)
   return (
-    <>
+    <section>
       <div className="container">
         <div className="navbar">
           <Logo />
@@ -46,7 +46,7 @@ function Header(props) {
           </div>
         </div>
       </div>
-    </>
+    </section>
   )
 }
 

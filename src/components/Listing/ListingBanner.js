@@ -26,6 +26,7 @@ export default function ListingBanner() {
               <div className="gallery">
                 <div className="gallery-main">
                   <img src={gallery.main} alt="gallery main" />
+                  <span className="gallery-main__badge">verified</span>
                   <div className="gallery-main__actions">
                     <div>
                       <YelpIcon />
