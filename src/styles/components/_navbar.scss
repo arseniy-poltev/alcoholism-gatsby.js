@@ -54,13 +54,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
-    font-family: "Maison Neue";
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 22px;
-    text-align: center;
+    span {
+      color: #ffffff;
+      font-family: "Maison Neue";
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 22px;
+      text-align: center;
+    }
     svg {
       width: 11px;
       height: 11px;
@@ -129,6 +131,13 @@
     }
     .toggler {
       display: flex;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    button {
+      span {
+        display: none;
+      }
     }
   }
 }

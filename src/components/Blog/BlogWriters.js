@@ -8,7 +8,7 @@ export default function BlogWriters() {
       <div className="container">
         <div className="blog blog__writter">
           <BlogAuthor />
-          <div className="d-flex">
+          <div>
             <BlogEditor
               role="Editor"
               name="Kim Borwick"
