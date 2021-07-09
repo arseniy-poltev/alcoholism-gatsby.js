@@ -24,7 +24,7 @@ export default function BlogContent() {
         outpatient detox. The course you take depends on the severity of your
         condition.
       </p>
-      <img src="/Images/blog.png" alt="blog cover" />
+      <img src="/Images/blog.jpg" alt="blog cover" />
       <h4>Admissions</h4>
       <p>
         During admissions, most admissions representatives will talk to you
