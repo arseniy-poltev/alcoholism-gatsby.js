@@ -1,7 +1,7 @@
 .top-banner {
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/Banners/hero1.png");
+  background-image: url("../assets/Banners/hero1.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -9,7 +9,7 @@
   &--home {
     padding: 100px 0;
     min-height: 640px;
-    background-image: url("../assets/Banners/hero1.png");
+    background-image: url("../assets/Banners/hero1.jpg");
     > .container {
       margin-top: auto;
       margin-bottom: auto;
@@ -19,7 +19,7 @@
   &--admissions {
     padding: 100px 0;
     min-height: 691px;
-    background-image: url("../assets/Banners/hero2.png");
+    background-image: url("../assets/Banners/hero2.jpg");
     > .container {
       margin-top: auto;
       margin-bottom: auto;
@@ -30,7 +30,7 @@
     padding: 100px 0;
     margin-bottom: 50px;
     min-height: 640px;
-    background-image: url("../assets/Banners/hero3.png");
+    background-image: url("../assets/Banners/hero3.jpg");
     > .container {
       margin-top: auto;
       margin-bottom: auto;
@@ -74,7 +74,7 @@
       }
     }
   }
-  @include media-breakpoint-down(sm){
+  @include media-breakpoint-down(sm) {
     padding: 50px 0;
   }
 }
@@ -485,7 +485,7 @@
 
   &--home {
     padding: 40px 0;
-    background-image: url("/Images/cta1.png");
+    background-image: url("/Images/cta1.jpg");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -493,14 +493,14 @@
   &--listing {
     padding: 90px 0;
     // min-height: 441px;
-    background-image: url("/Images/cta2.png");
+    background-image: url("/Images/cta2.jpg");
     background-repeat: no-repeat;
     background-position: center;
   }
 
   &--blog {
     padding: 40px 0;
-    background-image: url("/Images/cta1.png");
+    background-image: url("/Images/cta1.jpg");
     background-repeat: no-repeat;
     background-position: center;
     .btn {
