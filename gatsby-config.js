@@ -1,10 +1,28 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+console.log("process.env.http_proxy", process.env.http_proxy)
+console.log("process.env.https_proxy", process.env.https_proxy)
 
-const contentfulConfig = {
+let contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  proxy: {
+    host: "172.25.1.2",
+    port: 3129,
+  },
+}
+
+if (process.env.CONTENTFUL_HOST) {
+  contentfulConfig.host = process.env.CONTENTFUL_HOST
+}
+
+const { spaceId, accessToken } = contentfulConfig
+
+if (!spaceId || !accessToken) {
+  throw new Error(
+    "Contentful spaceId and the access token need to be provided."
+  )
 }
 
 module.exports = {
