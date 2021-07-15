@@ -79,10 +79,26 @@ export const pageQuery = graphql`
       reviewer {
         name
         position
+        avatar {
+          fixed {
+            src
+            width
+            height
+            srcSet
+          }
+        }
       }
       editor {
         name
         position
+        avatar {
+          fixed {
+            src
+            width
+            height
+            srcSet
+          }
+        }
       }
     }
   }
