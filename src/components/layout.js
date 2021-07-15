@@ -18,11 +18,12 @@ export default function Layout(props) {
   //     }
   //   }
   // `)
+  const navmenus = children?.props.pageContext?.navmenus || []
   console.log("Layout->data", props)
 
   return (
     <>
-      <Header navmenus={children.props.pageContext.navmenus || []} />
+      <Header navmenus={navmenus} />
       {/* <Helmet>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtdO5k6CRntAMJCF-H5uZjTCoSGX95cdk" />
       </Helmet> */}
