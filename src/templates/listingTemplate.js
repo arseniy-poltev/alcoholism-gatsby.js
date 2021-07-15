@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import Layout from "../components/layout"
 import ListingBanner from "../components/Listing/ListingBanner"
 import PayTreatment from "../components/Listing/ListingDetail.js/PayTreatment"
@@ -12,9 +12,9 @@ import ListingFooterBanner from "../components/Listing/ListingFooterBanner"
 import FindLocalCenters from "../components/Listing/FindLocalCenters"
 import Seo from "../components/seo"
 
-export default function Listing() {
+export default function ListingTemplate() {
   return (
-    <Layout>
+    <Fragment>
       <Seo title="listing" />
       <ListingBanner />
       <section className="listing-detail">
@@ -36,6 +36,6 @@ export default function Listing() {
       </section>
       <ListingFooterBanner />
       <FindLocalCenters />
-    </Layout>
+    </Fragment>
   )
 }

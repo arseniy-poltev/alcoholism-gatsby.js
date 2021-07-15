@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import BlogBanner from "../components/Blog/BlogBanner"
 import BlogContent from "../components/Blog/BlogContent"
 import BlogSummary from "../components/Blog/BlogSummary"
@@ -11,13 +11,15 @@ import Seo from "../components/seo"
 import { graphql } from "gatsby"
 
 export default function BlogPostTemplate(props) {
-  console.log("BlogPostTemplate->props.data", props.data)
+  console.log("BlogPostTemplate->props", props)
+
   const {
     data: { contentfulPost: data },
     context,
   } = props
+
   return (
-    <Layout>
+    <Fragment>
       <Seo title="blog" />
       <BlogBanner
         title={data.title}
@@ -40,7 +42,7 @@ export default function BlogPostTemplate(props) {
         </div>
       </div>
       <BlogFooterBanner />
-    </Layout>
+    </Fragment>
   )
 }
 

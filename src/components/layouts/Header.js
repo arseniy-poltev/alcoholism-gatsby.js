@@ -6,15 +6,15 @@ import PhoneIcon from "../../assets/Icons/phone.svg"
 import { FaBars } from "react-icons/fa"
 import classNames from "classnames"
 
-const navmenus = [
-  { to: "/treatment", label: "Treatment" },
-  { to: "/listing", label: "Locations" },
-  { to: "/admissions", label: "Admissions" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
-]
+// const navmenus = [
+//   { to: "/treatment", label: "Treatment" },
+//   { to: "/listing", label: "Locations" },
+//   { to: "/admissions", label: "Admissions" },
+//   { to: "/about", label: "About" },
+//   { to: "/contact", label: "Contact" },
+// ]
 
-function Header(props) {
+function Header({ navmenus }) {
   const [dropdownOpened, setDropdownOpened] = useState(false)
   return (
     <section>
@@ -49,12 +49,12 @@ function Header(props) {
   )
 }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+// Header.defaultProps = {
+//   siteTitle: ``,
+// }
 
 export default Header

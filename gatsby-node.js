@@ -1,6 +1,5 @@
 const path = require("path")
 const contentful = require("contentful")
-const { createFilePath } = require("gatsby-source-filesystem")
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -32,38 +31,89 @@ if (!space || !accessToken) {
 
 const contentfulClient = contentful.createClient(contentfulClientConfig)
 
-exports.createPages = ({ graphql, actions }) => {
+const upperCaseFirstLetter = string => {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-  return new Promise((resolve, reject) => {
-    const blogPostTemplate = path.resolve(`./src/templates/blogPostTemplate.js`)
-    resolve(
-      graphql(`
-        {
-          allContentfulPost {
-            edges {
-              node {
-                id
-                slug
-              }
+  const homeTemplate = path.resolve(`./src/templates/homeTemplate.js`)
+  const blogPostTemplate = path.resolve(`./src/templates/blogPostTemplate.js`)
+  const listingTemplate = path.resolve(`./src/templates/listingTemplate.js`)
+  const aboutTemplate = path.resolve(`./src/templates/aboutTemplate.js`)
+  const contactTemplate = path.resolve(`./src/templates/contactTemplate.js`)
+
+  const result = await graphql(
+    `
+      {
+        allContentfulPost(filter: { node_locale: { eq: "en-US" } }) {
+          edges {
+            node {
+              id
+              slug
             }
           }
         }
-      `).then(result => {
-        if (result.errors) {
-          reject(result.errors)
-        }
-        result.data.allContentfulPost.edges.forEach(edge => {
-          createPage({
-            path: edge.node.slug,
-            component: blogPostTemplate,
-            context: {
-              slug: edge.node.slug,
-            },
-          })
-        })
-        return
-      })
-    )
+      }
+    `
+  )
+
+  if (result.errors) {
+    console.log("createPages->errors", result.errors)
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  const blogPostLinks = result.data.allContentfulPost.edges.map(edge => ({
+    to: `/${edge.node.slug}`,
+    label: upperCaseFirstLetter(edge.node.slug),
+  }))
+  const navmenus = [
+    { to: "/listing", label: "Locations" },
+    ...blogPostLinks,
+    { to: "/about", label: "About" },
+    { to: "/contact", label: "Contact" },
+  ]
+
+  console.log("createPages->navmenus", navmenus)
+  result.data.allContentfulPost.edges.forEach(edge => {
+    createPage({
+      path: edge.node.slug,
+      component: blogPostTemplate,
+      context: {
+        slug: edge.node.slug,
+        navmenus,
+      },
+    })
+  })
+
+  createPage({
+    path: `/`,
+    component: homeTemplate,
+    context: {
+      navmenus,
+    },
+  })
+  createPage({
+    path: `/about`,
+    component: aboutTemplate,
+    context: {
+      navmenus,
+    },
+  })
+  createPage({
+    path: `/contact`,
+    component: contactTemplate,
+    context: {
+      navmenus,
+    },
+  })
+  createPage({
+    path: `/listing`,
+    component: listingTemplate,
+    context: {
+      navmenus,
+    },
   })
 
   // return new Promise(async (resolve, reject) => {
@@ -71,11 +121,6 @@ exports.createPages = ({ graphql, actions }) => {
   //    * await
   //    */
   //   const result = await graphql(
-  //     `
-  //       {
-
-  //       }
-  //     `
   //   )
   //   const posts = result.data.allContentfulPost.edges
   //   posts.map((post, index) => {
@@ -85,6 +130,7 @@ exports.createPages = ({ graphql, actions }) => {
   //       context: { postData: post.node },
   //     })
   //   })
+
   //   /**
   //    * contentfulClient
   //    */
@@ -104,3 +150,16 @@ exports.createPages = ({ graphql, actions }) => {
   //   resolve()
   // })
 }
+
+// exports.onCreatePage = ({ page, actions }) => {
+//   const { createPage, deletePage } = actions
+//   deletePage(page)
+//   // You can access the variable "house" in your page queries now
+//   createPage({
+//     ...page,
+//     context: {
+//       ...page.context,
+//       house: `Gryffindor`,
+//     },
+//   })
+// }

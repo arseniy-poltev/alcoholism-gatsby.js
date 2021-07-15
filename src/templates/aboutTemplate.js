@@ -1,12 +1,12 @@
-import React from "react"
+import React, { Fragment } from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-export default function About() {
+export default function AboutTemplate() {
   return (
-    <Layout>
+    <Fragment>
       <Seo title="about" />
       <div className="container">about</div>
-    </Layout>
+    </Fragment>
   )
 }
