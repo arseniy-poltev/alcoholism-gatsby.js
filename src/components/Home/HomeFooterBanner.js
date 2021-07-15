@@ -1,7 +1,7 @@
 import React from "react"
-import { FaBlenderPhone, FaPhone } from "react-icons/fa"
-import { IoIosCall, IoMdCall } from "react-icons/io"
-import { IoCall } from "react-icons/io5"
+// import { FaBlenderPhone, FaPhone } from "react-icons/fa"
+// import { IoIosCall, IoMdCall } from "react-icons/io"
+// import { IoCall } from "react-icons/io5"
 import PhoneIcon from "../../assets/Icons/phone.svg"
 
 export default function HomeFooterBanner() {

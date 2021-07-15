@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 import moment from "moment"
 import React from "react"
 import { FaArrowRight } from "react-icons/fa"

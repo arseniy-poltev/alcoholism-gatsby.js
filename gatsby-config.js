@@ -1,17 +1,22 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-console.log("process.env.http_proxy", process.env.http_proxy)
-console.log("process.env.https_proxy", process.env.https_proxy)
 
 let contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  proxy: {
-    host: "172.25.1.2",
-    port: 3129,
-  },
 }
+
+if (process.env.HTTPS_PROXY) {
+  const host = process.env.HTTPS_PROXY.split(":")[0]
+  const port = process.env.HTTPS_PROXY.split(":")[1]
+  contentfulConfig.proxy = {
+    host,
+    port,
+  }
+}
+
+console.log("contentfulConfig", contentfulConfig)
 
 if (process.env.CONTENTFUL_HOST) {
   contentfulConfig.host = process.env.CONTENTFUL_HOST
@@ -28,15 +33,11 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: `Alcoholism`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Alcoholism.org web app`,
+    author: `Robert Popescu`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: "gatsby-source-contentful",
-      options: contentfulConfig,
-    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -78,6 +79,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    `@contentful/gatsby-transformer-contentful-richtext`,
+    {
+      resolve: "gatsby-source-contentful",
+      options: contentfulConfig,
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

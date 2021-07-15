@@ -1,17 +1,20 @@
 import React from "react"
+import moment from "moment"
 
-export default function BlogSummary() {
+export default function BlogSummary(props) {
+  const { author, updatedAt } = props
+
   return (
     <div className="blog blog__summary">
       <div>
         <img src="/Images/author.png" alt="author" />
         <p>
-          Author: <span>Lucas Dunn</span>
+          Author: <span>{author.name}</span>
         </p>
       </div>
       <div>
         <p>
-          Last Updated: <span>2/27/20</span>
+          Last Updated: <span>{moment(updatedAt).format("M/DD/YYYY")}</span>
         </p>
       </div>
       <div>

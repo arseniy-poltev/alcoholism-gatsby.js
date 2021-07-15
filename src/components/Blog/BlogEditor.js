@@ -1,8 +1,7 @@
 import React from "react"
-import moduleName from "react-icons/fa"
 
-export default function BlogEditor(props) {
-  const { role, avatar, name, position } = props
+export default function BlogEditor({ editor }) {
+  const { role, avatar, name, position } = editor
   return (
     <div className="blog-profile blog-profile--editor">
       <h5>{role}</h5>

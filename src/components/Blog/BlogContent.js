@@ -1,10 +1,13 @@
 import { Link } from "gatsby"
 import React from "react"
 
-export default function BlogContent() {
+export default function BlogContent({ html }) {
   return (
-    <div className="blog blog__content">
-      <h3>Types of Addiction Treatment</h3>
+    <div
+      className="blog blog__content"
+      dangerouslySetInnerHTML={{ __html: html }}
+    >
+      {/* <h3>Types of Addiction Treatment</h3>
       <p>
         The severity and type of addiction affect the type of substance abuse
         treatment that’s most appropriate for you. Almost every person with an
@@ -44,7 +47,7 @@ export default function BlogContent() {
         treatment. A minor alcohol addiction may require a few months of
         outpatient treatment.{" "}
         <Link to="/">Learn more about how long rehab takes</Link>.
-      </p>
+      </p> */}
     </div>
   )
 }

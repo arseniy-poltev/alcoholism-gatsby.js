@@ -3,11 +3,13 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Robert Popescu <robyop.eyeco@gmail.com>",
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
+    "@contentful/rich-text-html-renderer": "^15.0.0",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
-    "contentful": "^8.4.2",
+    "contentful": "^7.14.7",
     "dotenv": "^10.0.0",
     "gatsby": "^3.6.2",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
@@ -18,7 +20,7 @@
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sass": "^4.8.0",
     "gatsby-plugin-sharp": "^3.6.0",
-    "gatsby-source-contentful": "^5.9.0",
+    "gatsby-source-contentful": "^2.2.9",
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-transformer-sharp": "^3.6.0",
     "google-map-react": "^2.1.10",
@@ -35,7 +37,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "contentful-import": "^8.1.20",
+    "contentful-import": "^7.7.8",
     "prettier": "2.2.1"
   },
   "keywords": [

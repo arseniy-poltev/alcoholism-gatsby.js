@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import HomeFooterBanner from "../components/Home/HomeFooterBanner"
 import Seo from "../components/seo"
 
-export default function admissions() {
+export default function Admissions() {
   return (
     <Layout>
       <Seo title="Admissions" />

@@ -32,7 +32,8 @@ const settings = {
 }
 
 function NextArrow(props) {
-  const { className, onClick } = props
+  // const { className, onClick } = props
+  const { onClick } = props
   return (
     <div onClick={onClick} className="slick-arrow next">
       <LeftArrow />
@@ -41,7 +42,7 @@ function NextArrow(props) {
 }
 
 function PrevArrow(props) {
-  const { className, onClick } = props
+  const { onClick } = props
   return (
     <div onClick={onClick} className="slick-arrow prev">
       <RightArrow />
