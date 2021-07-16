@@ -23,15 +23,15 @@ export default function BlogPostTemplate(props) {
     <Fragment>
       <Seo title="blog" />
       <BlogBanner
-        title={data.title}
-        bannerSrc={data.banner.fixed.src}
-        shortDescription={data.shortDescription.shortDescription}
+        title={data?.title || ""}
+        bannerSrc={data?.banner.fixed.src || null}
+        shortDescription={data?.shortDescription.shortDescription || ""}
       />
       <div className="container">
-        <BlogSummary author={data.author} updatedAt={data.updatedAt} />
-        <BlogTopic topics={data.topics} />
+        <BlogSummary author={data?.author || null} updatedAt={data.updatedAt} />
+        <BlogTopic topics={data?.topics || []} />
         {/* <ContentfulRichText content={data.content} /> */}
-        <BlogContent content={data.content} />
+        <BlogContent content={data?.content || ""} />
         <BlogWriters
           author={data.author}
           editor={data.editor}
