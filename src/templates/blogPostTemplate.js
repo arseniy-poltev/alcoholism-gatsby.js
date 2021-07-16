@@ -30,8 +30,8 @@ export default function BlogPostTemplate(props) {
       <div className="container">
         <BlogSummary author={data.author} updatedAt={data.updatedAt} />
         <BlogTopic topics={data.topics} />
-        <ContentfulRichText content={data.content.content} />
-        <BlogContent html={data.content.childContentfulRichText.html} />
+        {/* <ContentfulRichText content={data.content} /> */}
+        <BlogContent content={data.content} />
         <BlogWriters
           author={data.author}
           editor={data.editor}
@@ -64,7 +64,7 @@ export const pageQuery = graphql`
         }
       }
       content {
-        content
+        json
         childContentfulRichText {
           html
         }

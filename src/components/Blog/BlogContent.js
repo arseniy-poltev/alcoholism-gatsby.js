@@ -1,10 +1,10 @@
 import React from "react"
 
-export default function BlogContent({ html }) {
+export default function BlogContent({ content }) {
   return (
     <div
       className="blog blog__content"
-      dangerouslySetInnerHTML={{ __html: html }}
+      dangerouslySetInnerHTML={{ __html: content.childContentfulRichText.html }}
     />
   )
 }
