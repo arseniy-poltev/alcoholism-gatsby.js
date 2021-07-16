@@ -10,22 +10,10 @@ export default function BlogWriters(props) {
         <div className="blog blog__writter">
           <BlogAuthor author={author} />
           <div>
-            <BlogEditor editor={editor} role="Editor" />
-            <BlogEditor editor={editor} role="Medical Reviewer" />
-            {/* <BlogEditor
-              editor={editor}
-              role="Editor"
-              name="Kim Borwick"
-              position="Editor, Alchoholism.org"
-              avatar="/Images/editor.png"
-            />
-            <BlogEditor
-              editor={editor}
-              role="Medical Reviewer"
-              name="Kevin Wandler"
-              position="Editor, Alchoholism.org"
-              avatar="/Images/reviewer.png"
-            /> */}
+            {editor && <BlogEditor editor={editor} role="Editor" />}
+            {reviewer && (
+              <BlogEditor editor={reviewer} role="Medical Reviewer" />
+            )}
           </div>
         </div>
       </div>

@@ -1,12 +1,7 @@
 import React from "react"
 
-export default function BlogEditor({ editor }) {
-  const {
-    role,
-    avatar,
-    name,
-    position,
-  } = editor
+export default function BlogEditor({ editor, role }) {
+  const { avatar, name, position } = editor
   return (
     <div className="blog-profile blog-profile--editor">
       <h5>{role}</h5>

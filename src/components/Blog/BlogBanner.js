@@ -1,10 +1,17 @@
 import React from "react"
 
 export default function BlogBanner(props) {
-  const { title, shortDescription } = props
+  const { title, shortDescription, bannerSrc } = props
+
+  console.log("BlogBanner->bannerSrc", bannerSrc)
 
   return (
-    <section className="top-banner top-banner--blog">
+    <section
+      className="top-banner top-banner--blog"
+      style={{
+        backgroundImage: `url(${bannerSrc})`,
+      }}
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-sm-12 d-flex flex-column">

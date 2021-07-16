@@ -9,6 +9,7 @@ import CloseIcon from "../assets/Icons/close-circle.svg"
 import BlogFooterBanner from "../components/Blog/BlogFooterBanner"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
+import ContentfulRichText from "../components/common/ContentfulRichText"
 
 export default function BlogPostTemplate(props) {
   console.log("BlogPostTemplate->props", props)
@@ -23,11 +24,13 @@ export default function BlogPostTemplate(props) {
       <Seo title="blog" />
       <BlogBanner
         title={data.title}
+        bannerSrc={data.banner.fixed.src}
         shortDescription={data.shortDescription.shortDescription}
       />
       <div className="container">
         <BlogSummary author={data.author} updatedAt={data.updatedAt} />
         <BlogTopic topics={data.topics} />
+        <ContentfulRichText content={data.content.content} />
         <BlogContent html={data.content.childContentfulRichText.html} />
         <BlogWriters
           author={data.author}
@@ -53,7 +56,15 @@ export const pageQuery = graphql`
       shortDescription {
         shortDescription
       }
+      banner {
+        fixed(width: 2000, quality: 100) {
+          src
+          width
+          height
+        }
+      }
       content {
+        content
         childContentfulRichText {
           html
         }

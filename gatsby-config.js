@@ -1,3 +1,5 @@
+const { BLOCKS, INLINES } = require("@contentful/rich-text-types")
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -46,6 +48,28 @@ module.exports = {
         path: `${__dirname}/src/assets/Images`,
       },
     },
+    {
+      resolve: "gatsby-source-contentful",
+      options: contentfulConfig,
+    },
+    {
+      resolve: "@contentful/gatsby-transformer-contentful-richtext",
+      options: {
+        renderOptions: {
+          renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: node => {
+              return `<img src="${node.data.target.fields.file["en-US"].url}" />`
+            },
+            [INLINES.ASSET_HYPERLINK]: node => {
+              return `<img class='custom-asset' src="${node.data.target.fields.file["en-US"].url}"/>`
+            },
+            [INLINES.EMBEDDED_ENTRY]: node => {
+              return `<div class='custom-entry' />${node.data.target.fields.name["en-US"]}</div>`
+            },
+          },
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -79,11 +103,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
-    `@contentful/gatsby-transformer-contentful-richtext`,
-    {
-      resolve: "gatsby-source-contentful",
-      options: contentfulConfig,
-    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
