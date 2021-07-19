@@ -56,10 +56,12 @@ export default function RequestCallForm({ className, text }) {
           <span className="span-error">{errors.phoneNumber?.message}</span>
         </div>
       </div>
-      <button className="btn btn-primary" onClick={handleSubmit}>
-        <PhoneIcon />
-        Request a call
-      </button>
+      <div className="call-form__action">
+        <button className="btn btn-primary" type="submit">
+          <PhoneIcon />
+          Request a call
+        </button>
+      </div>
     </form>
   )
 }

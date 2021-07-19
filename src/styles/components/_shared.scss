@@ -102,22 +102,34 @@
     line-height: 32px;
   }
 
-  .btn {
-    width: 100%;
-    height: 56px;
-    text-transform: uppercase;
-    font-family: "DM Sans";
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 0;
-    line-height: 20px;
-    text-align: center;
-    svg {
-      width: 12px;
-      height: 12px;
-      margin-right: 10px;
-      path {
-        fill: #ffffff;
+  &__action {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    .btn {
+      width: 90%;
+      height: 50px;
+      margin: auto;
+      text-transform: uppercase;
+      font-family: "DM Sans";
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 20px;
+      text-align: center;
+      transition: all ease-in-out 0.3s;
+      svg {
+        width: 12px;
+        height: 12px;
+        margin-right: 10px;
+        path {
+          fill: #ffffff;
+        }
+      }
+      &:hover {
+        width: 100%;
+        height: 56px;
       }
     }
   }
@@ -139,7 +151,7 @@
       padding-left: 32px;
       width: 100%;
     }
-    span{
+    span {
       color: red;
     }
   }
