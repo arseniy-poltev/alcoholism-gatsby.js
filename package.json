@@ -9,8 +9,10 @@
     "@contentful/rich-text-html-renderer": "^15.0.0",
     "@contentful/rich-text-react-renderer": "^15.0.0",
     "@contentful/rich-text-types": "^15.0.0",
+    "@hookform/resolvers": "^2.6.1",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
+    "classnames": "^2.3.1",
     "contentful": "^7.14.7",
     "dotenv": "^10.0.0",
     "gatsby": "^3.6.2",
@@ -34,9 +36,11 @@
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.11.1",
     "react-icons": "^4.2.0",
     "react-slick": "^0.28.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "contentful-import": "^7.7.8",
