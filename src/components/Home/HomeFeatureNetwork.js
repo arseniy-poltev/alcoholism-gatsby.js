@@ -1,4 +1,7 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 import NotepadIcon from "../../assets/Icons/notepad.svg"
 import PhoneActionsIcon from "../../assets/Icons/phone-actions-menu.svg"
 import DisplayIcon from "../../assets/Icons/display.svg"
@@ -6,11 +9,11 @@ import DisplayIcon from "../../assets/Icons/display.svg"
 export default function HomeFeatureNetwork() {
   return (
     <section className="home-feature home-feature--network">
-      <div className="container">
+      <Container>
         <span className="badge">OUR FEATURES</span>
         <h2>Our Network is Different</h2>
-        <div className="row">
-          <div className="col-lg-4 col-sm-6">
+        <Row>
+          <Col lg={4} sm={6}>
             <div className="home-feature__item">
               <div className="home-feature__icon">
                 <NotepadIcon />
@@ -18,8 +21,8 @@ export default function HomeFeatureNetwork() {
               <h4>Dedicated.</h4>
               <p>Recovery Centers thath have dedicated Alcoholism programs</p>
             </div>
-          </div>
-          <div className="col-lg-4 col-sm-6">
+          </Col>
+          <Col lg={4} sm={6}>
             <div className="home-feature__item">
               <div className="home-feature__icon">
                 <PhoneActionsIcon />
@@ -27,8 +30,8 @@ export default function HomeFeatureNetwork() {
               <h4>Vetted network.</h4>
               <p>We call and verify information directly.</p>
             </div>
-          </div>
-          <div className="col-lg-4 col-sm-6">
+          </Col>
+          <Col lg={4} sm={6}>
             <div className="home-feature__item">
               <div className="home-feature__icon">
                 <DisplayIcon />
@@ -39,9 +42,9 @@ export default function HomeFeatureNetwork() {
                 and more.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </section>
   )
 }

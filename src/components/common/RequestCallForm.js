@@ -1,4 +1,5 @@
 import React from "react"
+import Button from "react-bootstrap/Button"
 import PhoneIcon from "../../assets/Icons/phone.svg"
 import UserIcon from "../../assets/Icons/user.svg"
 import { useForm, Controller } from "react-hook-form"
@@ -57,10 +58,10 @@ export default function RequestCallForm({ className, text }) {
         </div>
       </div>
       <div className="call-form__action">
-        <button className="btn btn-primary" type="submit">
+        <Button variant="warning" type="submit">
           <PhoneIcon />
           Request a call
-        </button>
+        </Button>
       </div>
     </form>
   )

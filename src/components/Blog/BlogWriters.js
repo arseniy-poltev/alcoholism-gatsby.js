@@ -1,4 +1,5 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 import BlogAuthor from "./BlogAuthor"
 import BlogEditor from "./BlogEditor"
 
@@ -6,17 +7,17 @@ export default function BlogWriters(props) {
   const { author, editor, reviewer } = props
   return (
     <section>
-      <div className="container">
-        <div className="blog blog__writter">
+      <Container>
+        <div className="blog__writter">
           <BlogAuthor author={author} />
-          <div>
+          <div className="blog__editors">
             {editor && <BlogEditor editor={editor} role="Editor" />}
             {reviewer && (
               <BlogEditor editor={reviewer} role="Medical Reviewer" />
             )}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

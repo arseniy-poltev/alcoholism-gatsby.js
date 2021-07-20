@@ -1,4 +1,6 @@
 import React from "react"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 import VerifiedIcon from "../../../assets/Icons/verified-badge.svg"
 
 export default function PayTreatment() {
@@ -14,20 +16,20 @@ export default function PayTreatment() {
           Est. Cost: <span> $28,000</span>
         </div>
       </div>
-      <div className="row pay-treatment__features">
-        <div className="col-lg-6 col-sm-12">
+      <Row className="pay-treatment__features">
+        <Col lg={6} sm={12}>
           <p className="off">Insurance is not Accepted</p>
-        </div>
-        <div className="col-lg-6 col-sm-12">
+        </Col>
+        <Col lg={6} sm={12}>
           <p className="on">Financing is Available</p>
-        </div>
-        <div className="col-lg-6 col-sm-12">
+        </Col>
+        <Col lg={6} sm={12}>
           <p className="off">Medicare is not Accepted</p>
-        </div>
-        <div className="col-lg-6 col-sm-12">
+        </Col>
+        <Col lg={6} sm={12}>
           <p className="on">Medicald is not Accepted</p>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </div>
   )
 }

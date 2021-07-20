@@ -1,8 +1,6 @@
 import React, { Fragment } from "react"
 // import { StaticImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
-
-import Layout from "../components/layout"
 import HomeBanner from "../components/Home/HomeBanner"
 import HomeFeatureNetwork from "../components/Home/HomeFeatureNetwork"
 import HomeFeatureCenters from "../components/Home/HomeFeatureCenters"

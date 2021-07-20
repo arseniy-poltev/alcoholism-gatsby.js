@@ -1,4 +1,7 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 import RequestCallForm from "../common/RequestCallForm"
 import BadgeIcon from "../../assets/Icons/badge.svg"
 import PencilIcon from "../../assets/Icons/pencil.svg"
@@ -19,9 +22,9 @@ const gallery = {
 export default function ListingBanner() {
   return (
     <section className="listing-banner">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-6 col-sm-12 d-flex">
+      <Container>
+        <Row>
+          <Col lg={6} sm={12} className="d-flex">
             <div className="gallery-wrapper">
               <div className="gallery">
                 <div className="gallery-main">
@@ -50,8 +53,8 @@ export default function ListingBanner() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-6 col-sm-12">
+          </Col>
+          <Col lg={6} sm={12}>
             <div className="location-summary">
               <div className="d-flex flex-column">
                 <h2 className="location-summary__name">
@@ -80,9 +83,9 @@ export default function ListingBanner() {
               className="call-form--listing"
               text={"Enter your phone number"}
             />
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </section>
   )
 }

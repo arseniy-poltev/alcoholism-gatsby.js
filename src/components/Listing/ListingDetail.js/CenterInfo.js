@@ -1,4 +1,5 @@
 import React from "react"
+import Button from "react-bootstrap/Button"
 import CenterMap from "../../common/CenterMap"
 import PhoneIcon from ".././../../assets/Icons/phone.svg"
 
@@ -13,10 +14,10 @@ export default function CenterInfo() {
         <div className="center-card__map">
           <CenterMap />
         </div>
-        <button className="btn btn-primary">
+        <Button variant="warning">
           <PhoneIcon />
           888-999-0000
-        </button>
+        </Button>
       </div>
     </div>
   )

@@ -1,10 +1,14 @@
-import React from "react"
+import React, { Fragment } from "react"
 
 export default function BlogContent({ content }) {
   return (
-    <div
-      className="blog blog__content"
-      dangerouslySetInnerHTML={{ __html: content.childContentfulRichText.html }}
-    />
+    <Fragment>
+      <div
+        className="blog__content"
+        dangerouslySetInnerHTML={{
+          __html: content.childContentfulRichText.html,
+        }}
+      />
+    </Fragment>
   )
 }

@@ -1,4 +1,5 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 import Slider from "react-slick"
 import LeftArrow from "../../assets/Icons/tail-left.svg"
 import RightArrow from "../../assets/Icons/tail-right.svg"
@@ -54,7 +55,7 @@ export default function HomeFeatureCenters(props) {
   const { centers } = props
   return (
     <section className="home-feature home-feature--centers">
-      <div className="container">
+      <Container>
         <span className="badge">OUR FEATURES</span>
         <h2>Quality Recovery Centers in 50 States</h2>
         <div className="carousel-container">
@@ -66,7 +67,7 @@ export default function HomeFeatureCenters(props) {
             </Slider>
           }
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

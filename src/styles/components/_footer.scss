@@ -3,6 +3,14 @@ footer {
   padding-bottom: 108px;
   background-color: #1b1b1b;
 
+  a {
+    text-decoration: unset !important;
+    &:hover,
+    &:active {
+      color: #fb9c00 !important;
+    }
+  }
+
   .copyright {
     opacity: 0.5;
     color: #ffffff;

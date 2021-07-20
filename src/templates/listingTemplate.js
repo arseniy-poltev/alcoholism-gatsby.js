@@ -1,5 +1,8 @@
 import React, { Fragment } from "react"
-import Layout from "../components/layout"
+// import Layout from "../components/layout"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 import ListingBanner from "../components/Listing/ListingBanner"
 import PayTreatment from "../components/Listing/ListingDetail.js/PayTreatment"
 import TreatmentDetail from "../components/Listing/ListingDetail.js/TreatmentDetail"
@@ -18,21 +21,21 @@ export default function ListingTemplate() {
       <Seo title="listing" />
       <ListingBanner />
       <section className="listing-detail">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 col-sm-12">
+        <Container>
+          <Row>
+            <Col lg={8} sm={12}>
               <PayTreatment />
               <TreatmentDetail />
-            </div>
-            <div className="col-lg-4 col-sm-12">
+            </Col>
+            <Col lg={4} sm={12}>
               <CenterFeature />
               <CenterDetail />
               <CenterInfo />
               <CenterSetting />
               <CenterMoreResource />
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
       <ListingFooterBanner />
       <FindLocalCenters />

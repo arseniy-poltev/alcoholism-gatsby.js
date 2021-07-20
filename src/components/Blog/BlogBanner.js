@@ -1,4 +1,8 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button"
 
 export default function BlogBanner(props) {
   const { title, shortDescription, bannerSrc } = props
@@ -12,19 +16,17 @@ export default function BlogBanner(props) {
         backgroundImage: `url(${bannerSrc})`,
       }}
     >
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-6 col-sm-12 d-flex flex-column">
+      <Container>
+        <Row>
+          <Col lg={6} sm={12} className="d-flex flex-column">
             <div className="text-block">
               <h1>{title}</h1>
               <p>{shortDescription}</p>
-              <button className="btn btn-primary">
-                GET HELP WITH YOUR ADDICTION
-              </button>
+              <Button variant="warning">GET HELP WITH YOUR ADDICTION</Button>
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </section>
   )
 }

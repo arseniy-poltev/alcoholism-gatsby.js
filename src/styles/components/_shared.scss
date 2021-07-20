@@ -128,6 +128,7 @@
         }
       }
       &:hover {
+        color: #ffffff;
         width: 100%;
         height: 56px;
       }
@@ -386,6 +387,7 @@
       letter-spacing: 0;
       line-height: 20px;
       text-align: center;
+      text-decoration: unset;
       svg {
         height: 10px;
       }

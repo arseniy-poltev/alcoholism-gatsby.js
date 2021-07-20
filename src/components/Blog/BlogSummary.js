@@ -5,7 +5,7 @@ export default function BlogSummary(props) {
   const { author, updatedAt } = props
 
   return (
-    <div className="blog blog__summary">
+    <div className="blog__summary">
       <div>
         <img src={author.avatar.fixed.src} alt="author" />
         <p>

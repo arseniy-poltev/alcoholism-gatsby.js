@@ -1,4 +1,5 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 import LogoSamsha from "../../assets/Logos/Logo_SAMSHA.png"
 import LogoJointCommission from "../../assets/Logos/Logo_Joint_Commission.png"
 import LogoNaadac from "../../assets/Logos/Logo-Naadac.png"
@@ -7,7 +8,7 @@ import LogoYpr from "../../assets/Logos/Logo-Ypr.png"
 export default function HomeCertifications() {
   return (
     <section className="home-certifications">
-      <div className="container">
+      <Container>
         <h5>Our Accreditations & Certifications:</h5>
         <div>
           <div className="home-certifications__logo">
@@ -23,7 +24,7 @@ export default function HomeCertifications() {
             <img src={LogoYpr} alt="Logo Ypr" />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

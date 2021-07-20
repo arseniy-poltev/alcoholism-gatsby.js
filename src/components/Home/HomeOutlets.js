@@ -1,4 +1,5 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 import LogoCbs from "../../assets/Logos/logo-cbs.png"
 import LogoYahoo from "../../assets/Logos/logo-yahoo.png"
 import LogoNbc from "../../assets/Logos/logo-nbc.png"
@@ -9,7 +10,7 @@ import LogoCw from "../../assets/Logos/logo-cw.png"
 export default function HomeOutlets() {
   return (
     <section className="home-outlets">
-      <div className="container">
+      <Container>
         <h3>We have been featured on multiple outlets</h3>
         <div>
           <div className="home-outlets__logo">
@@ -31,7 +32,7 @@ export default function HomeOutlets() {
             <img src={LogoCw} alt="Logo Cw" />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

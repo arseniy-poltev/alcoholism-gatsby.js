@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Button from "react-bootstrap/Button"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Logo from "../common/Logo"
@@ -33,10 +34,10 @@ function Header({ navmenus }) {
               </div>
             ))}
           </div>
-          <button className="btn btn-primary">
+          <Button variant="warning">
             <PhoneIcon />
             <span>CALL US NOW</span>
-          </button>
+          </Button>
           <div
             className="toggler"
             onClick={() => setDropdownOpened(!dropdownOpened)}

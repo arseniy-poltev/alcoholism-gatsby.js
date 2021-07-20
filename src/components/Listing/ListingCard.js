@@ -1,4 +1,5 @@
 import React from "react"
+import Button from "react-bootstrap/Button"
 
 export default function ListingCard() {
   return (
@@ -22,9 +23,7 @@ export default function ListingCard() {
         </div>
       </div>
       <div>
-          <button className="btn btn-primary">
-              VIEW
-          </button>
+        <Button variant="warning">VIEW</Button>
       </div>
     </div>
   )

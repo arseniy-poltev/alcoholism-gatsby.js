@@ -14,7 +14,7 @@ export default function BlogAuthor({ author }) {
         <div className="blog-profile__description">
           <h5>{name}</h5>
           <h6>{position}</h6>
-          <p>{bio}</p>
+          <p>{bio?.bio || ""}</p>
           <div className="blog-profile__contact">
             <a>
               <FaEnvelope />

@@ -1,31 +1,35 @@
-.blog {
+.blog-container {
   margin: 0 auto;
   max-width: 830px;
   display: flex;
   flex-direction: column;
-  .btn {
-    margin: 0 auto 110px;
-    height: 56px;
-    width: 200px;
-    border-radius: 6px;
-    background-color: rgba(251, 156, 0, 0.2);
-    // background-color: #fb9c00ff;
-    color: #fb9c00;
-    font-family: "DM Sans";
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 0;
-    line-height: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    svg {
-      margin-left: 24px;
-      width: 14px;
-      height: 14px;
-      path {
-        fill: #fb9c00;
-      }
+}
+
+.blog__more {
+  margin: 0 auto 110px;
+  height: 56px;
+  width: 200px;
+  border-radius: 6px;
+  background-color: rgba(251, 156, 0, 0.2);
+  // background-color: #fb9c00ff;
+  color: #fb9c00;
+  font-family: "DM Sans";
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  svg {
+    margin-left: 24px;
+    width: 14px;
+    height: 14px;
+    path {
+      fill: #fb9c00;
     }
+  }
+  &:hover {
+    background-color: #fcce81;
   }
 }
 
@@ -147,11 +151,12 @@
   border-radius: 5px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.08);
-  > div {
+  .blog__editors {
     display: flex;
   }
-  @include media-breakpoint-down(sm) {
-    > div {
+  @include media-breakpoint-down(md) {
+    .blog__editors {
+      display: flex;
       flex-direction: column;
       .blog-profile {
         width: 100%;
@@ -184,6 +189,7 @@
       max-width: 151px;
     }
   }
+
   &__description {
     h5 {
       margin-bottom: 0;
@@ -214,7 +220,7 @@
     a {
       display: flex;
       align-items: center;
-      color: #5a7184;
+      color: #5a7184 !important;
       font-size: 14px;
       font-weight: 500;
       letter-spacing: 0;
@@ -229,6 +235,9 @@
 
   &--author {
     margin-bottom: 35px;
+    > div {
+      flex-direction: row;
+    }
   }
 
   &--editor {
@@ -247,11 +256,14 @@
       }
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(md) {
     &--author {
       > div {
         flex-direction: column;
       }
+    }
+    &__description {
+      margin-top: 20px;
     }
   }
 }

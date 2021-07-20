@@ -1,12 +1,15 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 import BadgeIcon from "../../assets/Icons/verified-circle-badge.svg"
 
 export default function AdmissionsMain() {
   return (
     <section className="admissions-main">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 col-sm-12">
+      <Container>
+        <Row>
+          <Col lg={8} sm={12}>
             <h3>Verification</h3>
             <p>
               Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec.
@@ -32,12 +35,12 @@ export default function AdmissionsMain() {
               neque quis augue. Sed lobortis ultrices lacus, a placerat metus
               rutrum sit amet. Aenean ut suscipit justo.
             </p>
-          </div>
-          <div className="col-lg-4 col-sm-12">
+          </Col>
+          <Col lg={4} sm={12}>
             <BadgeIcon />
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </section>
   )
 }

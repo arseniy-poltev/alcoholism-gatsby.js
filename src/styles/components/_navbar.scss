@@ -6,6 +6,9 @@
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+  a {
+    text-decoration: unset !important;
+  }
   .logo {
     height: 52px;
     max-width: 220px;
@@ -18,6 +21,8 @@
   }
   .navbar-nav {
     display: flex;
+    flex-direction: row;
+
     .nav-item {
       display: flex;
       a {
@@ -135,15 +140,13 @@
     }
   }
   @include media-breakpoint-down(xs) {
-    
   }
-  @media (max-width:500px){
+  @media (max-width: 500px) {
     button {
       padding: 12px;
       span {
         display: none;
       }
-      
     }
   }
 }
