@@ -34,6 +34,9 @@ const contentfulClient = contentful.createClient(contentfulClientConfig)
 const upperCaseFirstLetter = string => {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
+const formatText = string => {
+  return string.split("-").join(" ")
+}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -51,6 +54,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             node {
               id
               slug
+              title
+              parentPost {
+                slug
+              }
+              hasLink
             }
           }
         }
@@ -64,10 +72,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const blogPostLinks = result.data.allContentfulPost.edges.map(edge => ({
-    to: `/${edge.node.slug}`,
-    label: upperCaseFirstLetter(edge.node.slug),
-  }))
+  const blogPostLinks = result.data.allContentfulPost.edges
+    .filter(edge => edge.node.hasLink === true)
+    .map(edge => {
+      let to = "/"
+      let label = upperCaseFirstLetter(formatText(edge.node.slug))
+
+      if (edge.node.parentPost) {
+        to = `/${edge.node.parentPost.slug}/${edge.node.slug}`
+      } else {
+        to = `/${edge.node.slug}`
+      }
+      return {
+        to,
+        label,
+      }
+    })
+
   const navmenus = [
     { to: "/listing", label: "Locations" },
     ...blogPostLinks,
@@ -77,8 +98,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   console.log("createPages->navmenus", navmenus)
   result.data.allContentfulPost.edges.forEach(edge => {
+    let path = "/"
+    if (edge.node.parentPost) {
+      path = `/${edge.node.parentPost.slug}/${edge.node.slug}`
+    } else {
+      path = `/${edge.node.slug}`
+    }
     createPage({
-      path: edge.node.slug,
+      path,
       component: blogPostTemplate,
       context: {
         slug: edge.node.slug,
