@@ -56,6 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
               title
               parentPost {
+                id
                 slug
               }
               hasLink
@@ -73,27 +74,36 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const blogPostLinks = result.data.allContentfulPost.edges
-    .filter(edge => edge.node.hasLink === true)
+    .filter(edge => edge.node.hasLink === true && !edge.node.parentPost)
     .map(edge => {
-      let to = "/"
-      let label = upperCaseFirstLetter(formatText(edge.node.slug))
+      let postId = edge.node.id
+      let menu = {
+        key: edge.node.slug,
+        label: upperCaseFirstLetter(formatText(edge.node.slug)),
+      }
 
-      if (edge.node.parentPost) {
-        to = `/${edge.node.parentPost.slug}/${edge.node.slug}`
-      } else {
-        to = `/${edge.node.slug}`
+      let childPostsEdges = result.data.allContentfulPost.edges
+        .filter(edge => edge.node.hasLink === true)
+        .filter(
+          edge => edge.node.parentPost && edge.node.parentPost.id === postId
+        )
+      console.log("childPostsEdges of " + edge.node.slug, childPostsEdges)
+
+      if (childPostsEdges.length > 0) {
+        menu.children = childPostsEdges.map(edge => ({
+          key: edge.node.slug,
+          label: upperCaseFirstLetter(formatText(edge.node.slug)),
+        }))
       }
-      return {
-        to,
-        label,
-      }
+
+      return menu
     })
 
   const navmenus = [
-    { to: "/listing", label: "Locations" },
+    { key: "listing", label: "Locations" },
     ...blogPostLinks,
-    { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
+    { key: "about", label: "About" },
+    { key: "contact", label: "Contact" },
   ]
 
   console.log("createPages->navmenus", navmenus)

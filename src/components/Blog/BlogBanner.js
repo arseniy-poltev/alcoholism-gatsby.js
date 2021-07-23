@@ -22,7 +22,9 @@ export default function BlogBanner(props) {
             <div className="text-block">
               <h1>{title}</h1>
               <p>{shortDescription}</p>
-              <Button variant="warning">GET HELP WITH YOUR ADDICTION</Button>
+              <Button variant="warning" className="btn-transform">
+                GET HELP WITH YOUR ADDICTION
+              </Button>
             </div>
           </Col>
         </Row>

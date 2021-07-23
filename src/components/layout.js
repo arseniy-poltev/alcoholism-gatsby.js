@@ -2,9 +2,9 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./layouts/Header"
 import "../styles/style.scss"
 import Footer from "./layouts/Footer"
+import TopNavbar from "./layouts/TopNavbar"
 // import { Helmet } from "react-helmet"
 
 export default function Layout(props) {
@@ -23,7 +23,7 @@ export default function Layout(props) {
 
   return (
     <>
-      <Header navmenus={navmenus} />
+      <TopNavbar navmenus={navmenus} />
       {/* <Helmet>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtdO5k6CRntAMJCF-H5uZjTCoSGX95cdk" />
       </Helmet> */}

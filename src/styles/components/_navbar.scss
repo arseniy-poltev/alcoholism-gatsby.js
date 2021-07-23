@@ -6,23 +6,14 @@
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+
   a {
     text-decoration: unset !important;
   }
-  .logo {
-    height: 52px;
-    max-width: 220px;
-    color: #000000;
-    font-family: "Miller Display";
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: -0.2px;
-    line-height: 52px;
-  }
+
   .navbar-nav {
     display: flex;
     flex-direction: row;
-
     .nav-item {
       display: flex;
       a {
@@ -35,6 +26,8 @@
         letter-spacing: 0;
         text-align: center;
         line-height: 21px;
+      }
+      .topnav-item {
         &:after {
           position: absolute;
           margin: auto;
@@ -50,6 +43,29 @@
         }
         &:hover:after {
           width: 100%;
+        }
+      }
+    }
+    .dropdown {
+      display: flex;
+      flex-direction: column;
+      .dropdown-toggle {
+        color: #5a7184 !important;
+        &::after {
+          display: inline-block;
+          margin-left: 0.255em;
+          vertical-align: 0.255em;
+          content: "";
+          border-top: 0.3em solid #fb9c00;
+          border-right: 0.3em solid transparent;
+          border-bottom: 0;
+          border-left: 0.3em solid transparent;
+        }
+      }
+      .dropdown-menu {
+        top: 50px;
+        .dropdown-item {
+          padding: 8px 18px;
         }
       }
     }
@@ -80,10 +96,8 @@
       }
     }
   }
-  .toggler {
-    display: none;
-    padding: 8px;
-    cursor: pointer;
+
+  .navbar-toggler {
     svg {
       width: 30px;
       height: 30px;
@@ -92,6 +106,7 @@
       }
     }
   }
+
   @include media-breakpoint-down(lg) {
     .navbar-nav {
       .nav-item {
@@ -117,14 +132,8 @@
       border-bottom: 1px solid #e5eaf4;
       background-color: #ffffff;
       box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.08);
-
       transition: all ease-in-out 0.3s;
-      &.show {
-        height: 320px;
-      }
-      &.hidden {
-        height: 0;
-      }
+
       .nav-item {
         a {
           margin: auto;
@@ -135,12 +144,8 @@
       margin-left: auto;
       margin-right: 20px;
     }
-    .toggler {
-      display: flex;
-    }
   }
-  @include media-breakpoint-down(xs) {
-  }
+
   @media (max-width: 500px) {
     button {
       padding: 12px;

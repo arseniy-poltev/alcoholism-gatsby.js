@@ -58,7 +58,7 @@ export default function RequestCallForm({ className, text }) {
         </div>
       </div>
       <div className="call-form__action">
-        <Button variant="warning" type="submit">
+        <Button variant="warning" className="btn-transform" type="submit">
           <PhoneIcon />
           Request a call
         </Button>

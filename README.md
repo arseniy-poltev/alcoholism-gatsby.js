@@ -22,7 +22,7 @@ You need to have nodejs(>10) installed to run this app.
     npm i gatsby -g
     ```
 
-1.  **Start developing.**
+2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
@@ -31,7 +31,7 @@ You need to have nodejs(>10) installed to run this app.
     npm run develop
     ```
 
-1.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 

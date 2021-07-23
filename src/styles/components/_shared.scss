@@ -108,9 +108,11 @@
     justify-content: center;
     align-items: center;
     .btn {
-      width: 90%;
-      height: 50px;
+      width: 100%;
+      height: 56px;
       margin: auto;
+      padding: 0;
+      transition: all ease-in-out 200ms;
       text-transform: uppercase;
       font-family: "DM Sans";
       font-size: 15px;
@@ -118,7 +120,6 @@
       letter-spacing: 0;
       line-height: 20px;
       text-align: center;
-      transition: all ease-in-out 0.3s;
       svg {
         width: 12px;
         height: 12px;
@@ -126,11 +127,6 @@
         path {
           fill: #ffffff;
         }
-      }
-      &:hover {
-        color: #ffffff;
-        width: 100%;
-        height: 56px;
       }
     }
   }
@@ -169,7 +165,7 @@
   &--listing-footer {
     padding: 0;
     box-shadow: none;
-    background-color: #fb9c00;
+    background-color: transparent;
 
     .call-form__input-wrapper {
       position: relative;
@@ -198,6 +194,9 @@
         path {
           fill: #fb9c00;
         }
+      }
+      &:hover {
+        color: #fb9c00 !important;
       }
     }
   }
@@ -449,6 +448,7 @@
 .footer-banner {
   background-color: #fb9c00;
   background-size: cover;
+
   .container {
     > div {
       display: flex;
@@ -475,27 +475,36 @@
     line-height: 28px;
   }
 
-  .btn {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
+  &__button-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 243px;
-    font-family: "DM Sans";
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 20px;
-    box-shadow: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    .btn {
+      padding: 0;
+      display: flex;
+      width: 243px;
+      height: 54px;
+      justify-content: center;
+      align-items: center;
+      min-width: 243px;
+      text-transform: uppercase;
+      font-family: "DM Sans";
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 20px;
+      box-shadow: none;
 
-    svg {
-      height: 11px;
-      width: 11px;
-      margin-right: 7px;
-      path {
-        fill: #fb9c00 !important;
+      svg {
+        height: 11px;
+        width: 11px;
+        margin-right: 7px;
+        path {
+          fill: #fb9c00 !important;
+        }
       }
     }
   }

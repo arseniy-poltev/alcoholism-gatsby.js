@@ -1,4 +1,15 @@
 // elements
+.logo {
+  height: 52px;
+  max-width: 220px;
+  color: #000000;
+  font-family: "Miller Display";
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  line-height: 52px;
+}
+
 .btn {
   border: none;
   &:focus {
@@ -105,5 +116,12 @@
     polygon {
       fill: #fb9c01;
     }
+  }
+}
+
+.btn-transform {
+  transition: all ease-in-out 200ms;
+  &:hover {
+    transform: scale(1.1);
   }
 }
