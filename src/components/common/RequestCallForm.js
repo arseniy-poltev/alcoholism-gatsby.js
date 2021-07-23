@@ -5,6 +5,7 @@ import UserIcon from "../../assets/Icons/user.svg"
 import { useForm, Controller } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as Yup from "yup"
+import { createCustomerEntry } from "../../service/contentfulApi"
 
 export default function RequestCallForm({ className, text }) {
   const validationSchema = Yup.object().shape({
@@ -22,9 +23,14 @@ export default function RequestCallForm({ className, text }) {
   } = useForm(formOptions)
   const { errors, isValid } = formState
 
-  function onSubmit(formData) {
-    console.log("RequestCallForm->onSubmit", formData)
-    alert(JSON.stringify(formData))
+  async function onSubmit(formData) {
+    try {
+      const res = await createCustomerEntry(formData)
+      alert("accepted!")
+    } catch (error) {
+      console.log("onSubmit->error", error)
+      alert(error.message)
+    }
   }
 
   function handleChange(e) {

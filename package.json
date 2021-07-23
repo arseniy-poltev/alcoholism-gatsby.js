@@ -14,6 +14,7 @@
     "bootstrap": "^5.0.2",
     "classnames": "^2.3.1",
     "contentful": "^7.14.7",
+    "contentful-management": "^7.30.0",
     "dotenv": "^10.0.0",
     "gatsby": "^3.6.2",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
