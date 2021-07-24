@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import "../styles/style.scss"
 import Footer from "./layouts/Footer"
 import TopNavbar from "./layouts/TopNavbar"
+import Notification from "./common/Notification"
 // import { Helmet } from "react-helmet"
 
 export default function Layout(props) {
@@ -23,6 +24,7 @@ export default function Layout(props) {
 
   return (
     <>
+      <Notification />
       <TopNavbar navmenus={navmenus} />
       {/* <Helmet>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtdO5k6CRntAMJCF-H5uZjTCoSGX95cdk" />

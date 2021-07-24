@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Button from "react-bootstrap/Button"
 import PhoneIcon from "../../assets/Icons/phone.svg"
 import UserIcon from "../../assets/Icons/user.svg"
@@ -6,8 +6,13 @@ import { useForm, Controller } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as Yup from "yup"
 import { createCustomerEntry } from "../../service/contentfulApi"
+import { useDispatch } from "react-redux"
+import alertActions from "../../redux/alert/alertActions"
 
 export default function RequestCallForm({ className, text }) {
+  const [isLoading, setIsLoading] = useState(false)
+
+  const dispatch = useDispatch()
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("Please enter your first name"),
     phoneNumber: Yup.string().required("Please enter a valid US phone number"),
@@ -24,13 +29,15 @@ export default function RequestCallForm({ className, text }) {
   const { errors, isValid } = formState
 
   async function onSubmit(formData) {
+    setIsLoading(true)
     try {
       const res = await createCustomerEntry(formData)
-      alert("accepted!")
+      dispatch(alertActions.alertSuccess("Accepted request successfully!"))
     } catch (error) {
       console.log("onSubmit->error", error)
-      alert(error.message)
+      dispatch(alertActions.alertError(error.message))
     }
+    setIsLoading(false)
   }
 
   function handleChange(e) {
@@ -83,7 +90,12 @@ export default function RequestCallForm({ className, text }) {
         )}
       </div>
       <div className="call-form__action">
-        <Button variant="warning" className="btn-transform" type="submit">
+        <Button
+          disabled={isLoading}
+          variant="warning"
+          className="btn-transform"
+          type="submit"
+        >
           <PhoneIcon />
           Request a call
         </Button>

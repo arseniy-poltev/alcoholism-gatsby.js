@@ -3,8 +3,6 @@ import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/Button"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
-import NavDropdown from "react-bootstrap/NavDropdown"
-import { Link } from "gatsby"
 import Logo from "../common/Logo"
 import PhoneIcon from "../../assets/Icons/phone.svg"
 import { FaBars } from "react-icons/fa"
@@ -26,32 +24,9 @@ export default function TopNavbar({ navmenus }) {
         </Navbar.Toggle>
         <Navbar.Collapse id="top-navbar-nav">
           <Nav className="me-auto">
-            {navmenus.map(menu=>(
-              <TopNavMenu key={menu.key} item={menu}/>
+            {navmenus.map(menu => (
+              <TopNavMenu key={menu.key} item={menu} />
             ))}
-            {/* <Nav.Item>
-              <Link to="/" className="topnav-item">
-                Home
-              </Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Link to="/about" className="topnav-item">
-                About
-              </Link>
-            </Nav.Item>
-            <NavDropdown title="Dropdown" id="top-nav-dropdown">
-              <Nav.Item>
-                <Link to="/about" className="dropdown-item">
-                  About
-                </Link>
-              </Nav.Item>
-              <NavDropdown.Divider />
-              <Nav.Item>
-                <Link to="/about" className="dropdown-item">
-                  About
-                </Link>
-              </Nav.Item>
-            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
