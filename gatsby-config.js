@@ -32,6 +32,50 @@ if (!spaceId || !accessToken) {
   )
 }
 
+const renderEmbeddedAsset = node => {
+  const { title, description, file } = node.data.target.fields
+  const mimeType = file["en-US"].contentType
+  const mimeGroup = mimeType.split("/")[0]
+  console.log(`gatsby-config-->renderEmbeddedAsset`, node)
+  switch (mimeGroup) {
+    case "image":
+      return `<img
+          title="${title ? title["en-US"] : null}"
+          alt="${description ? description["en-US"] : null}"
+          src="${file["en-US"].url}"
+        />`
+    case "video":
+      return `<div className="embed-responsive embed-responsive-16by9">
+          <video controls>
+            <source src="${file.url}" type="video/mp4" />
+            <p>Your browser doesnt support HTML5 video.</p>
+          </video>
+        </div>`
+    case "application":
+      return `<a
+          alt="${description ? description["en-US"] : null}"
+          href="${file["en-US"].url}"
+        >
+          ${title ? title["en-US"] : file["en-US"].details.fileName}
+        </a>`
+    default:
+      return `<span >${mimeType} embedded asset</span>`
+  }
+}
+
+const renderEmbeddedEntry = node => {
+  const contentTypeId = node.data.target.sys.contentType.sys.id
+  const fields = node.data.target.fields
+  console.log(`gatsby-config-->renderEmbeddedEntry`, node)
+
+  switch (contentTypeId) {
+    case "topic":
+      return `<h3 id="${fields.slug["en-US"]}">${fields.title["en-US"]}</h3>`
+    default:
+      return `<div>Embedded Entry</div>`
+  }
+}
+
 module.exports = {
   siteMetadata: {
     title: `Alcoholism`,
@@ -58,13 +102,10 @@ module.exports = {
         renderOptions: {
           renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: node => {
-              return `<img src="${node.data.target.fields.file["en-US"].url}" />`
+              return renderEmbeddedAsset(node)
             },
-            [INLINES.ASSET_HYPERLINK]: node => {
-              return `<img class='custom-asset' src="${node.data.target.fields.file["en-US"].url}"/>`
-            },
-            [INLINES.EMBEDDED_ENTRY]: node => {
-              return `<div class='custom-entry' />${node.data.target.fields.name["en-US"]}</div>`
+            [BLOCKS.EMBEDDED_ENTRY]: node => {
+              return renderEmbeddedEntry(node)
             },
           },
         },

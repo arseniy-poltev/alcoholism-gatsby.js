@@ -21,9 +21,6 @@ export default function RequestCallForm({ className, text }) {
   const {
     register,
     handleSubmit,
-    trigger,
-    setValue,
-    control,
     formState,
   } = useForm(formOptions)
   const { errors, isValid } = formState
@@ -31,7 +28,7 @@ export default function RequestCallForm({ className, text }) {
   async function onSubmit(formData) {
     setIsLoading(true)
     try {
-      const res = await createCustomerEntry(formData)
+      await createCustomerEntry(formData)
       dispatch(alertActions.alertSuccess("Accepted request successfully!"))
     } catch (error) {
       console.log("onSubmit->error", error)

@@ -9,7 +9,6 @@ export default function Notification() {
   const [show, setShow] = useState(true)
 
   const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
 
   if (!message || !show) return null
   return (

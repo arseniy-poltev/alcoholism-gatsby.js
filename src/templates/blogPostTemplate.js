@@ -13,12 +13,11 @@ import { graphql } from "gatsby"
 import ContentfulRichText from "../components/common/ContentfulRichText"
 
 export default function BlogPostTemplate(props) {
-  console.log("BlogPostTemplate->props", props)
-
   const {
     data: { contentfulPost: data },
     context,
   } = props
+  console.log("BlogPostTemplate->props", props)
 
   return (
     <Fragment>
@@ -30,13 +29,10 @@ export default function BlogPostTemplate(props) {
       />
       <Container>
         <div className="blog-container">
-          <BlogSummary
-            author={data?.author || null}
-            updatedAt={data.updatedAt}
-          />
-          <BlogTopic topics={data?.topics || []} />
-          {/* <ContentfulRichText content={data.content} /> */}
-          <BlogContent content={data?.content || ""} />
+          <BlogSummary author={data?.author} updatedAt={data.updatedAt} />
+          <BlogTopic topics={data?.topics} />
+          <ContentfulRichText content={data.content} />
+          {/* <BlogContent content={data?.content || ""} /> */}
           <BlogWriters
             author={data.author}
             editor={data.editor}

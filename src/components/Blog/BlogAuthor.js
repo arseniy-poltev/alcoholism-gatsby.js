@@ -16,11 +16,11 @@ export default function BlogAuthor({ author }) {
           <h6>{position}</h6>
           <p>{bio?.bio || ""}</p>
           <div className="blog-profile__contact">
-            <a>
+            <a href="#">
               <FaEnvelope />
               {email}
             </a>
-            <a>
+            <a href="#">
               <FaTwitter />
               {twitterUsername || ""}
             </a>

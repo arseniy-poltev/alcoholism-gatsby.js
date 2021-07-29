@@ -17,7 +17,8 @@ const bindMiddleware = middlewares => {
 
 const createStore = () =>
   reduxCreateStore(rootReducer, initialState, bindMiddleware([thunk]))
-
-export default ({ element }) => (
+const reduxWrapper = ({ element }) => (
   <Provider store={createStore()}>{element}</Provider>
 )
+
+export default reduxWrapper

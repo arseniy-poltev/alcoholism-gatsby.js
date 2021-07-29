@@ -3,6 +3,7 @@ import moment from "moment"
 
 export default function BlogSummary(props) {
   const { author, updatedAt } = props
+  if (!author) return null
 
   return (
     <div className="blog__summary">

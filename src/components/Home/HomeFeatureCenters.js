@@ -36,7 +36,7 @@ function NextArrow(props) {
   // const { className, onClick } = props
   const { onClick } = props
   return (
-    <div onClick={onClick} className="slick-arrow next">
+    <div onClick={onClick} onKeyDown={onClick} className="slick-arrow next">
       <LeftArrow />
     </div>
   )
@@ -45,7 +45,7 @@ function NextArrow(props) {
 function PrevArrow(props) {
   const { onClick } = props
   return (
-    <div onClick={onClick} className="slick-arrow prev">
+    <div onClick={onClick} onKeyDown={onClick} className="slick-arrow prev">
       <RightArrow />
     </div>
   )

@@ -152,46 +152,28 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       navmenus,
     },
   })
-
-  // return new Promise(async (resolve, reject) => {
-  //   /**
-  //    * await
-  //    */
-  //   const result = await graphql(
-  //   )
-  //   const posts = result.data.allContentfulPost.edges
-  //   posts.map((post, index) => {
-  //     createPage({
-  //       path: `/${post.node.slug}`,
-  //       component: path.resolve("./src/templates/blogPost.js"),
-  //       context: { postData: post.node },
-  //     })
-  //   })
-
-  //   /**
-  //    * contentfulClient
-  //    */
-  //   const { items: postsRaw } = await contentfulClient.getEntries({
-  //     content_type: "page",
-  //   })
-  //   const posts = postsRaw.map(x => x.fields)
-  //   posts.map((post, index) => {
-  //     console.log("gatsby-node-->post", post)
-  //     createPage({
-  //       path: `/${post.slug}`,
-  //       component: path.resolve("./src/templates/blogPost.js"),
-  //       context: { postData: post },
-  //     })
-  //   })
-
-  //   resolve()
-  // })
 }
+
+// exports.createPages = async ({ graphql, actions, reporter }) => {
+//   return new Promise(async (resolve, reject) => {
+//     const { items: postsRaw } = await contentfulClient.getEntries({
+//       content_type: "page",
+//     })
+//     const posts = postsRaw.map(x => x.fields)
+//     posts.map((post, index) => {
+//       createPage({
+//         path: `/${post.slug}`,
+//         component: path.resolve("./src/templates/blogPostTemplate.js"),
+//         context: { postData: post },
+//       })
+//     })
+//     resolve()
+//   })
+// }
 
 // exports.onCreatePage = ({ page, actions }) => {
 //   const { createPage, deletePage } = actions
 //   deletePage(page)
-//   // You can access the variable "house" in your page queries now
 //   createPage({
 //     ...page,
 //     context: {
