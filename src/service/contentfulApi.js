@@ -1,10 +1,10 @@
 const sdk = require("contentful-management")
 const environmentId = "master"
-const spaceId = process.env.CONTENTFUL_SPACE_ID
+const spaceId = process.env.GATSBY_CONTENTFUL_SPACE_ID
 
 let clientConfig = {
   space: spaceId,
-  accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN,
+  accessToken: process.env.GATSBY_CONTENTFUL_MANAGEMENT_TOKEN,
 }
 
 if (process.env.HTTPS_PROXY) {

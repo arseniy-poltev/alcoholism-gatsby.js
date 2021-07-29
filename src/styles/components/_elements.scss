@@ -34,7 +34,8 @@
   text-align: center;
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &:disabled {
     color: #ffffff !important;
   }
 }
