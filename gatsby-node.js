@@ -1,9 +1,13 @@
 const path = require("path")
 const contentful = require("contentful")
 
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+try {
+  require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+  })
+} catch (error) {
+  console.log(`Failed to load .env.${process.env.NODE_ENV}`)
+}
 
 let contentfulClientConfig = {
   space: process.env.CONTENTFUL_SPACE_ID,

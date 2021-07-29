@@ -1,8 +1,12 @@
 const { BLOCKS, INLINES } = require("@contentful/rich-text-types")
 
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+try {
+  require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+  })
+} catch (error) {
+  console.log(`Failed to load .env.${process.env.NODE_ENV}`)
+}
 
 let contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
