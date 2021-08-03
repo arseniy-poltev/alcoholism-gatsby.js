@@ -7,8 +7,8 @@ export default function BlogTopic({ topics }) {
       <h5>Topics On This Page</h5>
       <div>
         {topics.map((topic, index) => (
-          <a key={index} href={`#${topic.slug}`}>
-            {topic.title}
+          <a key={index} href={`#${topic.split(" ").join("-").toLowerCase()}`}>
+            {topic}
           </a>
         ))}
       </div>

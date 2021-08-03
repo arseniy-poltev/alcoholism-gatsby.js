@@ -65,6 +65,14 @@ export const renderEmbeddedAsset = node => {
   }
 }
 
+export const renderHeading = node => {
+  console.log(`ContentfulRichText->renderHeading`, node)
+  const slug = node.content[0].value.split(" ").join("-").toLowerCase()
+  const HeadingTag = `h${node.nodeType.split("-")[1]}`
+
+  return <HeadingTag id={slug}>{node.content[0].value}</HeadingTag>
+}
+
 export const renderEmbeddedEntry = node => {
   const contentTypeId = node.data.target.sys.contentType.sys.id
   const fields = node.data.target.fields
@@ -95,6 +103,11 @@ export default function ContentfulRichText({ content }) {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: node => {
         let jsx = renderEmbeddedAsset(node)
+        let markup = renderToStaticMarkup(jsx)
+        return markup
+      },
+      [BLOCKS.HEADING_3]: node => {
+        let jsx = renderHeading(node)
         let markup = renderToStaticMarkup(jsx)
         return markup
       },

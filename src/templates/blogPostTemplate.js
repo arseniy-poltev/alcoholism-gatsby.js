@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useEffect, useState } from "react"
 import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/Button"
 import CloseIcon from "../assets/Icons/close-circle.svg"
@@ -11,6 +11,7 @@ import BlogFooterBanner from "../components/Blog/BlogFooterBanner"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
 import ContentfulRichText from "../components/common/ContentfulRichText"
+import { BLOCKS } from "@contentful/rich-text-types"
 
 export default function BlogPostTemplate(props) {
   const {
@@ -18,6 +19,15 @@ export default function BlogPostTemplate(props) {
     context,
   } = props
   console.log("BlogPostTemplate->props", props)
+  const [topics, setTopics] = useState(null)
+
+  useEffect(() => {
+    const arr = data.content.json.content
+      .filter(obj => obj.nodeType === BLOCKS.HEADING_3)
+      .map(obj => obj.content[0].value)
+    console.log(`BlogPostTemplate->useEffect`, arr)
+    setTopics(arr)
+  }, [data])
 
   return (
     <Fragment>
@@ -29,14 +39,14 @@ export default function BlogPostTemplate(props) {
       />
       <Container>
         <div className="blog-container">
-          <BlogSummary author={data?.author} updatedAt={data.updatedAt} />
-          <BlogTopic topics={data?.topics} />
-          <ContentfulRichText content={data.content} />
-          {/* <BlogContent content={data?.content || ""} /> */}
+          <BlogSummary author={data?.author} updatedAt={data?.updatedAt} />
+          <BlogTopic topics={topics} />
+          <ContentfulRichText content={data?.content} />
+          {/* <BlogContent content={data?.content} /> */}
           <BlogWriters
-            author={data.author}
-            editor={data.editor}
-            reviewer={data.reviewer}
+            author={data?.author}
+            editor={data?.editor}
+            reviewer={data?.reviewer}
           />
           <Button variant="warning" className="blog__more">
             View more
@@ -68,10 +78,6 @@ export const pageQuery = graphql`
         childContentfulRichText {
           html
         }
-      }
-      topics {
-        title
-        slug
       }
       createdAt
       updatedAt
