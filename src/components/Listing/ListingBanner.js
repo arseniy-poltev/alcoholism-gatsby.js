@@ -77,7 +77,7 @@ export default function ListingBanner() {
               </h3>
             </div>
             <h3 className="location-summary__phone">
-              Call our Hotline Number <span>888-777-6666</span>
+              Call our Hotline Number <span>888-767-3708</span>
             </h3>
             <RequestCallForm
               className="call-form--listing"

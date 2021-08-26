@@ -13,15 +13,6 @@ let contentfulConfig = {
   accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
 }
 
-if (process.env.HTTPS_PROXY) {
-  const host = process.env.HTTPS_PROXY.split(":")[0]
-  const port = process.env.HTTPS_PROXY.split(":")[1]
-  contentfulConfig.proxy = {
-    host,
-    port,
-  }
-}
-
 console.log("contentfulConfig", contentfulConfig)
 
 if (process.env.CONTENTFUL_HOST) {

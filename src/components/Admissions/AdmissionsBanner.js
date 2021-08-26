@@ -16,7 +16,7 @@ export default function AdmissionsBanner() {
                 <br /> one Phone Call
               </h1>
               <h4>
-                Call our Hotline Number <span>888-777-6666</span>
+                Call our Hotline Number <span>888-767-3708</span>
               </h4>
             </div>
             <RequestCallForm
