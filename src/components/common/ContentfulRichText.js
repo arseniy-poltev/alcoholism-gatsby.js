@@ -1,8 +1,7 @@
 import React from "react"
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
+import { BLOCKS } from "@contentful/rich-text-types"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { renderToStaticMarkup } from "react-dom/server"
 
 const BlockQuote = ({ quoteText, quoter }) => {
   return (
@@ -16,25 +15,19 @@ const BlockQuote = ({ quoteText, quoter }) => {
 }
 
 export const renderEmbeddedAsset = node => {
-  const { title, description, file } = node.data.target.fields
-  const mimeType = file["en-US"].contentType
+  const { title, description, file } = node.data.target
+  console.log("ContentfulRichText->renderEmbeddedAsset", node)
+
+  const mimeType = file.contentType
   const mimeGroup = mimeType.split("/")[0]
-  console.log(
-    "ContentfulRichText->renderEmbeddedAsset",
-    title,
-    description,
-    file,
-    mimeType,
-    mimeGroup
-  )
 
   switch (mimeGroup) {
     case "image":
       return (
         <img
-          title={title ? title["en-US"] : null}
-          alt={description ? description["en-US"] : null}
-          src={file["en-US"].url}
+          title={title ? title : null}
+          alt={description ? description : null}
+          src={file.url}
         />
       )
     case "video":
@@ -48,17 +41,13 @@ export const renderEmbeddedAsset = node => {
       )
     case "application":
       return (
-        <a
-          alt={description ? description["en-US"] : null}
-          href={file["en-US"].url}
-        >
-          {title ? title["en-US"] : file["en-US"].details.fileName}
+        <a alt={description ? description : null} href={file.url}>
+          {title ? title : file.details.fileName}
         </a>
       )
     default:
       return (
         <span style={{ backgroundColor: "red", color: "white" }}>
-          {" "}
           {mimeType} embedded asset{" "}
         </span>
       )
@@ -76,21 +65,14 @@ export const renderHeading = node => {
 export const renderEmbeddedEntry = node => {
   const contentTypeId = node.data.target.sys.contentType.sys.id
   const fields = node.data.target.fields
-  console.log(
-    `ContentfulRichText->renderEmbeddedEntry`,
-    contentTypeId,
-    fields.slug["en-US"]
-  )
+  console.log(`ContentfulRichText->renderEmbeddedEntry`, node)
   switch (contentTypeId) {
     case "topic":
-      return <h3 id={fields.slug["en-US"]}>{fields.title["en-US"]}</h3>
+      return <h3 id={fields.slug}>{fields.title}</h3>
     case "blockquote":
       return (
         <div>
-          <BlockQuote
-            quoteText={fields.quoteText["en-US"]}
-            quoter={fields.quoter["en-US"]}
-          />
+          <BlockQuote quoteText={fields.quoteText} quoter={fields.quoter} />
         </div>
       )
     default:
@@ -101,32 +83,27 @@ export const renderEmbeddedEntry = node => {
 export default function ContentfulRichText({ content }) {
   const options = {
     renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: node => {
-        let jsx = renderEmbeddedAsset(node)
-        let markup = renderToStaticMarkup(jsx)
-        return markup
-      },
-      [BLOCKS.HEADING_3]: node => {
-        let jsx = renderHeading(node)
-        let markup = renderToStaticMarkup(jsx)
-        return markup
-      },
-      [BLOCKS.EMBEDDED_ENTRY]: node => {
-        let jsx = renderEmbeddedEntry(node)
-        let markup = renderToStaticMarkup(jsx)
-        return markup
-      },
+      [BLOCKS.EMBEDDED_ASSET]: renderEmbeddedAsset,
+      [BLOCKS.HEADING_3]: renderHeading,
+      [BLOCKS.EMBEDDED_ENTRY]: renderEmbeddedEntry,
     },
   }
 
-  let html = content ? documentToHtmlString(content.json, options) : ""
-  console.log("ContentfulRichText->content", content)
-  console.log("ContentfulRichText->html", html)
-
+  console.log(`ContentfulRichText-->json`, content)
   return (
-    <div
-      className="blog blog__content"
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    <div className="blog blog__content">{renderRichText(content, options)}</div>
   )
+
+  /**
+   * rich-text-react-renderer embedded assets not working
+   */
+  // let contentJson = JSON.parse(content.raw)
+  // let html = content ? documentToHtmlString(contentJson, options) : ""
+
+  // return (
+  //   <div
+  //     className="blog blog__content"
+  //     dangerouslySetInnerHTML={{ __html: html }}
+  //   />
+  // )
 }

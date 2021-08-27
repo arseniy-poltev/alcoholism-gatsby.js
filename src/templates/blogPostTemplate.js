@@ -18,14 +18,16 @@ export default function BlogPostTemplate(props) {
     data: { contentfulPost: data },
     context,
   } = props
+
   console.log("BlogPostTemplate->props", props)
   const [topics, setTopics] = useState(null)
 
   useEffect(() => {
-    const arr = data.content.json.content
-      .filter(obj => obj.nodeType === BLOCKS.HEADING_3)
+    const arr = JSON.parse(data.content.raw)
+      .content.filter(obj => obj.nodeType === BLOCKS.HEADING_3)
       .map(obj => obj.content[0].value)
-    console.log(`BlogPostTemplate->useEffect`, arr)
+
+    console.log(`BlogPostTemplate->useEffect->topics`, arr)
     setTopics(arr)
   }, [data])
 
@@ -41,7 +43,7 @@ export default function BlogPostTemplate(props) {
         <div className="blog-container">
           <BlogSummary author={data?.author} updatedAt={data?.updatedAt} />
           <BlogTopic topics={topics} />
-          <ContentfulRichText content={data?.content} />
+          <ContentfulRichText content={data.content} />
           {/* <BlogContent content={data?.content} /> */}
           <BlogWriters
             author={data?.author}
@@ -74,9 +76,22 @@ export const pageQuery = graphql`
         }
       }
       content {
-        json
-        childContentfulRichText {
-          html
+        raw
+        references {
+          __typename
+          contentful_id
+          title
+          description
+          file {
+            contentType
+            url
+          }
+          fixed(width: 2000) {
+            width
+            height
+            src
+            srcSet
+          }
         }
       }
       createdAt
