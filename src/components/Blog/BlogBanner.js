@@ -8,20 +8,21 @@ export default function BlogBanner(props) {
   const { title, shortDescription, bannerSrc } = props
 
   console.log("BlogBanner->bannerSrc", bannerSrc)
+  let style = {}
+  if (bannerSrc) {
+    style = {
+      backgroundImage: `url(${bannerSrc})`,
+    }
+  }
 
   return (
-    <section
-      className="top-banner top-banner--blog"
-      style={{
-        backgroundImage: `url(${bannerSrc})`,
-      }}
-    >
+    <section className="top-banner top-banner--blog" style={style}>
       <Container>
         <Row>
           <Col lg={6} sm={12} className="d-flex flex-column">
             <div className="text-block">
-              <h1>{title}</h1>
-              <p>{shortDescription}</p>
+              <h1>{title ? title : ""}</h1>
+              <p>{shortDescription ? shortDescription : ""}</p>
               <Button variant="warning" className="btn-transform">
                 GET HELP WITH YOUR ADDICTION
               </Button>

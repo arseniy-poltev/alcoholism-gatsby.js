@@ -35,9 +35,9 @@ export default function BlogPostTemplate(props) {
     <Fragment>
       <Seo title="blog" />
       <BlogBanner
-        title={data?.title || ""}
-        bannerSrc={data?.banner.fixed.src || null}
-        shortDescription={data?.shortDescription.shortDescription || ""}
+        title={data?.title}
+        bannerSrc={data?.banner.fixed.src}
+        shortDescription={data?.shortDescription?.shortDescription}
       />
       <Container>
         <div className="blog-container">
