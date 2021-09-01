@@ -27,6 +27,7 @@ export default function BlogPostTemplate(props) {
   }, [data])
 
   function generateContentTable(data) {
+    if (!data.content) return
     const nodesArr = JSON.parse(data.content.raw)
     const arr = nodesArr.content
       .filter(
@@ -47,7 +48,7 @@ export default function BlogPostTemplate(props) {
       <Seo title="blog" />
       <BlogBanner
         title={data?.title}
-        bannerSrc={data?.banner.fixed.src}
+        bannerSrc={data?.banner?.fixed.src}
         shortDescription={data?.shortDescription?.shortDescription}
       />
       <Container>

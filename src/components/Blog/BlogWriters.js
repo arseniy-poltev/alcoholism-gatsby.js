@@ -9,7 +9,7 @@ export default function BlogWriters(props) {
     <section>
       <Container>
         <div className="blog__writter">
-          <BlogAuthor author={author} />
+          {author && <BlogAuthor author={author} />}
           <div className="blog__editors">
             {editor && <BlogEditor editor={editor} role="Editor" />}
             {reviewer && (

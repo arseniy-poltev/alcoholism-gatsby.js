@@ -91,6 +91,8 @@ export default function ContentfulRichText({ content }) {
   }
 
   console.log(`ContentfulRichText-->json`, content)
+  if (!content) return null
+  
   return (
     <div className="blog blog__content">{renderRichText(content, options)}</div>
   )
