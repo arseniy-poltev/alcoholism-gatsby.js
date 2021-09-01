@@ -84,6 +84,7 @@ export default function ContentfulRichText({ content }) {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: renderEmbeddedAsset,
+      [BLOCKS.HEADING_2]: renderHeading,
       [BLOCKS.HEADING_3]: renderHeading,
       [BLOCKS.EMBEDDED_ENTRY]: renderEmbeddedEntry,
     },

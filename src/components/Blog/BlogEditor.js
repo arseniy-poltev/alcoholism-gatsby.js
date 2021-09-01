@@ -7,7 +7,9 @@ export default function BlogEditor({ editor, role }) {
       <h5>{role}</h5>
       <div>
         <div className="blog-profile__avatar">
-          <img src={avatar?.fixed.src} alt="editor" />
+          <div>
+            <img src={avatar?.fixed.src} alt="editor" />
+          </div>
         </div>
         <div className="blog-profile__description">
           <h5>{name}</h5>

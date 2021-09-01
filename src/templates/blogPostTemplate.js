@@ -23,13 +23,24 @@ export default function BlogPostTemplate(props) {
   const [topics, setTopics] = useState(null)
 
   useEffect(() => {
-    const arr = JSON.parse(data.content.raw)
-      .content.filter(obj => obj.nodeType === BLOCKS.HEADING_3)
-      .map(obj => obj.content[0].value)
+    generateContentTable(data)
+  }, [data])
+
+  function generateContentTable(data) {
+    const nodesArr = JSON.parse(data.content.raw)
+    const arr = nodesArr.content
+      .filter(
+        obj =>
+          obj.nodeType === BLOCKS.HEADING_2 || obj.nodeType === BLOCKS.HEADING_3
+      )
+      .map(obj => ({
+        type: obj.nodeType,
+        value: obj.content[0].value,
+      }))
 
     console.log(`BlogPostTemplate->useEffect->topics`, arr)
     setTopics(arr)
-  }, [data])
+  }
 
   return (
     <Fragment>

@@ -7,7 +7,7 @@ export default function BlogSummary(props) {
 
   return (
     <div className="blog__summary">
-      <div>
+      <div className="blog__summary__profile">
         <img src={author.avatar.fixed.src} alt="author" />
         <p>
           Author: <span>{author.name}</span>
