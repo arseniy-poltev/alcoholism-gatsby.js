@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react"
+import { graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/Button"
 import CloseIcon from "../assets/Icons/close-circle.svg"
@@ -9,7 +10,6 @@ import BlogTopic from "../components/Blog/BlogTopic"
 import BlogWriters from "../components/Blog/BlogWriters"
 import BlogFooterBanner from "../components/Blog/BlogFooterBanner"
 import Seo from "../components/seo"
-import { graphql } from "gatsby"
 import ContentfulRichText from "../components/common/ContentfulRichText"
 import { BLOCKS } from "@contentful/rich-text-types"
 

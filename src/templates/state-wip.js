@@ -1,4 +1,7 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 import Layout from "../components/layout"
 import CenterDetail from "../components/Listing/ListingDetail.js/CenterDetail"
 import CenterInfo from "../components/Listing/ListingDetail.js/CenterInfo"
@@ -21,9 +24,9 @@ export default function StateWip() {
         </div>
       </section>
       <section className="state-wip__detail">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 col-sm-12">
+        <Container>
+          <Row>
+            <Col lg={8} sm={12}>
               <div className="state-wip__card-wrapper">
                 <ListingCard />
                 <ListingCard />
@@ -33,13 +36,13 @@ export default function StateWip() {
                 <ListingCard />
                 <ListingCard />
               </div>
-            </div>
-            <div className="col-lg-4 col-sm-12">
+            </Col>
+            <Col lg={4} sm={12}>
               <CenterDetail />
               <CenterInfo />
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
       <ListingFooterBanner />
       <FindLocalCenters />

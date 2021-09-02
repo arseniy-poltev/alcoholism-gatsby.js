@@ -9,22 +9,32 @@ try {
   console.log(`Failed to load .env.${process.env.NODE_ENV}`)
 }
 
-let contentfulClientConfig = {
-  space: process.env.GATSBY_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
-}
+// let contentfulClientConfig = {
+//   space: process.env.GATSBY_CONTENTFUL_SPACE_ID,
+//   accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
+// }
 
-if (process.env.CONTENTFUL_HOST) {
-  contentfulClientConfig.host = process.env.CONTENTFUL_HOST
-}
+// if (process.env.HTTPS_PROXY) {
+//   const url = new URL(process.env.HTTPS_PROXY)
+//   process.env.HTTPS_PROXY.match
+//   contentfulClientConfig.proxy = {
+//     protocol: url.protocol,
+//     host: url.hostname,
+//     port: url.port,
+//   }
+// }
 
-const { space, accessToken } = contentfulClientConfig
+// if (process.env.CONTENTFUL_HOST) {
+//   contentfulClientConfig.host = process.env.CONTENTFUL_HOST
+// }
 
-if (!space || !accessToken) {
-  throw new Error("Contentful space and the access token need to be provided.")
-}
+// const { space, accessToken } = contentfulClientConfig
 
-const contentfulClient = contentful.createClient(contentfulClientConfig)
+// if (!space || !accessToken) {
+//   throw new Error("Contentful space and the access token need to be provided.")
+// }
+
+// const contentfulClient = contentful.createClient(contentfulClientConfig)
 
 const upperCaseFirstLetter = string => {
   return string.charAt(0).toUpperCase() + string.slice(1)
@@ -37,6 +47,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const homeTemplate = path.resolve(`./src/templates/homeTemplate.js`)
   const blogPostTemplate = path.resolve(`./src/templates/blogPostTemplate.js`)
+  const blogListingTemplate = path.resolve(
+    `./src/templates/blogListingTemplate.js`
+  )
   const listingTemplate = path.resolve(`./src/templates/listingTemplate.js`)
   const aboutTemplate = path.resolve(`./src/templates/aboutTemplate.js`)
   const contactTemplate = path.resolve(`./src/templates/contactTemplate.js`)
@@ -68,7 +81,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const blogPostLinks = result.data.allContentfulPost.edges
+  const postLinks = result.data.allContentfulPost.edges
     .filter(edge => edge.node.hasLink === true && !edge.node.parentPost)
     .map(edge => {
       let postId = edge.node.id
@@ -77,26 +90,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         label: upperCaseFirstLetter(formatText(edge.node.slug)),
       }
 
-      let childPostsEdges = result.data.allContentfulPost.edges
-        .filter(edge => edge.node.hasLink === true)
-        .filter(
-          edge => edge.node.parentPost && edge.node.parentPost.id === postId
-        )
-      console.log("childPostsEdges of " + edge.node.slug, childPostsEdges)
+      // let childPostsEdges = result.data.allContentfulPost.edges
+      //   .filter(edge => edge.node.hasLink === true)
+      //   .filter(
+      //     edge => edge.node.parentPost && edge.node.parentPost.id === postId
+      //   )
+      // console.log("childPostsEdges of " + edge.node.slug, childPostsEdges)
 
-      if (childPostsEdges.length > 0) {
-        menu.children = childPostsEdges.map(edge => ({
-          key: edge.node.slug,
-          label: upperCaseFirstLetter(formatText(edge.node.slug)),
-        }))
-      }
+      // if (childPostsEdges.length > 0) {
+      //   menu.children = childPostsEdges.map(edge => ({
+      //     key: edge.node.slug,
+      //     label: upperCaseFirstLetter(formatText(edge.node.slug)),
+      //   }))
+      // }
 
       return menu
     })
 
   const navmenus = [
     { key: "listing", label: "Locations" },
-    ...blogPostLinks,
+    ...postLinks,
     { key: "about", label: "About" },
     { key: "contact", label: "Contact" },
   ]
@@ -109,14 +122,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     } else {
       path = `/${edge.node.slug}`
     }
-    createPage({
-      path,
-      component: blogPostTemplate,
-      context: {
-        slug: edge.node.slug,
-        navmenus,
-      },
-    })
+
+    if (edge.node.slug === "blog") {
+      createPage({
+        path,
+        component: blogListingTemplate,
+        context: {
+          slug: edge.node.slug,
+          navmenus,
+        },
+      })
+    } else {
+      createPage({
+        path,
+        component: blogPostTemplate,
+        context: {
+          slug: edge.node.slug,
+          navmenus,
+        },
+      })
+    }
   })
 
   createPage({

@@ -13,6 +13,15 @@ let contentfulConfig = {
   accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
 }
 
+if (process.env.HTTPS_PROXY) {
+  const url = new URL(process.env.HTTPS_PROXY)
+  contentfulConfig.proxy = {
+    protocol: url.protocol,
+    host: url.hostname,
+    port: url.port,
+  }
+}
+
 if (process.env.CONTENTFUL_HOST) {
   contentfulConfig.host = process.env.CONTENTFUL_HOST
 }
@@ -36,8 +45,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -49,24 +56,26 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
-    // {
-    //   resolve: "@contentful/gatsby-transformer-contentful-richtext",
-    //   options: {
-    //     renderOptions: {
-    //       renderNode: {
-    //         [BLOCKS.EMBEDDED_ASSET]: node => {
-    //           return renderEmbeddedAsset(node)
-    //         },
-    //         [BLOCKS.HEADING_3]: node => {
-    //           return renderHeading(node)
-    //         },
-    //         [BLOCKS.EMBEDDED_ENTRY]: node => {
-    //           return renderEmbeddedEntry(node)
-    //         },
-    //       },
-    //     },
-    //   },
-    // },
+    {
+      resolve: "@contentful/gatsby-transformer-contentful-richtext",
+      options: {
+        renderOptions: {
+          renderNode: {
+            // [BLOCKS.EMBEDDED_ASSET]: node => {
+            //   return renderEmbeddedAsset(node)
+            // },
+            // [BLOCKS.HEADING_3]: node => {
+            //   return renderHeading(node)
+            // },
+            // [BLOCKS.EMBEDDED_ENTRY]: node => {
+            //   return renderEmbeddedEntry(node)
+            // },
+          },
+        },
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
