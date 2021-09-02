@@ -549,6 +549,22 @@
   }
 }
 
+.scroll-top {
+  align-items: center;
+  background-color: #fb9c00;
+  border-radius: 0.2em;
+  bottom: 1em;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  opacity: 0.8;
+  padding: 1em;
+  position: fixed;
+  right: 1em;
+  text-align: center;
+  z-index: 9999;
+}
+
 .listing-card {
   display: flex;
   justify-content: space-between;

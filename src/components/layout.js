@@ -6,6 +6,7 @@ import "../styles/style.scss"
 import Footer from "./layouts/Footer"
 import TopNavbar from "./layouts/TopNavbar"
 import Notification from "./common/Notification"
+import ScrollToTop from "./common/ScrollToTop"
 
 export default function Layout(props) {
   const { children } = props
@@ -27,6 +28,7 @@ export default function Layout(props) {
       <TopNavbar navmenus={navmenus} />
       <div className="min-h-screen">{children}</div>
       <Footer />
+      <ScrollToTop />
     </>
   )
 }
