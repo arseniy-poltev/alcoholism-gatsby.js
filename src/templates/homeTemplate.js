@@ -19,8 +19,8 @@ export default function HomeTemplate(props) {
       <HomeBanner />
       <HomeCertifications />
       <HomeFeatureNetwork />
-      <HomeFeatureCenters centers={centersList} />
-      <HomeFeatureBlogs blogs={blogList} />
+      {/* <HomeFeatureCenters centers={centersList} /> */}
+      {/* <HomeFeatureBlogs blogs={blogList} /> */}
       <HomeOutlets />
       <HomeFooterBanner />
       {/* <StaticImage
