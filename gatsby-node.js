@@ -43,6 +43,21 @@ const formatText = string => {
   return string.split("-").join(" ")
 }
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type ContentfulProfile implements Node {
+      joinedAt: Date
+      twitterUsername: String
+    }
+    type ContentfulPost implements Node {
+      editor: ContentfulProfile
+      reviewer: ContentfulProfile
+    }
+  `
+  createTypes(typeDefs)
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const homeTemplate = path.resolve(`./src/templates/homeTemplate.js`)
