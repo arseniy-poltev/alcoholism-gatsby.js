@@ -68,6 +68,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const listingTemplate = path.resolve(`./src/templates/listingTemplate.js`)
   const aboutTemplate = path.resolve(`./src/templates/aboutTemplate.js`)
   const contactTemplate = path.resolve(`./src/templates/contactTemplate.js`)
+  const termTemplate = path.resolve(`./src/templates/termTemplate.js`)
 
   const result = await graphql(
     `
@@ -83,6 +84,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 slug
               }
               hasLink
+            }
+          }
+        }
+        allContentfulWidget(filter: { node_locale: { eq: "en-US" } }) {
+          edges {
+            node {
+              name
+              children {
+                __typename
+              }
+              text {
+                raw
+              }
             }
           }
         }
@@ -122,6 +136,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       return menu
     })
 
+  const widgets = result.data.allContentfulWidget.edges
+
   const navmenus = [
     { key: "listing", label: "Locations" },
     ...postLinks,
@@ -129,7 +145,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     { key: "contact", label: "Contact" },
   ]
 
-  console.log("createPages->navmenus", navmenus)
+  console.log("gatsby-nodejs: createPages: navmenus", navmenus)
   result.data.allContentfulPost.edges.forEach(edge => {
     let path = "/"
     if (edge.node.parentPost) {
@@ -164,6 +180,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     component: homeTemplate,
     context: {
       navmenus,
+      widgets,
     },
   })
   createPage({
@@ -171,6 +188,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     component: aboutTemplate,
     context: {
       navmenus,
+      widgets,
     },
   })
   createPage({
@@ -178,6 +196,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     component: contactTemplate,
     context: {
       navmenus,
+      widgets,
     },
   })
   createPage({
@@ -185,6 +204,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     component: listingTemplate,
     context: {
       navmenus,
+      widgets,
+    },
+  })
+  createPage({
+    path: `/terms-of-service`,
+    component: termTemplate,
+    context: {
+      navmenus,
+      widgets,
     },
   })
 }

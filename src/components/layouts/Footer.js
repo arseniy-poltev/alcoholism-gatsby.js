@@ -1,12 +1,41 @@
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import React from "react"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Badges from "../common/Badges"
 import SocialLinks from "../common/SocialLinks"
+import { BLOCKS } from "@contentful/rich-text-types"
 
-export default function Footer() {
+export default function Footer(props) {
+  const [linkColumns, setLinkColumns] = useState(null)
+  const { widget } = props
+
+  useEffect(() => {
+    if (widget) {
+      console.log(`Footer:widget`, widget)
+      let linksJson = JSON.parse(widget.node.text.raw)
+      console.log(`Footer:text`, linksJson)
+      let headings = linksJson.content
+        .filter(obj => obj.nodeType === BLOCKS.HEADING_5)
+        .map(obj => obj.content[0].value)
+
+      let array = [],
+        columnIndex = -1
+      for (let i = 0; i < linksJson.content.length; i++) {
+        let node = linksJson.content[i]
+        if (node.nodeType === BLOCKS.HEADING_5) {
+          columnIndex++
+          array[columnIndex] = { name: node.content[0].value, items: [] }
+        }
+        if (node.nodeType === BLOCKS.PARAGRAPH) {
+          array[columnIndex].items.push(node)
+        }
+      }
+      console.log(`array`, array)
+    }
+  }, [widget])
+
   return (
     <footer>
       <Container>
@@ -19,11 +48,13 @@ export default function Footer() {
             </h5>
             <Badges />
           </Col>
+
           <Col lg={2} sm={6}>
             <h5>About us</h5>
             <Link to="/staff">Staff</Link>
             <Link to="/philosphy">Philosphy</Link>
             <Link to="/testimonials">Testimonials</Link>
+            <Link to="/terms-of-service">Disclaimers</Link>
           </Col>
           <Col lg={2} sm={6}>
             <h5>Services</h5>
