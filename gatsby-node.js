@@ -84,8 +84,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               name
-              children {
-                __typename
+              childWidgets {
+                ... on ContentfulBadge {
+                  name
+                  image {
+                    fixed {
+                      width
+                      height
+                      src
+                    }
+                  }
+                }
               }
               text {
                 raw

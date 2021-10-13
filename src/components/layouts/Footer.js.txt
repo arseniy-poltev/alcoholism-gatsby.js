@@ -6,11 +6,9 @@ import Col from "react-bootstrap/Col"
 import Badges from "../common/Badges"
 import SocialLinks from "../common/SocialLinks"
 import { BLOCKS } from "@contentful/rich-text-types"
-import FooterLink from "./FooterLink"
 
 export default function Footer(props) {
-  const [countCols, setCountCols] = useState(null)
-  const [linksArray, setlinksArray] = useState(null)
+  const [linkColumns, setLinkColumns] = useState(null)
   const { widget } = props
 
   useEffect(() => {
@@ -18,6 +16,9 @@ export default function Footer(props) {
       console.log(`Footer:widget`, widget)
       let linksJson = JSON.parse(widget.node.text.raw)
       console.log(`Footer:text`, linksJson)
+      let headings = linksJson.content
+        .filter(obj => obj.nodeType === BLOCKS.HEADING_5)
+        .map(obj => obj.content[0].value)
 
       let array = [],
         columnIndex = -1
@@ -31,13 +32,9 @@ export default function Footer(props) {
           array[columnIndex].items.push(node)
         }
       }
-
-      setlinksArray(array)
-      setCountCols(array.length)
+      console.log(`array`, array)
     }
   }, [widget])
-
-  if (!linksArray || !countCols) return null
 
   return (
     <footer>
@@ -49,21 +46,36 @@ export default function Footer(props) {
               © Copyright 2020 Bright Stance® <br />
               All Rights Reserved
             </h5>
-            <Badges nodes={widget.node.childWidgets} />
+            <Badges />
           </Col>
-          <Col lg={8} sm={12}>
-            <Row>
-              {linksArray.map(linkBlock => {
-                return (
-                  <Col key={linkBlock.name} lg={12 / countCols} sm={6}>
-                    <h5>{linkBlock.name}</h5>
-                    {linkBlock.items.map((obj, index) => (
-                      <FooterLink key={index} node={obj} />
-                    ))}
-                  </Col>
-                )
-              })}
-            </Row>
+
+          <Col lg={2} sm={6}>
+            <h5>About us</h5>
+            <Link to="/staff">Staff</Link>
+            <Link to="/philosphy">Philosphy</Link>
+            <Link to="/testimonials">Testimonials</Link>
+            <Link to="/terms-of-service">Disclaimers</Link>
+          </Col>
+          <Col lg={2} sm={6}>
+            <h5>Services</h5>
+            <Link to="/">Alumni</Link>
+            <Link to="/">Addiction Problems</Link>
+            <Link to="/">
+              You People and <br />
+              Experimentation
+            </Link>
+          </Col>
+          <Col lg={2} sm={6}>
+            <h5>Resources</h5>
+            <Link to="/">Resources</Link>
+            <Link to="/">Careers</Link>
+            <Link to="/">Privacy Policy</Link>
+          </Col>
+          <Col lg={2} sm={6}>
+            <h5>Quick Links</h5>
+            <Link to="/">Insurance</Link>
+            <Link to="/">Blog</Link>
+            <Link to="/">Drugs & Your Body</Link>
           </Col>
         </Row>
       </Container>
