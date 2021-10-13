@@ -11,8 +11,7 @@ export default function blogListingTemplate(props) {
     data: { allContentfulPost },
     context,
   } = props
-
-  console.log(`blogListingTemplate`, props)
+  console.log(`blogListingTemplate:props`, props)
 
   return (
     <Fragment>
@@ -31,7 +30,11 @@ export default function blogListingTemplate(props) {
           <Row>
             <Col lg={{ offset: 2, span: 8 }} sm={12}>
               {allContentfulPost.edges.map((edge, index) => (
-                <BlogListingCard blog={edge.node} key={edge.node.slug} />
+                <BlogListingCard
+                  blog={edge.node}
+                  key={edge.node.slug}
+                  path={edge.node.path}
+                />
               ))}
             </Col>
           </Row>
@@ -43,16 +46,12 @@ export default function blogListingTemplate(props) {
 
 export const pageQuery = graphql`
   {
-    allContentfulPost(
-      filter: {
-        node_locale: { eq: "en-US" }
-        parentPost: { slug: { eq: "blog" } }
-      }
-    ) {
+    allContentfulPost(filter: { node_locale: { eq: "en-US" } }) {
       edges {
         node {
           id
           slug
+          path
           title
           author {
             name

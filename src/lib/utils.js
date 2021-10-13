@@ -1,8 +1,12 @@
-export const upperCaseFirstLetter = string => {
-  return string.charAt(0) + string.slice(1)
+const upperCaseFirstLetter = string => {
+  return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-export const urlHelper = href => {
+const formatText = string => {
+  return string.split("-").join(" ")
+}
+
+const urlHelper = href => {
   const regex = /^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/
   const match = href.match(regex)
   return (
@@ -18,3 +22,5 @@ export const urlHelper = href => {
     }
   )
 }
+
+module.exports = { upperCaseFirstLetter, formatText, urlHelper }

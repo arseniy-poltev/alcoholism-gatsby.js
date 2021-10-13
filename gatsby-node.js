@@ -1,5 +1,6 @@
 const path = require("path")
 const contentful = require("contentful")
+const { upperCaseFirstLetter } = require("./src/lib/utils")
 
 try {
   require("dotenv").config({
@@ -36,13 +37,6 @@ try {
 
 // const contentfulClient = contentful.createClient(contentfulClientConfig)
 
-const upperCaseFirstLetter = string => {
-  return string.charAt(0).toUpperCase() + string.slice(1)
-}
-const formatText = string => {
-  return string.split("-").join(" ")
-}
-
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
@@ -51,6 +45,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       twitterUsername: String
     }
     type ContentfulPost implements Node {
+      category: String
       editor: ContentfulProfile
       reviewer: ContentfulProfile
     }
@@ -78,11 +73,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             node {
               id
               slug
+              category
+              path
               title
-              parentPost {
-                id
-                slug
-              }
               hasLink
             }
           }
@@ -110,66 +103,43 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const postLinks = result.data.allContentfulPost.edges
-    .filter(edge => edge.node.hasLink === true && !edge.node.parentPost)
-    .map(edge => {
-      let postId = edge.node.id
-      let menu = {
-        key: edge.node.slug,
-        label: upperCaseFirstLetter(formatText(edge.node.slug)),
-      }
-
-      // let childPostsEdges = result.data.allContentfulPost.edges
-      //   .filter(edge => edge.node.hasLink === true)
-      //   .filter(
-      //     edge => edge.node.parentPost && edge.node.parentPost.id === postId
-      //   )
-      // console.log("childPostsEdges of " + edge.node.slug, childPostsEdges)
-
-      // if (childPostsEdges.length > 0) {
-      //   menu.children = childPostsEdges.map(edge => ({
-      //     key: edge.node.slug,
-      //     label: upperCaseFirstLetter(formatText(edge.node.slug)),
-      //   }))
-      // }
-
-      return menu
-    })
-
   const widgets = result.data.allContentfulWidget.edges
 
+  const headerLinks = result.data.allContentfulPost.edges
+    .filter(edge => edge.node.hasLink)
+    .map(edge => {
+      let path = edge.node.path ? edge.node.path : `/${edge.node.slug}`
+      return {
+        key: edge.node.slug,
+        label: upperCaseFirstLetter(edge.node.slug),
+      }
+    })
+
+  console.log(`headerLinks`, headerLinks)
   const navmenus = [
     { key: "listing", label: "Locations" },
-    ...postLinks,
+    ...headerLinks,
+    { key: "blog", label: "Blog" },
     { key: "about", label: "About" },
     { key: "contact", label: "Contact" },
   ]
 
   console.log("gatsby-nodejs: createPages: navmenus", navmenus)
   result.data.allContentfulPost.edges.forEach(edge => {
-    let path = "/"
-    if (edge.node.parentPost) {
-      path = `/${edge.node.parentPost.slug}/${edge.node.slug}`
-    } else {
-      path = `/${edge.node.slug}`
-    }
+    let path = edge.node.path
+      ? edge.node.path.substring(1)
+      : `${edge.node.slug}`
 
-    if (edge.node.slug === "blog") {
-      createPage({
-        path,
-        component: blogListingTemplate,
-        context: {
-          slug: edge.node.slug,
-          navmenus,
-        },
-      })
-    } else {
+    console.log(`allContentfulPost`, path)
+
+    if (path !== "blog") {
       createPage({
         path,
         component: blogPostTemplate,
         context: {
           slug: edge.node.slug,
           navmenus,
+          widgets,
         },
       })
     }
@@ -178,6 +148,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   createPage({
     path: `/`,
     component: homeTemplate,
+    context: {
+      navmenus,
+      widgets,
+    },
+  })
+  createPage({
+    path: `/blog`,
+    component: blogListingTemplate,
     context: {
       navmenus,
       widgets,

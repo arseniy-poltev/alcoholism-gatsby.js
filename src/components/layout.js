@@ -11,6 +11,7 @@ import useIsScrolled from "../lib/useIsScrolled"
 
 export default function Layout(props) {
   const [footerWidget, setFooterWidget] = useState(null)
+  const [headerWidget, setHeaderWidget] = useState(null)
 
   let isScrolled = useIsScrolled()
   const { children } = props
@@ -30,19 +31,19 @@ export default function Layout(props) {
   useEffect(() => {
     if (props.pageContext.widgets) {
       let widgets = props.pageContext.widgets
-      let footerWidget = widgets.find(obj => obj.node.name === "Footer")
-      setFooterWidget(footerWidget)
+      setHeaderWidget(widgets.find(obj => obj.node.name === "Header"))
+      setFooterWidget(widgets.find(obj => obj.node.name === "Footer"))
     }
   }, [props.pageContext])
 
   return (
-    <>
+    <div className="min-h-screen">
       <Notification />
-      <TopNavbar navmenus={navmenus} />
-      <div className="min-h-screen">{children}</div>
+      <TopNavbar navmenus={navmenus} widget={headerWidget} />
+      <div className="main">{children}</div>
       <Footer widget={footerWidget} />
       {isScrolled && <ScrollToTop />}
-    </>
+    </div>
   )
 }
 

@@ -3,7 +3,7 @@ import moment from "moment"
 import { Link } from "gatsby"
 
 export default function BlogListingCard({ blog }) {
-  const { slug, title, author, updatedAt } = blog
+  const { slug, path, title, author, updatedAt } = blog
   return (
     <div className="blog-listing--item">
       <div>
@@ -23,7 +23,7 @@ export default function BlogListingCard({ blog }) {
         </div>
       </div>
       <div>
-        <Link to={`/blog/${slug}`} className="btn btn-warning">
+        <Link to={path} className="btn btn-warning">
           VIEW
         </Link>
       </div>

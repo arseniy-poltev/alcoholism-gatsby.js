@@ -18,8 +18,7 @@ export default function BlogPostTemplate(props) {
     data: { contentfulPost: data },
     context,
   } = props
-
-  console.log("BlogPostTemplate->props", props)
+  console.log("BlogPostTemplate:props", props)
   const [topics, setTopics] = useState(null)
 
   useEffect(() => {

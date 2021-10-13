@@ -8,7 +8,7 @@ import PhoneIcon from "../../assets/Icons/phone.svg"
 import { FaBars } from "react-icons/fa"
 import TopNavMenu from "./TopNavMenu"
 
-export default function TopNavbar({ navmenus }) {
+export default function TopNavbar({ navmenus, widget }) {
   return (
     <Navbar bg="transparent" expand="lg">
       <Container>
