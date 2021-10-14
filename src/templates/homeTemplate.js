@@ -16,7 +16,7 @@ export default function HomeTemplate(props) {
     <Fragment>
       <Seo title="Home" />
       <HomeBanner />
-      <HomeCertifications />
+      {/* <HomeCertifications /> */}
       <HomeFeatureNetwork />
       {/* <HomeFeatureCenters centers={centersList} /> */}
       {/* <HomeFeatureBlogs blogs={blogList} /> */}
