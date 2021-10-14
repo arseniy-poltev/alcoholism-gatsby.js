@@ -3,16 +3,15 @@ import React, { Fragment } from "react"
 import Seo from "../components/seo"
 import HomeBanner from "../components/Home/HomeBanner"
 import HomeFeatureNetwork from "../components/Home/HomeFeatureNetwork"
-import HomeFeatureCenters from "../components/Home/HomeFeatureCenters"
-import HomeFeatureBlogs from "../components/Home/HomeFeatureBlogs"
-import { blogList, centersList } from "../components/common/data"
 import HomeCertifications from "../components/Home/HomeCertifications"
-import HomeOutlets from "../components/Home/HomeOutlets"
+// import HomeFeatureCenters from "../components/Home/HomeFeatureCenters"
+// import HomeFeatureBlogs from "../components/Home/HomeFeatureBlogs"
+// import { blogList, centersList } from "../components/common/data"
+// import HomeOutlets from "../components/Home/HomeOutlets"
 import HomeFooterBanner from "../components/Home/HomeFooterBanner"
 
 export default function HomeTemplate(props) {
   const { pageContext } = props
-  console.log("Homepage", props)
   return (
     <Fragment>
       <Seo title="Home" />
@@ -21,7 +20,7 @@ export default function HomeTemplate(props) {
       <HomeFeatureNetwork />
       {/* <HomeFeatureCenters centers={centersList} /> */}
       {/* <HomeFeatureBlogs blogs={blogList} /> */}
-      <HomeOutlets />
+      {/* <HomeOutlets /> */}
       <HomeFooterBanner />
       {/* <StaticImage
         src="../images/gatsby-astronaut.png"

@@ -49,7 +49,9 @@ export default function Footer(props) {
               © Copyright 2020 Bright Stance® <br />
               All Rights Reserved
             </h5>
-            <Badges nodes={widget.node.childWidgets} />
+            {widget.node.childWidgets && (
+              <Badges nodes={widget.node.childWidgets} />
+            )}
           </Col>
           <Col lg={8} sm={12}>
             <Row>

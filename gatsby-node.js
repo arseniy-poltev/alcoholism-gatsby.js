@@ -49,7 +49,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       editor: ContentfulProfile
       reviewer: ContentfulProfile
     }
+    type ContentfulWidget implements Node {
+      childWidgets: [ContentfulBadge]
+    }
   `
+
   createTypes(typeDefs)
 }
 
