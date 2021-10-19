@@ -66,6 +66,8 @@ export default function BlogPostTemplate(props) {
         },
       ]
     }
+if (data.shortDescription)
+
 
     return {
       title: data.title,

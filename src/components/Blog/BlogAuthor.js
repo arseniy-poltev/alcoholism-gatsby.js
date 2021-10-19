@@ -2,10 +2,11 @@ import React from "react"
 import { FaEnvelope, FaTwitter } from "react-icons/fa"
 
 export default function BlogAuthor({ author }) {
+  console.log(`BlogAuthor`, author)
   const { avatar, name, position, bio, email, twitterUsername } = author
 
   return (
-    <div className="blog-profile blog-profile--author">
+    <div id="author" className="blog-profile blog-profile--author">
       <h5>Author</h5>
       <div>
         <div className="blog-profile__avatar">

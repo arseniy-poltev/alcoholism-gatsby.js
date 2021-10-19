@@ -68,6 +68,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const aboutTemplate = path.resolve(`./src/templates/aboutTemplate.js`)
   const contactTemplate = path.resolve(`./src/templates/contactTemplate.js`)
   const termTemplate = path.resolve(`./src/templates/termTemplate.js`)
+  const teamTemplate = path.resolve(`./src/templates/teamTemplate.js`)
 
   const result = await graphql(
     `
@@ -145,6 +146,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     console.log(`allContentfulPost`, path)
 
+    if (edge.node.slug === "what-is-alcoholism") {
+      createPage({
+        path: "/",
+        component: blogPostTemplate,
+        context: {
+          slug: edge.node.slug,
+          navmenus,
+          widgets,
+        },
+      })
+    }
+
     if (path !== "blog") {
       createPage({
         path,
@@ -158,14 +171,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   })
 
-  createPage({
-    path: `/`,
-    component: homeTemplate,
-    context: {
-      navmenus,
-      widgets,
-    },
-  })
+  // createPage({
+  //   path: `/`,
+  //   component: homeTemplate,
+  //   context: {
+  //     navmenus,
+  //     widgets,
+  //   },
+  // })
   createPage({
     path: `/blog`,
     component: blogListingTemplate,
@@ -192,7 +205,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
   createPage({
     path: `/listing`,
-    component: listingTemplate,
+    component: homeTemplate,
     context: {
       navmenus,
       widgets,
@@ -201,6 +214,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   createPage({
     path: `/terms-of-service`,
     component: termTemplate,
+    context: {
+      navmenus,
+      widgets,
+    },
+  })
+  createPage({
+    path: `/team`,
+    component: teamTemplate,
     context: {
       navmenus,
       widgets,

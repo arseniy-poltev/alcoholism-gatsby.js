@@ -10,7 +10,7 @@ export default function BlogSummary(props) {
       <div className="blog__summary__profile">
         <img src={author.avatar.fixed.src} alt="author" />
         <p>
-          Author: <span>{author.name}</span>
+          Author: <a href="#author">{author.name}</a>
         </p>
       </div>
       <div>
@@ -18,11 +18,11 @@ export default function BlogSummary(props) {
           Last Updated: <span>{moment(updatedAt).format("M/DD/YYYY")}</span>
         </p>
       </div>
-      <div>
+      {/* <div>
         <p>
           Sources: <span>9</span>
         </p>
-      </div>
+      </div> */}
     </div>
   )
 }

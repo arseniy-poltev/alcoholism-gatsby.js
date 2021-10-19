@@ -64,6 +64,10 @@
       border-radius: 50%;
       object-fit: cover;
     }
+    a {
+      color: #3a586e;
+      font-weight: bold;
+    }
   }
 }
 
@@ -114,13 +118,8 @@
 
 .blog__content {
   margin-bottom: 100px;
-  h2 {
-    margin-bottom: 10px;
-    color: #183b56;
-    font-weight: bold;
-    letter-spacing: 0;
-    line-height: 52px;
-  }
+  h1,
+  h2,
   h3 {
     margin-bottom: 10px;
     color: #183b56;
@@ -128,6 +127,7 @@
     letter-spacing: 0;
     line-height: 52px;
   }
+
   p + h3 {
     margin-top: 36px;
   }
