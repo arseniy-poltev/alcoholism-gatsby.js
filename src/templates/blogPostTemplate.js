@@ -50,7 +50,7 @@ export default function BlogPostTemplate(props) {
         ...meta,
         {
           property: `og:image`,
-          content: data.thumbnail.fixed.src,
+          content: `https:${data.thumbnail.fixed.src}`,
         },
         {
           property: `og:image:alt`,
