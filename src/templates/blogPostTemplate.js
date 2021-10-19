@@ -42,9 +42,41 @@ export default function BlogPostTemplate(props) {
     setTopics(arr)
   }
 
+  function generateSeoData() {
+    console.log(`BlogPostTemplate:generateSeoData`, data)
+    let meta = []
+    if (data.banner) {
+      meta = [
+        ...meta,
+        {
+          property: `og:image`,
+          content: data.banner.fixed.src,
+        },
+        {
+          property: `og:image:alt`,
+          content: data.title,
+        },
+        {
+          property: `og:image:width`,
+          content: data.banner.fixed.width,
+        },
+        {
+          property: `og:image:height`,
+          content: data.banner.fixed.height,
+        },
+      ]
+    }
+
+    return {
+      title: data.title,
+      description: data.shortDescription,
+      meta,
+    }
+  }
+
   return (
     <Fragment>
-      <Seo title="blog" />
+      <Seo {...generateSeoData()} />
       <BlogBanner
         title={data?.title}
         bannerSrc={data?.banner?.fixed.src}

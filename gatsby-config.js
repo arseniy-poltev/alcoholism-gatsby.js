@@ -38,10 +38,10 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: `Alcoholism`,
-    description: `Alcoholism.org web app`,
-    author: `Robert Popescu`,
-    siteUrl: `https://alcoholism.gatsbyjs.io`,
+    title: `Alcoholism.org`,
+    description: `Alcoholism treatment program`,
+    author: `Alcoholism Team`,
+    siteUrl: `https://alcoholism.org`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
