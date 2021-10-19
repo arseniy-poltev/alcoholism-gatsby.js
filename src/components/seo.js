@@ -19,13 +19,14 @@ function Seo({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
     `
   )
 
-  console.log(`Seo`, site)
+  console.log(`Seo`, site, site.siteMetadata.siteUrl)
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
@@ -47,12 +48,16 @@ function Seo({ description, lang, meta, title }) {
           content: title,
         },
         {
-          property: `og:description`,
-          content: metaDescription,
+          property: `og:url`,
+          content: site.siteMetadata.siteUrl || "",
         },
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
         },
         {
           name: `twitter:card`,
@@ -65,6 +70,10 @@ function Seo({ description, lang, meta, title }) {
         {
           name: `twitter:title`,
           content: title,
+        },
+        {
+          name: `twitter:url`,
+          content: site.siteMetadata.siteUrl || "",
         },
         {
           name: `twitter:description`,

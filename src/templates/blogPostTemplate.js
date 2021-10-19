@@ -50,7 +50,7 @@ export default function BlogPostTemplate(props) {
         ...meta,
         {
           property: `og:image`,
-          content: data.banner.fixed.src,
+          content: data.thumbnail.fixed.src,
         },
         {
           property: `og:image:alt`,
@@ -58,11 +58,11 @@ export default function BlogPostTemplate(props) {
         },
         {
           property: `og:image:width`,
-          content: data.banner.fixed.width,
+          content: data.thumbnail.fixed.width,
         },
         {
           property: `og:image:height`,
-          content: data.banner.fixed.height,
+          content: data.thumbnail.fixed.height,
         },
       ]
     }
@@ -113,6 +113,13 @@ export const pageQuery = graphql`
       }
       banner {
         fixed(width: 2000, quality: 100) {
+          src
+          width
+          height
+        }
+      }
+      thumbnail: banner {
+        fixed(width: 1200, quality: 100) {
           src
           width
           height
