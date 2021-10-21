@@ -15,14 +15,22 @@ export default function BlogTopic({ topics }) {
         {topics.map((topic, index) => {
           if (topic.type === BLOCKS.HEADING_2) {
             return (
-              <a href={`#${generateSlug(topic.value)}`} className="topic-list">
+              <a
+                key={index}
+                href={`#${generateSlug(topic.value)}`}
+                className="topic-list"
+              >
                 {topic.value}
               </a>
             )
           }
           if (topic.type === BLOCKS.HEADING_3) {
             return (
-              <a href={`#${generateSlug(topic.value)}`} className="topic-item">
+              <a
+                key={index}
+                href={`#${generateSlug(topic.value)}`}
+                className="topic-item"
+              >
                 {topic.value}
               </a>
             )

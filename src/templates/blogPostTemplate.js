@@ -1,8 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
-import Button from "react-bootstrap/Button"
-import CloseIcon from "../assets/Icons/close-circle.svg"
 import BlogBanner from "../components/Blog/BlogBanner"
 import BlogContent from "../components/Blog/BlogContent"
 import BlogSummary from "../components/Blog/BlogSummary"
@@ -66,12 +64,12 @@ export default function BlogPostTemplate(props) {
         },
       ]
     }
-    if (data.shortDescription)
-      return {
-        title: data.title,
-        description: data.shortDescription,
-        meta,
-      }
+
+    return {
+      title: data.title,
+      description: data.shortDescription,
+      meta,
+    }
   }
 
   return (
@@ -90,7 +88,7 @@ export default function BlogPostTemplate(props) {
           {data.author && (
             <BlogSummary author={data?.author} updatedAt={data?.updatedAt} />
           )}
-          <BlogTopic topics={topics} />
+          {data.slug !== "what-is-alcoholism" && <BlogTopic topics={topics} />}
           <ContentfulRichText content={data.content} />
           {/* <BlogContent content={data?.content} /> */}
           <BlogWriters
@@ -98,10 +96,6 @@ export default function BlogPostTemplate(props) {
             editor={data?.editor}
             reviewer={data?.reviewer}
           />
-          {/* <Button variant="warning" className="blog__more">
-            View more
-            <CloseIcon />
-          </Button> */}
         </div>
       </Container>
       <BlogFooterBanner />
@@ -113,6 +107,7 @@ export const pageQuery = graphql`
   query PostDetailsBySlug($slug: String!) {
     contentfulPost(slug: { eq: $slug }) {
       title
+      slug
       shortDescription {
         shortDescription
       }

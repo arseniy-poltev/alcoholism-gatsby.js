@@ -8,14 +8,17 @@ try {
   console.log(`Failed to load .env.${process.env.NODE_ENV}`)
 }
 
-let contentfulConfig = {
+/**
+ * gatsby-source-contentful config
+ */
+let gatsbyContentfulConfig = {
   spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
   accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
 }
 
 if (process.env.HTTPS_PROXY) {
   const url = new URL(process.env.HTTPS_PROXY)
-  contentfulConfig.proxy = {
+  gatsbyContentfulConfig.proxy = {
     protocol: url.protocol,
     host: url.hostname,
     port: url.port,
@@ -23,12 +26,82 @@ if (process.env.HTTPS_PROXY) {
 }
 
 if (process.env.CONTENTFUL_HOST) {
-  contentfulConfig.host = process.env.CONTENTFUL_HOST
+  gatsbyContentfulConfig.host = process.env.CONTENTFUL_HOST
 }
 
-console.log("contentfulConfig", contentfulConfig)
+/**
+ * gatsby-transformer-contentful-richtext
+ */
+let gatsbyContentfulRichtextOptions = {
+  renderOptions: {
+    renderNode: {
+      // [BLOCKS.EMBEDDED_ASSET]: node => {
+      //   return renderEmbeddedAsset(node)
+      // },
+      // [BLOCKS.HEADING_3]: node => {
+      //   return renderHeading(node)
+      // },
+      // [BLOCKS.EMBEDDED_ENTRY]: node => {
+      //   return renderEmbeddedEntry(node)
+      // },
+    },
+  },
+}
 
-const { spaceId, accessToken } = contentfulConfig
+/**
+ * Google Tag Manager Plugin options
+ */
+
+let gatsbyGTMOptions = {
+  id: process.env.GATSBY_GOOGLE_TAGMANAGER_ID,
+  includeInDevelopment: true,
+  // Defaults to null
+  defaultDataLayer: { platform: "gatsby" },
+
+  // Specify optional GTM environment details.
+  gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
+  gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
+  dataLayerName: "YOUR_DATA_LAYER_NAME",
+
+  // Name of the event that is triggered
+  // on every Gatsby route change.
+  //
+  // Defaults to gatsby-route-change
+  routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
+  // Defaults to false
+  enableWebVitalsTracking: true,
+}
+
+if (process.env.GATSBY_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING) {
+  gatsbyGTMOptions = {
+    ...gatsbyGTMOptions,
+    gtmAuth: process.env.GATSBY_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING,
+  }
+}
+if (process.env.GATSBY_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME) {
+  gatsbyGTMOptions = {
+    ...gatsbyGTMOptions,
+    gtmPreview: process.env.GATSBY_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME,
+  }
+}
+if (process.env.GATSBY_DATA_LAYER_NAME) {
+  gatsbyGTMOptions = {
+    ...gatsbyGTMOptions,
+    dataLayerName: process.env.GATSBY_DATA_LAYER_NAME,
+  }
+}
+if (process.env.GATSBY_ROUTE_CHANGE_EVENT_NAME) {
+  gatsbyGTMOptions = {
+    ...gatsbyGTMOptions,
+    routeChangeEventName: process.env.GATSBY_ROUTE_CHANGE_EVENT_NAME,
+  }
+}
+
+console.log("gatsbyContentfulConfig", gatsbyContentfulConfig)
+console.log("gatsbyContentfulRichtextOptions", gatsbyContentfulRichtextOptions)
+console.log("gatsbyGTMOptions", gatsbyGTMOptions)
+
+const { spaceId, accessToken } = gatsbyContentfulConfig
 
 if (!spaceId || !accessToken) {
   throw new Error(
@@ -55,25 +128,11 @@ module.exports = {
     },
     {
       resolve: "gatsby-source-contentful",
-      options: contentfulConfig,
+      options: gatsbyContentfulConfig,
     },
     {
       resolve: "@contentful/gatsby-transformer-contentful-richtext",
-      options: {
-        renderOptions: {
-          renderNode: {
-            // [BLOCKS.EMBEDDED_ASSET]: node => {
-            //   return renderEmbeddedAsset(node)
-            // },
-            // [BLOCKS.HEADING_3]: node => {
-            //   return renderHeading(node)
-            // },
-            // [BLOCKS.EMBEDDED_ENTRY]: node => {
-            //   return renderEmbeddedEntry(node)
-            // },
-          },
-        },
-      },
+      options: gatsbyContentfulRichtextOptions,
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -96,7 +155,7 @@ module.exports = {
     //     sassOptions: {
     //       includePaths: ["src/images"],
     //     },
-    //     // data: `@import "${__dirname}/src/styles/styles";`, // global styles
+    //     data: `@import "${__dirname}/src/styles/styles";`, // global styles
     //   },
     // },
     {
@@ -122,6 +181,10 @@ module.exports = {
         sitemap: "https://alcoholism.gatsbyjs.io/sitemap/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: gatsbyGTMOptions,
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

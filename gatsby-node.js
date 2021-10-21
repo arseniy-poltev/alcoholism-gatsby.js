@@ -110,7 +110,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     `
   )
-
   if (result.errors) {
     console.log("createPages->errors", result.errors)
     reporter.panicOnBuild(`Error while running GraphQL query.`)
@@ -118,7 +117,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const widgets = result.data.allContentfulWidget.edges
-
   const headerLinks = result.data.allContentfulPost.edges
     .filter(edge => edge.node.hasLink)
     .map(edge => {
@@ -128,8 +126,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         label: upperCaseFirstLetter(edge.node.slug),
       }
     })
-
-  console.log(`headerLinks`, headerLinks)
   const navmenus = [
     { key: "listing", label: "Locations" },
     ...headerLinks,
@@ -137,14 +133,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     { key: "about", label: "About" },
     { key: "contact", label: "Contact" },
   ]
-
+  console.log(`headerLinks`, headerLinks)
   console.log("gatsby-nodejs: createPages: navmenus", navmenus)
+
+  /**
+   * Render blog post pages
+   */
   result.data.allContentfulPost.edges.forEach(edge => {
     let path = edge.node.path
       ? edge.node.path.substring(1)
       : `${edge.node.slug}`
 
-    console.log(`allContentfulPost`, path)
+    console.log(`allContentfulPost:edge:node`, path)
 
     if (edge.node.slug === "what-is-alcoholism") {
       createPage({
