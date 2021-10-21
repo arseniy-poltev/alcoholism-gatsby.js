@@ -9,12 +9,14 @@ export default function BlogListingCard({ blog }) {
       <div>
         <h3>{title}</h3>
         <div className="blog-listing--item__summary">
-          <div className="blog-listing--item__profile">
-            <img src={author.avatar.fixed.src} alt="author" />
-            <p>
-              Author: <span>{author.name}</span>
-            </p>
-          </div>
+          {author && (
+            <div className="blog-listing--item__profile">
+              <img src={author.avatar.fixed.src} alt="author" />
+              <p>
+                Author: <span>{author.name}</span>
+              </p>
+            </div>
+          )}
           <div>
             <p>
               Last Updated: <span>{moment(updatedAt).format("M/DD/YYYY")}</span>

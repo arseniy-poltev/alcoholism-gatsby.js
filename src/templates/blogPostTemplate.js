@@ -66,27 +66,30 @@ export default function BlogPostTemplate(props) {
         },
       ]
     }
-if (data.shortDescription)
-
-
-    return {
-      title: data.title,
-      description: data.shortDescription,
-      meta,
-    }
+    if (data.shortDescription)
+      return {
+        title: data.title,
+        description: data.shortDescription,
+        meta,
+      }
   }
 
   return (
     <Fragment>
       <Seo {...generateSeoData()} />
-      <BlogBanner
-        title={data?.title}
-        bannerSrc={data?.banner?.fixed.src}
-        shortDescription={data?.shortDescription?.shortDescription}
-      />
+      {data.banner && (
+        <BlogBanner
+          title={data?.title}
+          bannerSrc={data?.banner?.fixed.src}
+          shortDescription={data?.shortDescription?.shortDescription}
+        />
+      )}
+
       <Container>
         <div className="blog-container">
-          <BlogSummary author={data?.author} updatedAt={data?.updatedAt} />
+          {data.author && (
+            <BlogSummary author={data?.author} updatedAt={data?.updatedAt} />
+          )}
           <BlogTopic topics={topics} />
           <ContentfulRichText content={data.content} />
           {/* <BlogContent content={data?.content} /> */}
@@ -95,10 +98,10 @@ if (data.shortDescription)
             editor={data?.editor}
             reviewer={data?.reviewer}
           />
-          <Button variant="warning" className="blog__more">
+          {/* <Button variant="warning" className="blog__more">
             View more
             <CloseIcon />
-          </Button>
+          </Button> */}
         </div>
       </Container>
       <BlogFooterBanner />
