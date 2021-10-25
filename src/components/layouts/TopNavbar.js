@@ -16,7 +16,7 @@ export default function TopNavbar({ navmenus, widget }) {
     trackCustomEvent({
       category: "CTA buttons",
       action: "Click",
-      label: "Call us campaign",
+      label: "Header CTA",
     })
     window.open("tel:+18887673708")
   }

@@ -25,9 +25,8 @@ export default function RequestCallForm({ className, text }) {
   async function onSubmit(formData) {
     setIsLoading(true)
     trackCustomEvent({
-      category: "Request call button",
+      category: "Request call buttons",
       action: "Click",
-      label: "Call us campaign",
     })
 
     try {
