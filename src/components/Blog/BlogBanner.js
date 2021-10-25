@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
+import { Link } from "gatsby"
 
 export default function BlogBanner(props) {
   const { title, shortDescription, bannerSrc } = props
@@ -23,9 +24,9 @@ export default function BlogBanner(props) {
             <div className="text-block">
               <h1>{title ? title : ""}</h1>
               <p>{shortDescription ? shortDescription : ""}</p>
-              <Button variant="warning" className="btn-transform">
+              <Link to="/start" className="btn btn-warning btn-transform">
                 GET HELP WITH YOUR ADDICTION
-              </Button>
+              </Link>
             </div>
           </Col>
         </Row>

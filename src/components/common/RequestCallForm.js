@@ -8,6 +8,7 @@ import * as Yup from "yup"
 import { createCustomerEntry } from "../../service/contentfulApi"
 import { useDispatch } from "react-redux"
 import alertActions from "../../redux/alert/alertActions"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 export default function RequestCallForm({ className, text }) {
   const [isLoading, setIsLoading] = useState(false)
@@ -18,15 +19,17 @@ export default function RequestCallForm({ className, text }) {
     phoneNumber: Yup.string().required("Please enter a valid US phone number"),
   })
   const formOptions = { resolver: yupResolver(validationSchema) }
-  const {
-    register,
-    handleSubmit,
-    formState,
-  } = useForm(formOptions)
+  const { register, handleSubmit, formState } = useForm(formOptions)
   const { errors, isValid } = formState
 
   async function onSubmit(formData) {
     setIsLoading(true)
+    trackCustomEvent({
+      category: "Request call button",
+      action: "Click",
+      label: "Call us campaign",
+    })
+
     try {
       await createCustomerEntry(formData)
       dispatch(alertActions.alertSuccess("Accepted request successfully!"))

@@ -17,6 +17,7 @@
     "dotenv": "^10.0.0",
     "gatsby": "^3.6.2",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
+    "gatsby-plugin-google-analytics": "^4.0.0",
     "gatsby-plugin-google-tagmanager": "^3.13.0",
     "gatsby-plugin-image": "^1.6.0",
     "gatsby-plugin-manifest": "^3.6.0",

@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import React from "react"
 import Button from "react-bootstrap/Button"
 
@@ -23,7 +24,9 @@ export default function ListingCard() {
         </div>
       </div>
       <div>
-        <Button variant="warning">VIEW</Button>
+        <Link to="/start" variant="warning">
+          VIEW
+        </Link>
       </div>
     </div>
   )

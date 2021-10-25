@@ -59,14 +59,14 @@ let gatsbyGTMOptions = {
   defaultDataLayer: { platform: "gatsby" },
 
   // Specify optional GTM environment details.
-  // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
-  // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
-  // dataLayerName: "YOUR_DATA_LAYER_NAME",
+  // gtmAuth: "GATSBY_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
+  // gtmPreview: "GATSBY_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
+  // dataLayerName: "GATSBY_DATA_LAYER_NAME",
 
   // Name of the event that is triggered
   // on every Gatsby route change.
   // Defaults to gatsby-route-change
-  // routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
+  // routeChangeEventName: "GATSBY_ROUTE_CHANGE_EVENT_NAME",
   // Defaults to false
   enableWebVitalsTracking: true,
 }
@@ -93,6 +93,42 @@ if (process.env.GATSBY_ROUTE_CHANGE_EVENT_NAME) {
   gatsbyGTMOptions = {
     ...gatsbyGTMOptions,
     routeChangeEventName: process.env.GATSBY_ROUTE_CHANGE_EVENT_NAME,
+  }
+}
+
+/**
+ * Google Analytics Plugin options
+ */
+let gatsbyGAOptions = {
+  trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_ID,
+  head: false,
+  anonymize: true,
+  respectDNT: true,
+  exclude: [],
+  pageTransitionDelay: 0,
+  defer: false,
+  sampleRate: 5,
+  siteSpeedSampleRate: 10,
+  cookieDomain: "example.com",
+  enableWebVitalsTracking: true,
+}
+
+if (process.env.GATSBY_GOOGLE_OPTIMIZE_TRACKING_ID) {
+  gatsbyGAOptions = {
+    ...gatsbyGAOptions,
+    optimizeId: process.env.GATSBY_GOOGLE_OPTIMIZE_TRACKING_ID,
+  }
+}
+if (process.env.GATSBY_GOOGLE_EXPERIMENT_ID) {
+  gatsbyGAOptions = {
+    ...gatsbyGAOptions,
+    optimizeId: process.env.GATSBY_GOOGLE_EXPERIMENT_ID,
+  }
+}
+if (process.env.GATSBY_GOOGLE_OPTIMIZE_VARIATION_ID) {
+  gatsbyGAOptions = {
+    ...gatsbyGAOptions,
+    optimizeId: process.env.GATSBY_GOOGLE_OPTIMIZE_VARIATION_ID,
   }
 }
 
@@ -144,7 +180,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/favicon.jpg`, // This path is relative to the root of the site.
       },
     },
     "gatsby-plugin-sass",
@@ -184,6 +220,10 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: gatsbyGTMOptions,
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: gatsbyGAOptions,
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

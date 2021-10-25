@@ -7,15 +7,31 @@ import Logo from "../common/Logo"
 import PhoneIcon from "../../assets/Icons/phone.svg"
 import { FaBars } from "react-icons/fa"
 import TopNavMenu from "./TopNavMenu"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 export default function TopNavbar({ navmenus, widget }) {
+  function handleClick(e) {
+    console.log(`CALL US NOW`)
+    e.preventDefault()
+    trackCustomEvent({
+      category: "CTA buttons",
+      action: "Click",
+      label: "Call us campaign",
+    })
+    window.open("tel:+18887673708")
+  }
+
   return (
     <Navbar bg="transparent" expand="lg">
       <Container>
         <Navbar.Brand href="/">
           <Logo />
         </Navbar.Brand>
-        <Button variant="warning" className="order-lg-last">
+        <Button
+          variant="warning"
+          className="order-lg-last"
+          onClick={handleClick}
+        >
           <PhoneIcon />
           <span>CALL US NOW</span>
         </Button>

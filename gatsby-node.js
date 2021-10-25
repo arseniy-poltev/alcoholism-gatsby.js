@@ -127,7 +127,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     })
   const navmenus = [
-    { key: "listing", label: "Locations" },
+    { key: "start", label: "Locations" },
     ...headerLinks,
     { key: "blog", label: "Blog" },
     { key: "about", label: "About" },
@@ -204,7 +204,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     },
   })
   createPage({
-    path: `/listing`,
+    path: `/start`,
     component: homeTemplate,
     context: {
       navmenus,

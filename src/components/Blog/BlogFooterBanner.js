@@ -1,6 +1,7 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/Button"
+import { Link } from "gatsby"
 
 export default function BlogFooterBanner() {
   return (
@@ -12,9 +13,9 @@ export default function BlogFooterBanner() {
             <p>Get cost-effective, quality addiction care that truly works.</p>
           </div>
           <div className="footer-banner__button-wrapper">
-            <Button variant="outline-warning" className="btn-transform">
+            <Link to="/start" className="btn-transform btn btn-outline-warning">
               start your recovery
-            </Button>
+            </Link>
           </div>
         </div>
       </Container>

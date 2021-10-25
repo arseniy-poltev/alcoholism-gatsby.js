@@ -4,6 +4,8 @@ import CenterMap from "../../common/CenterMap"
 import PhoneIcon from ".././../../assets/Icons/phone.svg"
 
 export default function CenterInfo() {
+  function handleClick() {}
+  
   return (
     <div className="center-card center-card--info">
       <div className="center-card__header">
@@ -14,7 +16,7 @@ export default function CenterInfo() {
         <div className="center-card__map">
           <CenterMap />
         </div>
-        <Button variant="warning">
+        <Button variant="warning" onClick={handleClick}>
           <PhoneIcon />
           888-999-0000
         </Button>

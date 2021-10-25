@@ -91,11 +91,13 @@ export default function BlogPostTemplate(props) {
           {data.slug !== "what-is-alcoholism" && <BlogTopic topics={topics} />}
           <ContentfulRichText content={data.content} />
           {/* <BlogContent content={data?.content} /> */}
-          <BlogWriters
-            author={data?.author}
-            editor={data?.editor}
-            reviewer={data?.reviewer}
-          />
+          {(data.author || data.editor || data.reviewer) && (
+            <BlogWriters
+              author={data?.author}
+              editor={data?.editor}
+              reviewer={data?.reviewer}
+            />
+          )}
         </div>
       </Container>
       <BlogFooterBanner />
