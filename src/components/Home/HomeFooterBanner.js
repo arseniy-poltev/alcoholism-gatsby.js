@@ -5,7 +5,7 @@ import PhoneIcon from "../../assets/Icons/phone.svg"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 export default function HomeFooterBanner() {
-  function handleClick() {
+  function handleClick(e) {
     // 1-888-767-3708
     console.log(`CALL US NOW`)
     e.preventDefault()
