@@ -15,7 +15,15 @@ export default function teamTemplate(props) {
 
   return (
     <Fragment>
-      <Seo title="team" />
+      <Seo
+        title="team"
+        meta={[
+          {
+            property: `google-site-verification`,
+            content: process.env.GATSBY_GATSBY_GOOGLE_SITE_VERIFICATION,
+          },
+        ]}
+      />
 
       <Container>
         {edges.map((edge, index) => {

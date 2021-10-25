@@ -4,7 +4,15 @@ import Seo from "../components/seo"
 export default function TermsOfService() {
   return (
     <Fragment>
-      <Seo title="about" />
+      <Seo
+        title="about"
+        meta={[
+          {
+            property: `google-site-verification`,
+            content: process.env.GATSBY_GATSBY_GOOGLE_SITE_VERIFICATION,
+          },
+        ]}
+      />
       <div className="container">
         <div className="blog blog__content">
           <h2>Terms of Service</h2>

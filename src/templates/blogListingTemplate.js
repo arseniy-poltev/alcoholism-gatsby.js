@@ -15,7 +15,15 @@ export default function blogListingTemplate(props) {
 
   return (
     <Fragment>
-      <Seo title="Blog Listing" />
+      <Seo
+        title="Blog Listing"
+        meta={[
+          {
+            property: `google-site-verification`,
+            content: process.env.GATSBY_GATSBY_GOOGLE_SITE_VERIFICATION,
+          },
+        ]}
+      />
       {/* <section className="blog-listing__banner">
         <div className="container">
           <h2>Banner title</h2>

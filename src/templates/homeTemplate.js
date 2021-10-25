@@ -14,7 +14,15 @@ export default function HomeTemplate(props) {
   const { pageContext } = props
   return (
     <Fragment>
-      <Seo title="Home" />
+      <Seo
+        title="Home"
+        meta={[
+          {
+            property: `google-site-verification`,
+            content: process.env.GATSBY_GATSBY_GOOGLE_SITE_VERIFICATION,
+          },
+        ]}
+      />
       <HomeBanner />
       {/* <HomeCertifications /> */}
       <HomeFeatureNetwork />

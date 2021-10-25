@@ -18,7 +18,15 @@ import Seo from "../components/seo"
 export default function ListingTemplate() {
   return (
     <Fragment>
-      <Seo title="listing" />
+      <Seo
+        title="listing"
+        meta={[
+          {
+            property: `google-site-verification`,
+            content: process.env.GATSBY_GATSBY_GOOGLE_SITE_VERIFICATION,
+          },
+        ]}
+      />
       <ListingBanner />
       <section className="listing-detail">
         <Container>

@@ -42,7 +42,12 @@ export default function BlogPostTemplate(props) {
 
   function generateSeoData() {
     console.log(`BlogPostTemplate:generateSeoData`, data)
-    let meta = []
+    let meta = [
+      {
+        property: `google-site-verification`,
+        content: process.env.GATSBY_GATSBY_GOOGLE_SITE_VERIFICATION,
+      },
+    ]
     if (data.banner) {
       meta = [
         ...meta,

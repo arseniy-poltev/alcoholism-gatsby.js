@@ -4,7 +4,15 @@ import Seo from "../components/seo"
 export default function ContactTemplate() {
   return (
     <Fragment>
-      <Seo title="contact" />
+      <Seo
+        title="contact"
+        meta={[
+          {
+            property: `google-site-verification`,
+            content: process.env.GATSBY_GATSBY_GOOGLE_SITE_VERIFICATION,
+          },
+        ]}
+      />
       <div className="container">
         <div className="blog blog__content">
           <h3>Reach Out Today</h3>
