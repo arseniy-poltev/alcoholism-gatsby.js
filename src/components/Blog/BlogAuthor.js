@@ -19,18 +19,22 @@ export default function BlogAuthor({ author }) {
           <h6>{position}</h6>
           <p>{bio?.bio || ""}</p>
           <div className="blog-profile__contact">
-            <a
-              href={`mailto:${email}?subject=To Author`}
-              target="_blank"
-              rel="nofollow"
-            >
-              <FaEnvelope />
-              {email}
-            </a>
-            {/* <a href="#">
-              <FaTwitter />
-              {twitterUsername || ""}
-            </a> */}
+            {email && (
+              <a
+                href={`mailto:${email}?subject=To Author`}
+                target="_blank"
+                rel="nofollow"
+              >
+                <FaEnvelope />
+                {email}
+              </a>
+            )}
+            {/* {twitterUsername && (
+              <a href="#">
+                <FaTwitter />
+                {twitterUsername}
+              </a>
+            )} */}
           </div>
         </div>
       </div>

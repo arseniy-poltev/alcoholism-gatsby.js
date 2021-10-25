@@ -44,9 +44,13 @@ export default function Footer(props) {
       <Container>
         <Row>
           <Col lg={4} sm={12}>
-            <SocialLinks />
+            {/* <SocialLinks /> */}
             <h5 className="copyright">
-              © Copyright 2020 Bright Stance® <br />
+              Alcoholism.org. ©
+              <br />
+              1-888-767-3708
+              <br />
+              Copyright 2021 Addiction Solutions, LLC <br />
               All Rights Reserved
             </h5>
             {widget.node.childWidgets && (
